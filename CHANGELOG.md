@@ -4,6 +4,26 @@
 
 ---
 
+## v0.2.0 - "The Health Connection" (2026-01-24)
+
+### Major Features
+- **Health Connect Integration** — The fortress now receives tribute from the realm's fitness trackers
+  - Automatic step syncing from Health Connect-compatible apps
+  - Manual sync button for the impatient adventurer
+  - Graceful fallback to manual logging when Health Connect is unavailable
+
+### Changes
+- Raised minimum Android SDK to 26 (Android 8.0 Oreo)
+  - The ancient devices of API 23-25 can no longer receive the blessings of Health Connect
+  - Their inhabitants must seek adventure through other means
+
+### Bug Fixes
+- **Corrected the sacred color references in the Health Connect card**
+  - The `xpGold` color, though noble in intent, did not exist in the theme scrolls
+  - Replaced with `accentGold`, which had been there all along, waiting patiently
+
+---
+
 ## v0.1.0 - "The Great Awakening" (2026-01-24)
 
 ### Major Features
