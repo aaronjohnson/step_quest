@@ -51,7 +51,20 @@ Aaron Johnson (aaronjohnson on GitHub)
 - **No ads** — funded by voluntary tips
 - Supporters get in-app badge and recognition in SUPPORTERS.md
 - Tip tiers (prime numbers): Coffee (~$2), Supporter (~$3), Legendary (~$7)
-- Localized pricing set in Google Play Console per country (sensible round numbers)
+
+### Manual Price Tiers (Google Play Console)
+Set these manually in Play Console → Monetization → Products for sensible round numbers:
+
+| Tier      | USD | EUR | GBP | JPY  | INR  | BRL  |
+|-----------|-----|-----|-----|------|------|------|
+| Coffee    | $2  | €2  | £2  | ¥200 | ₹150 | R$10 |
+| Supporter | $3  | €3  | £3  | ¥300 | ₹250 | R$15 |
+| Legendary | $7  | €7  | £6  | ¥700 | ₹500 | R$35 |
+
+Product IDs:
+- `tip_coffee`
+- `tip_supporter`
+- `tip_legendary`
 
 ## Future Plans
 - Google Play Billing integration for tip jar
