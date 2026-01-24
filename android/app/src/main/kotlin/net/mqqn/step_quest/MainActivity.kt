@@ -1,4 +1,4 @@
-package com.example.step_quest
+package net.mqqn.step_quest
 
 import io.flutter.embedding.android.FlutterActivity
 
