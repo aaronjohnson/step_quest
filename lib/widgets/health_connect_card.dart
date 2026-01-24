@@ -23,6 +23,8 @@ class HealthConnectCard extends StatefulWidget {
 }
 
 class _HealthConnectCardState extends State<HealthConnectCard> {
+  bool _showInfo = false;
+
   @override
   Widget build(BuildContext context) {
     return GameCard(
@@ -59,6 +61,89 @@ class _HealthConnectCardState extends State<HealthConnectCard> {
           ),
           const SizedBox(height: 12),
           _buildActionButton(),
+          const SizedBox(height: 8),
+          _buildInfoToggle(),
+          if (_showInfo) _buildInfoSection(),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildInfoToggle() {
+    return GestureDetector(
+      onTap: () => setState(() => _showInfo = !_showInfo),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            _showInfo ? Icons.expand_less : Icons.expand_more,
+            size: 16,
+            color: AppColors.textSecondary,
+          ),
+          const SizedBox(width: 4),
+          Text(
+            _showInfo ? 'Hide details' : 'How does sync work?',
+            style: const TextStyle(
+              fontSize: 12,
+              color: AppColors.textSecondary,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildInfoSection() {
+    return Container(
+      margin: const EdgeInsets.only(top: 12),
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: Colors.black26,
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: const Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Sync Path',
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+              color: AppColors.textPrimary,
+            ),
+          ),
+          SizedBox(height: 8),
+          Text(
+            'Your fitness app (Samsung Health, Google Fit, Fitbit, etc.) '
+            '→ Health Connect → Step Quest\n\n'
+            'Enable Health Connect sync in your fitness app\'s settings '
+            'to share step data.',
+            style: TextStyle(
+              fontSize: 12,
+              color: AppColors.textSecondary,
+              height: 1.4,
+            ),
+          ),
+          SizedBox(height: 12),
+          Text(
+            'Want more sensors?',
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+              color: AppColors.textPrimary,
+            ),
+          ),
+          SizedBox(height: 8),
+          Text(
+            'Heart rate, calories, sleep tracking, and other sensor '
+            'features can be requested on our GitHub:\n'
+            'github.com/aaronjohnson/step_quest/issues',
+            style: TextStyle(
+              fontSize: 12,
+              color: AppColors.textSecondary,
+              height: 1.4,
+            ),
+          ),
         ],
       ),
     );
@@ -118,9 +203,9 @@ class _HealthConnectCardState extends State<HealthConnectCard> {
   String _getStatusMessage() {
     switch (widget.status) {
       case HealthConnectStatus.authorized:
-        return 'Your steps are syncing automatically from Health Connect.';
+        return 'Steps sync automatically from Google Fit, Samsung Health, Fitbit, and other Health Connect apps.';
       case HealthConnectStatus.notAuthorized:
-        return 'Connect to sync steps from your fitness apps automatically.';
+        return 'Connect to sync steps from Google Fit, Samsung Health, Fitbit, and other fitness apps.';
       case HealthConnectStatus.unavailable:
         return 'Health Connect is not available. Use manual step logging.';
       case HealthConnectStatus.unknown:

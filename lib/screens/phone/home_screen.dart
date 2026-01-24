@@ -8,6 +8,7 @@ import '../../widgets/streak_card.dart';
 import '../../widgets/log_steps_card.dart';
 import '../../widgets/achievements_card.dart';
 import '../../widgets/health_connect_card.dart';
+import '../../widgets/supporter_card.dart';
 
 /// Main home screen for the phone app.
 class HomeScreen extends ConsumerStatefulWidget {
@@ -137,6 +138,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 const SizedBox(height: 16),
                 // Achievements card
                 AchievementsCard(data: gameState),
+                const SizedBox(height: 16),
+                // Supporter card
+                const SupporterCard(),
                 const SizedBox(height: 24),
               ],
             ),

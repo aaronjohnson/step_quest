@@ -4,6 +4,34 @@
 
 ---
 
+## v0.3.0 - "The Supporter's Guild" (2026-01-24)
+
+### Major Features
+- **Supporter System** — A tip jar for those who wish to fund the fortress
+  - Three tiers with prime number pricing: Coffee ☕ (~$2), Supporter ⭐ (~$3), Legendary 👑 (~$7)
+  - Supporter badge displayed proudly in-app
+  - Google Play IAP integration pending (prices will be localized per country)
+
+- **Health Connect Info Panel** — Expanded sync documentation
+  - Explains the data flow: Fitness App → Health Connect → Step Quest
+  - Lists compatible apps (Samsung Health, Google Fit, Fitbit, etc.)
+  - Directs adventurers to GitHub for sensor feature requests
+
+### External Links
+- GitHub Sponsors for the developer community
+- Patreon for general audience supporters
+- Source code link for the curious and brave
+- SUPPORTERS.md added for public recognition of patrons
+
+### Philosophy
+- **Prime number pricing** — Because $2, $3, and $7 are more elegant than $1.99
+- **Localized pricing** — Sensible round numbers per country (configured in Play Console)
+- In-app purchases follow Google Play policies
+- Both GitHub Sponsors AND Patreon for different audiences
+- Open source remains free; tips fund development and keep ads at bay
+
+---
+
 ## v0.2.0 - "The Health Connection" (2026-01-24)
 
 ### Major Features

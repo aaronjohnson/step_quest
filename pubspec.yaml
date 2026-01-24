@@ -25,6 +25,7 @@ dependencies:
   # Wear OS support
   wear_plus: ^1.2.4
   health: ^13.2.1
+  url_launcher: ^6.3.2
 
 dev_dependencies:
   flutter_test:

@@ -44,7 +44,16 @@ Aaron Johnson (aaronjohnson on GitHub)
 - Pixel 8 Pro (Android 16 API 36) - primary phone
 - Wear OS watch available for testing
 
+## Monetization Strategy
+- **Google Play IAP** for in-app tip jar (follows Play Store policies)
+- **GitHub Sponsors** for developer community recurring support
+- **Patreon** for general audience recurring support
+- **No ads** — funded by voluntary tips
+- Supporters get in-app badge and recognition in SUPPORTERS.md
+- Tip tiers (prime numbers): Coffee (~$2), Supporter (~$3), Legendary (~$7)
+- Localized pricing set in Google Play Console per country (sensible round numbers)
+
 ## Future Plans
-- Health Connect API integration for automatic step tracking
-- Samsung APIs for data sync exploration
+- Google Play Billing integration for tip jar
 - Watch-to-phone data synchronization
+- Additional Health Connect sensors (heart rate, calories) via GitHub requests
