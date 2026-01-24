@@ -1,0 +1,253 @@
+{
+  "@@locale": "en",
+  "appTitle": "Step Quest",
+  "@appTitle": {
+    "description": "The app name"
+  },
+  "appTagline": "Turn your steps into an adventure!",
+  "@appTagline": {
+    "description": "Main app tagline"
+  },
+
+  "levelLabel": "Level {level}",
+  "@levelLabel": {
+    "description": "Player level display",
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
+  },
+  "xpProgress": "{current} / {total} XP",
+  "@xpProgress": {
+    "description": "XP progress display",
+    "placeholders": {
+      "current": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+  "totalSteps": "{count} steps",
+  "@totalSteps": {
+    "description": "Total step count",
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "todaySteps": "Today: {count}",
+  "@todaySteps": {
+    "description": "Today's step count",
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+  "streakTitle": "Streak",
+  "@streakTitle": {
+    "description": "Streak card title"
+  },
+  "streakDays": "{count} days",
+  "@streakDays": {
+    "description": "Streak day count",
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "streakRecord": "Record: {count} days",
+  "@streakRecord": {
+    "description": "Best streak record",
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+  "streakEmpty": "Start walking to build your streak!",
+  "@streakEmpty": {
+    "description": "Message when no streak"
+  },
+
+  "logStepsTitle": "Log Steps",
+  "@logStepsTitle": {
+    "description": "Log steps card title"
+  },
+  "logStepsHint": "Enter steps",
+  "@logStepsHint": {
+    "description": "Log steps input hint"
+  },
+  "logStepsButton": "Log",
+  "@logStepsButton": {
+    "description": "Log steps button"
+  },
+  "logStepsQuickAdd": "+{count}",
+  "@logStepsQuickAdd": {
+    "description": "Quick add button label",
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+  "achievementsTitle": "Achievements",
+  "@achievementsTitle": {
+    "description": "Achievements card title"
+  },
+  "achievementsUnlocked": "{count} unlocked",
+  "@achievementsUnlocked": {
+    "description": "Number of achievements unlocked",
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+  "healthConnectTitle": "Health Connect",
+  "@healthConnectTitle": {
+    "description": "Health Connect card title"
+  },
+  "healthConnectConnected": "Connected",
+  "@healthConnectConnected": {
+    "description": "Health Connect connected status"
+  },
+  "healthConnectNotConnected": "Not Connected",
+  "@healthConnectNotConnected": {
+    "description": "Health Connect not connected status"
+  },
+  "healthConnectUnavailable": "Unavailable",
+  "@healthConnectUnavailable": {
+    "description": "Health Connect unavailable status"
+  },
+  "healthConnectChecking": "Checking...",
+  "@healthConnectChecking": {
+    "description": "Health Connect checking status"
+  },
+  "healthConnectSyncMessage": "Steps sync automatically from Google Fit, Samsung Health, Fitbit, and other Health Connect apps.",
+  "@healthConnectSyncMessage": {
+    "description": "Message when Health Connect is connected"
+  },
+  "healthConnectPrompt": "Connect to sync steps from Google Fit, Samsung Health, Fitbit, and other fitness apps.",
+  "@healthConnectPrompt": {
+    "description": "Message prompting to connect Health Connect"
+  },
+  "healthConnectUnavailableMessage": "Health Connect is not available. Use manual step logging.",
+  "@healthConnectUnavailableMessage": {
+    "description": "Message when Health Connect is unavailable"
+  },
+  "healthConnectSyncing": "Syncing...",
+  "@healthConnectSyncing": {
+    "description": "Sync in progress"
+  },
+  "healthConnectSyncNow": "Sync Now",
+  "@healthConnectSyncNow": {
+    "description": "Sync now button"
+  },
+  "healthConnectConnect": "Connect Health",
+  "@healthConnectConnect": {
+    "description": "Connect button"
+  },
+  "healthConnectHowItWorks": "How does sync work?",
+  "@healthConnectHowItWorks": {
+    "description": "Info toggle text"
+  },
+  "healthConnectHideDetails": "Hide details",
+  "@healthConnectHideDetails": {
+    "description": "Hide info toggle text"
+  },
+  "healthConnectSyncPathTitle": "Sync Path",
+  "@healthConnectSyncPathTitle": {
+    "description": "Sync path section title"
+  },
+  "healthConnectSyncPathDescription": "Your fitness app (Samsung Health, Google Fit, Fitbit, etc.) → Health Connect → Step Quest\n\nEnable Health Connect sync in your fitness app's settings to share step data.",
+  "@healthConnectSyncPathDescription": {
+    "description": "Sync path explanation"
+  },
+  "healthConnectMoreSensors": "Want more sensors?",
+  "@healthConnectMoreSensors": {
+    "description": "More sensors section title"
+  },
+  "healthConnectMoreSensorsDescription": "Heart rate, calories, sleep tracking, and other sensor features can be requested on our GitHub:\ngithub.com/aaronjohnson/step_quest/issues",
+  "@healthConnectMoreSensorsDescription": {
+    "description": "More sensors explanation"
+  },
+
+  "supportTitle": "Support Step Quest",
+  "@supportTitle": {
+    "description": "Support card title"
+  },
+  "supporterBadge": "Supporter",
+  "@supporterBadge": {
+    "description": "Supporter badge text"
+  },
+  "supportThanks": "Thank you for supporting the quest! Your generosity keeps the fortress running.",
+  "@supportThanks": {
+    "description": "Thank you message for supporters"
+  },
+  "supportPrompt": "Step Quest is free and open source. Tips help fund development and keep ads away.",
+  "@supportPrompt": {
+    "description": "Support prompt for non-supporters"
+  },
+  "supportOpenTipJar": "Open Tip Jar",
+  "@supportOpenTipJar": {
+    "description": "Open tip jar button"
+  },
+  "supportHideTipJar": "Hide Tip Jar",
+  "@supportHideTipJar": {
+    "description": "Hide tip jar button"
+  },
+  "supportTipComing": "Tip jar coming soon! For now, visit GitHub Sponsors.",
+  "@supportTipComing": {
+    "description": "Tip jar coming soon message"
+  },
+  "supportSourceCode": "View Source Code",
+  "@supportSourceCode": {
+    "description": "Source code link"
+  },
+  "supportGitHubSponsors": "GitHub Sponsors",
+  "@supportGitHubSponsors": {
+    "description": "GitHub Sponsors link"
+  },
+  "supportPatreon": "Patreon",
+  "@supportPatreon": {
+    "description": "Patreon link"
+  },
+
+  "tipCoffee": "Buy a Coffee",
+  "@tipCoffee": {
+    "description": "Coffee tier name"
+  },
+  "tipCoffeeDesc": "A small thanks!",
+  "@tipCoffeeDesc": {
+    "description": "Coffee tier description"
+  },
+  "tipSupporter": "Support the Quest",
+  "@tipSupporter": {
+    "description": "Supporter tier name"
+  },
+  "tipSupporterDesc": "Help keep development going",
+  "@tipSupporterDesc": {
+    "description": "Supporter tier description"
+  },
+  "tipLegendary": "Legendary Patron",
+  "@tipLegendary": {
+    "description": "Legendary tier name"
+  },
+  "tipLegendaryDesc": "You are a legend!",
+  "@tipLegendaryDesc": {
+    "description": "Legendary tier description"
+  },
+
+  "watchTapToLog": "Tap to log steps",
+  "@watchTapToLog": {
+    "description": "Watch home tap hint"
+  },
+  "watchStepsLabel": "steps",
+  "@watchStepsLabel": {
+    "description": "Steps label on watch"
+  },
+  "watchQuickLogTitle": "Quick Log",
+  "@watchQuickLogTitle": {
+    "description": "Watch quick log screen title"
+  },
+  "watchLoggedSteps": "Logged {count} steps!",
+  "@watchLoggedSteps": {
+    "description": "Confirmation after logging steps on watch",
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  }
+}

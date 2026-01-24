@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../l10n/app_localizations.dart';
 import '../providers/game_state_provider.dart';
 import '../theme/app_theme.dart';
 import 'game_card.dart';
@@ -39,9 +40,9 @@ class _HealthConnectCardState extends State<HealthConnectCard> {
                 size: 24,
               ),
               const SizedBox(width: 8),
-              const Text(
-                'Health Connect',
-                style: TextStyle(
+              Text(
+                AppLocalizations.of(context)!.healthConnectTitle,
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,

@@ -66,7 +66,16 @@ Product IDs:
 - `tip_supporter`
 - `tip_legendary`
 
+## Internationalization (i18n)
+- **Supported locales**: en, de, es, hi, ja, pt
+- ARB files in `lib/l10n/`
+- Generated classes in `lib/l10n/app_localizations*.dart`
+- Usage: `AppLocalizations.of(context)!.stringKey`
+- XP is universal (not translated)
+- TODO: Migrate remaining widget hardcoded strings
+
 ## Future Plans
 - Google Play Billing integration for tip jar
 - Watch-to-phone data synchronization
 - Additional Health Connect sensors (heart rate, calories) via GitHub requests
+- Complete i18n migration of all widget strings

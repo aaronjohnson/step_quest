@@ -1,0 +1,195 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
+import 'app_localizations.dart';
+
+// ignore_for_file: type=lint
+
+/// The translations for Portuguese (`pt`).
+class AppLocalizationsPt extends AppLocalizations {
+  AppLocalizationsPt([String locale = 'pt']) : super(locale);
+
+  @override
+  String get appTitle => 'Step Quest';
+
+  @override
+  String get appTagline => 'Transforme seus passos em uma aventura!';
+
+  @override
+  String levelLabel(int level) {
+    return 'Nível $level';
+  }
+
+  @override
+  String xpProgress(int current, int total) {
+    return '$current / $total XP';
+  }
+
+  @override
+  String totalSteps(int count) {
+    return '$count passos';
+  }
+
+  @override
+  String todaySteps(int count) {
+    return 'Hoje: $count';
+  }
+
+  @override
+  String get streakTitle => 'Sequência';
+
+  @override
+  String streakDays(int count) {
+    return '$count dias';
+  }
+
+  @override
+  String streakRecord(int count) {
+    return 'Recorde: $count dias';
+  }
+
+  @override
+  String get streakEmpty => 'Comece a caminhar para criar sua sequência!';
+
+  @override
+  String get logStepsTitle => 'Registrar passos';
+
+  @override
+  String get logStepsHint => 'Digite os passos';
+
+  @override
+  String get logStepsButton => 'Registrar';
+
+  @override
+  String logStepsQuickAdd(int count) {
+    return '+$count';
+  }
+
+  @override
+  String get achievementsTitle => 'Conquistas';
+
+  @override
+  String achievementsUnlocked(int count) {
+    return '$count desbloqueadas';
+  }
+
+  @override
+  String get healthConnectTitle => 'Health Connect';
+
+  @override
+  String get healthConnectConnected => 'Conectado';
+
+  @override
+  String get healthConnectNotConnected => 'Não conectado';
+
+  @override
+  String get healthConnectUnavailable => 'Indisponível';
+
+  @override
+  String get healthConnectChecking => 'Verificando...';
+
+  @override
+  String get healthConnectSyncMessage =>
+      'Os passos são sincronizados automaticamente do Google Fit, Samsung Health, Fitbit e outros apps do Health Connect.';
+
+  @override
+  String get healthConnectPrompt =>
+      'Conecte-se para sincronizar passos do Google Fit, Samsung Health, Fitbit e outros apps de fitness.';
+
+  @override
+  String get healthConnectUnavailableMessage =>
+      'Health Connect não está disponível. Use o registro manual de passos.';
+
+  @override
+  String get healthConnectSyncing => 'Sincronizando...';
+
+  @override
+  String get healthConnectSyncNow => 'Sincronizar agora';
+
+  @override
+  String get healthConnectConnect => 'Conectar Health';
+
+  @override
+  String get healthConnectHowItWorks => 'Como funciona a sincronização?';
+
+  @override
+  String get healthConnectHideDetails => 'Ocultar detalhes';
+
+  @override
+  String get healthConnectSyncPathTitle => 'Caminho de sincronização';
+
+  @override
+  String get healthConnectSyncPathDescription =>
+      'Seu app de fitness (Samsung Health, Google Fit, Fitbit, etc.) → Health Connect → Step Quest\n\nAtive a sincronização do Health Connect nas configurações do seu app de fitness.';
+
+  @override
+  String get healthConnectMoreSensors => 'Quer mais sensores?';
+
+  @override
+  String get healthConnectMoreSensorsDescription =>
+      'Frequência cardíaca, calorias, monitoramento de sono e outros recursos podem ser solicitados no GitHub:\ngithub.com/aaronjohnson/step_quest/issues';
+
+  @override
+  String get supportTitle => 'Apoie o Step Quest';
+
+  @override
+  String get supporterBadge => 'Apoiador';
+
+  @override
+  String get supportThanks =>
+      'Obrigado por apoiar a aventura! Sua generosidade mantém a fortaleza de pé.';
+
+  @override
+  String get supportPrompt =>
+      'Step Quest é gratuito e código aberto. Gorjetas ajudam no desenvolvimento e mantêm o app sem anúncios.';
+
+  @override
+  String get supportOpenTipJar => 'Abrir gorjetas';
+
+  @override
+  String get supportHideTipJar => 'Fechar gorjetas';
+
+  @override
+  String get supportTipComing =>
+      'Gorjetas em breve! Por enquanto, visite GitHub Sponsors.';
+
+  @override
+  String get supportSourceCode => 'Ver código fonte';
+
+  @override
+  String get supportGitHubSponsors => 'GitHub Sponsors';
+
+  @override
+  String get supportPatreon => 'Patreon';
+
+  @override
+  String get tipCoffee => 'Pagar um café';
+
+  @override
+  String get tipCoffeeDesc => 'Um pequeno agradecimento!';
+
+  @override
+  String get tipSupporter => 'Apoiar a aventura';
+
+  @override
+  String get tipSupporterDesc => 'Ajude a manter o desenvolvimento';
+
+  @override
+  String get tipLegendary => 'Patrono lendário';
+
+  @override
+  String get tipLegendaryDesc => 'Você é uma lenda!';
+
+  @override
+  String get watchTapToLog => 'Toque para registrar';
+
+  @override
+  String get watchStepsLabel => 'passos';
+
+  @override
+  String get watchQuickLogTitle => 'Registro rápido';
+
+  @override
+  String watchLoggedSteps(int count) {
+    return '$count passos registrados!';
+  }
+}

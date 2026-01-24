@@ -2,6 +2,8 @@ import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'l10n/app_localizations.dart';
 import 'providers/game_state_provider.dart';
 import 'screens/phone/home_screen.dart';
 import 'screens/watch/watch_home.dart';
@@ -33,6 +35,21 @@ class StepQuestApp extends StatelessWidget {
       title: 'Step Quest',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.theme,
+      // Localization
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en'),      // English (base)
+        Locale('de'),      // German (EUR)
+        Locale('es'),      // Spanish
+        Locale('hi'),      // Hindi (INR)
+        Locale('ja'),      // Japanese (JPY)
+        Locale('pt'),      // Portuguese (BRL)
+      ],
       home: const _DeviceAdaptiveHome(),
     );
   }

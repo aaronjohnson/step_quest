@@ -4,6 +4,28 @@
 
 ---
 
+## v0.4.0 - "The Tower of Babel Falls" (2026-01-24)
+
+### Major Features
+- **Full Internationalization Infrastructure** — The fortress now speaks many tongues
+  - English (en) - Base language
+  - German (de) - For our European allies (EUR)
+  - Spanish (es) - Para nuestros amigos hispanohablantes
+  - Hindi (hi) - भारतीय साहसियों के लिए (INR)
+  - Japanese (ja) - 日本の冒険者のために (JPY)
+  - Portuguese (pt) - Para nossos amigos brasileiros (BRL)
+
+### Technical
+- ARB files for all 6 locales with 50+ translatable strings
+- Flutter localization delegates configured
+- XP remains universal (gaming lingua franca)
+
+### TODO
+- Widget strings still need migration to use `AppLocalizations.of(context)`
+- Pattern established in health_connect_card.dart
+
+---
+
 ## v0.3.0 - "The Supporter's Guild" (2026-01-24)
 
 ### Major Features
