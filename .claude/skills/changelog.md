@@ -108,9 +108,9 @@ For special releases, consider thematic headers:
 
 ## Footer
 
-End the changelog with:
+End the changelog with a link to the source of inspiration:
 ```
-*"Losing is fun!" - Dwarf Fortress wisdom*
+*"Losing is fun!" - [Dwarf Fortress](https://www.bay12games.com/dwarves/) wisdom*
 ```
 
 ## Example Entry

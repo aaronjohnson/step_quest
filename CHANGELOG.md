@@ -194,4 +194,4 @@
 
 ---
 
-*"Losing is fun!" - Dwarf Fortress wisdom*
+*"Losing is fun!" - [Dwarf Fortress](https://www.bay12games.com/dwarves/) wisdom*
