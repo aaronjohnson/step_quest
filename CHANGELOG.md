@@ -4,6 +4,37 @@
 
 ---
 
+## v0.5.0 - "The Grand Opening" (2026-01-25)
+
+### Major Features
+- **Google Play Store Release** — The fortress gates open to the public
+  - Mobile app available on internal testing track
+  - Wear OS app on dedicated form factor track
+  - Automated CI/CD via GitHub Actions and Fastlane
+
+- **Tip Jar Implementation** — Real Google Play Billing integration
+  - Three tiers: Coffee ($2), Supporter ($3), Legendary ($7)
+  - Prime number pricing preserved
+  - Consumable products (can tip multiple times)
+  - Purchase status tracked locally
+
+- **Landing Page** — Firebase Hosting at step-quest-485403.web.app
+  - Beta testing links for Phone and Wear OS
+  - Privacy policy for Play Store compliance
+  - iOS waitlist form with Firestore backend
+
+### Documentation
+- SECURITY.md for vulnerability reporting via GitHub
+- README updated with Free and Open Source section
+
+### Technical
+- Product flavors for mobile/wear separation
+- Version codes: mobile uses even numbers, wear uses odd numbers
+- Workload Identity Federation for keyless CI authentication
+- BILLING permission added to AndroidManifest
+
+---
+
 ## v0.4.0 - "The Tower of Babel Falls" (2026-01-24)
 
 ### Major Features
