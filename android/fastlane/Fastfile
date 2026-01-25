@@ -1,0 +1,131 @@
+# Fastfile for Step Quest Android
+# https://docs.fastlane.tools
+
+default_platform(:android)
+
+# Configuration
+FIREBASE_APP_ID = ENV["FIREBASE_APP_ID"] || "1:203689137716:android:b879b8f67ee0caa1ea1c61"
+FLUTTER_ROOT = File.expand_path("../..", __dir__)
+
+platform :android do
+
+  desc "Build debug APK"
+  lane :build_debug do
+    Dir.chdir(FLUTTER_ROOT) do
+      sh("flutter", "build", "apk", "--debug")
+    end
+
+    apk_path = File.join(FLUTTER_ROOT, "build/app/outputs/flutter-apk/app-debug.apk")
+    UI.success("Debug APK built: #{apk_path}")
+    apk_path
+  end
+
+  desc "Build release APK"
+  lane :build_release do
+    Dir.chdir(FLUTTER_ROOT) do
+      sh("flutter", "build", "apk", "--release")
+    end
+
+    apk_path = File.join(FLUTTER_ROOT, "build/app/outputs/flutter-apk/app-release.apk")
+    UI.success("Release APK built: #{apk_path}")
+    apk_path
+  end
+
+  desc "Build release App Bundle (AAB) for Play Store"
+  lane :build_bundle do
+    Dir.chdir(FLUTTER_ROOT) do
+      sh("flutter", "build", "appbundle", "--release")
+    end
+
+    aab_path = File.join(FLUTTER_ROOT, "build/app/outputs/bundle/release/app-release.aab")
+    UI.success("Release AAB built: #{aab_path}")
+    aab_path
+  end
+
+  desc "Distribute debug build to Firebase App Distribution"
+  lane :distribute_debug do |options|
+    apk_path = build_debug
+
+    notes = options[:notes] || "Debug build - #{Time.now.strftime('%Y-%m-%d %H:%M')}"
+    testers = options[:testers] || ENV["FIREBASE_TESTERS"]
+    groups = options[:groups] || ENV["FIREBASE_GROUPS"] || "android-testers"
+
+    firebase_app_distribution(
+      app: FIREBASE_APP_ID,
+      apk_path: apk_path,
+      release_notes: notes,
+      groups: groups,
+      testers: testers,
+      service_credentials_file: ENV["GOOGLE_APPLICATION_CREDENTIALS"],
+      firebase_cli_token: ENV["FIREBASE_TOKEN"]
+    )
+
+    UI.success("Debug build distributed to Firebase App Distribution!")
+  end
+
+  desc "Distribute release build to Firebase App Distribution"
+  lane :distribute_release do |options|
+    apk_path = build_release
+
+    notes = options[:notes] || "Release build - #{Time.now.strftime('%Y-%m-%d %H:%M')}"
+    testers = options[:testers] || ENV["FIREBASE_TESTERS"]
+    groups = options[:groups] || ENV["FIREBASE_GROUPS"] || "android-testers"
+
+    firebase_app_distribution(
+      app: FIREBASE_APP_ID,
+      apk_path: apk_path,
+      release_notes: notes,
+      groups: groups,
+      testers: testers,
+      service_credentials_file: ENV["GOOGLE_APPLICATION_CREDENTIALS"],
+      firebase_cli_token: ENV["FIREBASE_TOKEN"]
+    )
+
+    UI.success("Release build distributed to Firebase App Distribution!")
+  end
+
+  desc "Run Flutter tests"
+  lane :test do
+    Dir.chdir(FLUTTER_ROOT) do
+      sh("flutter", "test")
+    end
+  end
+
+  desc "Analyze code"
+  lane :analyze do
+    Dir.chdir(FLUTTER_ROOT) do
+      sh("flutter", "analyze", "--no-fatal-infos")
+    end
+  end
+
+  desc "Full pipeline: test, analyze, build, distribute"
+  lane :deploy do |options|
+    test
+    analyze
+
+    if options[:debug]
+      distribute_debug(options)
+    else
+      distribute_release(options)
+    end
+  end
+
+  desc "Install APK on connected device"
+  lane :install do |options|
+    apk_type = options[:release] ? "release" : "debug"
+    apk_path = File.join(FLUTTER_ROOT, "build/app/outputs/flutter-apk/app-#{apk_type}.apk")
+
+    unless File.exist?(apk_path)
+      UI.message("APK not found, building #{apk_type}...")
+      if options[:release]
+        build_release
+      else
+        build_debug
+      end
+    end
+
+    sh("adb", "install", "-r", apk_path)
+    UI.success("APK installed on device!")
+  end
+
+end

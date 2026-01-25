@@ -1,0 +1,141 @@
+name: Fastlane Android Build & Distribute
+
+on:
+  # Manual trigger with options
+  workflow_dispatch:
+    inputs:
+      build_type:
+        description: 'Build type'
+        required: true
+        default: 'debug'
+        type: choice
+        options:
+          - debug
+          - release
+      distribute:
+        description: 'Distribute to Firebase'
+        required: true
+        default: true
+        type: boolean
+      release_notes:
+        description: 'Release notes for testers'
+        required: false
+        default: ''
+        type: string
+
+  # Auto-trigger on tags (for releases)
+  push:
+    tags:
+      - 'v*'
+
+# Required for Workload Identity Federation
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  fastlane-android:
+    runs-on: [self-hosted, macOS, ARM64]
+
+    defaults:
+      run:
+        working-directory: android
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud (WIF)
+        id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: 'projects/203689137716/locations/global/workloadIdentityPools/github-actions-pool/providers/github-provider'
+          service_account: 'github-actions-firebase@step-quest-485403.iam.gserviceaccount.com'
+
+      - name: Get Flutter dependencies
+        run: flutter pub get
+        working-directory: .
+
+      - name: Copy signing config
+        working-directory: .
+        run: |
+          # Copy signing files from the permanent location on Mac Mini
+          # Update these paths to match your local setup
+          if [ -f ~/projects/step_quest/android/key.properties ]; then
+            cp ~/projects/step_quest/android/key.properties android/key.properties
+            cp ~/projects/step_quest/android/app/step-quest-release-key.jks android/app/step-quest-release-key.jks
+            echo "Signing config copied"
+          else
+            echo "No signing config found, using debug signing"
+          fi
+
+      - name: Install Fastlane
+        run: |
+          export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+          bundle config set --local path 'vendor/bundle'
+          bundle install
+
+      - name: Get release notes from tag
+        if: ${{ github.event_name == 'push' }}
+        id: tag_notes
+        run: |
+          NOTES=$(git tag -l --format='%(contents)' ${{ github.ref_name }} | head -20)
+          NOTES="${NOTES//'%'/'%25'}"
+          NOTES="${NOTES//$'\n'/'%0A'}"
+          NOTES="${NOTES//$'\r'/'%0D'}"
+          echo "notes=$NOTES" >> $GITHUB_OUTPUT
+        working-directory: .
+
+      - name: Build and Distribute Release (tag push)
+        if: ${{ github.event_name == 'push' }}
+        env:
+          FIREBASE_GROUPS: android-testers
+        run: |
+          export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+          NOTES="${{ steps.tag_notes.outputs.notes }}"
+          if [ -z "$NOTES" ]; then
+            NOTES="Release ${{ github.ref_name }}"
+          fi
+          bundle exec fastlane android distribute_release notes:"$NOTES"
+
+      - name: Build and Distribute Debug (manual)
+        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.build_type == 'debug' && github.event.inputs.distribute != 'false' }}
+        env:
+          FIREBASE_GROUPS: android-testers
+        run: |
+          export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+          NOTES="${{ github.event.inputs.release_notes }}"
+          if [ -z "$NOTES" ]; then
+            NOTES="Debug build - $(date +%Y-%m-%d)"
+          fi
+          bundle exec fastlane android distribute_debug notes:"$NOTES"
+
+      - name: Build and Distribute Release (manual)
+        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.build_type == 'release' && github.event.inputs.distribute != 'false' }}
+        env:
+          FIREBASE_GROUPS: android-testers
+        run: |
+          export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+          NOTES="${{ github.event.inputs.release_notes }}"
+          if [ -z "$NOTES" ]; then
+            NOTES="Release build - $(date +%Y-%m-%d)"
+          fi
+          bundle exec fastlane android distribute_release notes:"$NOTES"
+
+      - name: Build Only (no distribute)
+        if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.distribute == 'false' }}
+        run: |
+          export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+          if [ "${{ github.event.inputs.build_type }}" == "release" ]; then
+            bundle exec fastlane android build_release
+          else
+            bundle exec fastlane android build_debug
+          fi
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-apk-${{ github.event.inputs.build_type || 'release' }}
+          path: |
+            build/app/outputs/flutter-apk/*.apk
+          retention-days: 14

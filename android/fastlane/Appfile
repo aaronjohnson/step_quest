@@ -1,0 +1,8 @@
+# Android App Configuration for Fastlane
+# https://docs.fastlane.tools/actions/supply/
+
+# Package name (Application ID)
+package_name("net.mqqn.step_quest")
+
+# For Firebase App Distribution, we use FIREBASE_TOKEN or GOOGLE_APPLICATION_CREDENTIALS
+# environment variables instead

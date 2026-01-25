@@ -21,10 +21,48 @@ Aaron Johnson (aaronjohnson on GitHub)
 - See CHANGELOG.md for reference
 
 ## Build & Distribution Pipeline
+
+### Overview
 - **Primary distribution**: Firebase App Distribution (not Google Play Store initially)
-- **CI/CD**: Fastlane with GitHub Actions
-- **Runner**: Self-hosted GitHub Actions runner available
-- **Preferred build flow**: GitHub push -> Fastlane -> Firebase App Distribution
+- **CI/CD**: Fastlane with GitHub Actions (self-hosted runner)
+- **Auth**: Google Cloud Workload Identity Federation (no long-lived secrets)
+
+### Firebase Project
+- **Project ID**: `step-quest-485403`
+- **Project Number**: `203689137716`
+- **Android App ID**: `1:203689137716:android:b879b8f67ee0caa1ea1c61`
+- **Package name**: `net.mqqn.step_quest`
+
+### GitHub Actions Setup
+- **Runner**: Self-hosted macOS ARM64 (Mac Mini)
+- **Workflow**: `.github/workflows/fastlane-android.yml`
+- **Triggers**: Manual dispatch or tag push (`v*`)
+
+### Workload Identity Federation
+- **Pool**: `github-actions-pool`
+- **Provider**: `github-provider` (OIDC, restricted to `aaronjohnson/step_quest`)
+- **Service Account**: `github-actions-firebase@step-quest-485403.iam.gserviceaccount.com`
+- **Role**: Firebase App Distribution Admin
+
+### Fastlane Lanes
+- `build_debug` / `build_release` - Build APK
+- `build_bundle` - Build AAB for Play Store
+- `distribute_debug` / `distribute_release` - Build and push to Firebase App Distribution
+- `test` / `analyze` - Run Flutter tests and analyzer
+- `deploy` - Full pipeline (test, analyze, build, distribute)
+- `install` - Install APK on connected device
+
+### Local Signing (Release Builds)
+Signing keys stored on Mac Mini at `~/projects/step_quest/android/`:
+- `key.properties` - Keystore configuration
+- `app/step-quest-release-key.jks` - Release keystore
+
+### Distribution Flow
+1. Push tag `v1.x.x` or trigger manual workflow
+2. GitHub Actions authenticates via WIF
+3. Fastlane builds Flutter APK
+4. Firebase App Distribution receives build
+5. Testers notified automatically
 
 ## Development Environment
 - **Host OS**: Fedora Aurora (immutable, rpm-ostree)
@@ -68,6 +106,9 @@ Product IDs:
 
 ## Internationalization (i18n)
 - **Supported locales**: en, de, es, hi, ja, pt
+- **Easter egg languages**: tlh (Klingon), khz (Dwarvish/Khuzdul)
+  - Klingon: Unlocked via Konami code (↑↑↓↓←→←→ + double-tap twice)
+  - Dwarvish: Unlocked by tapping app title 7 times
 - ARB files in `lib/l10n/`
 - Generated classes in `lib/l10n/app_localizations*.dart`
 - Usage: `AppLocalizations.of(context)!.stringKey`
