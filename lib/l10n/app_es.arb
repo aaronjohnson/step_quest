@@ -80,5 +80,29 @@
   "easterEggTryNow": "Probar ahora",
   "easterEggLater": "Después",
   "languageTitle": "Idioma",
-  "languageSecretSection": "Idiomas secretos"
+  "languageSecretSection": "Idiomas secretos",
+
+  "liveTracking": "SEGUIMIENTO EN VIVO",
+  "stepsThisSession": "pasos en esta sesión",
+  "liveStarting": "Iniciando...",
+  "pedometerUnavailable": "Podómetro no disponible",
+  "enableStepTracking": "Activar seguimiento de pasos",
+  "enableStepTrackingDesc": "Permitir reconocimiento de actividad para contar pasos automáticamente",
+  "enableButton": "Activar",
+  "syncStepsNow": "Sincronizar pasos ahora",
+
+  "heroTitleDragonLord": "Señor Dragón",
+  "heroTitleMonarch": "Monarca",
+  "heroTitleChampion": "Campeón",
+  "heroTitleKnight": "Caballero",
+  "heroTitleWarrior": "Guerrero",
+  "heroTitleRunner": "Corredor",
+  "heroTitleWalker": "Caminante",
+  "levelToday": "Hoy",
+
+  "streakBadgeLegend": "Leyenda",
+  "streakBadgePro": "Pro",
+  "streakBadgeHot": "En racha",
+
+  "celebrationSteps": "¡PASOS!"
 }

@@ -80,5 +80,29 @@
   "easterEggTryNow": "Speak It Now",
   "easterEggLater": "Later",
   "languageTitle": "Tongue",
-  "languageSecretSection": "Hidden Tongues"
+  "languageSecretSection": "Hidden Tongues",
+
+  "liveTracking": "LIVE WATCH",
+  "stepsThisSession": "strides this shift",
+  "liveStarting": "Awakening...",
+  "pedometerUnavailable": "Stride-counter sleeps",
+  "enableStepTracking": "Awaken Stride Tracking",
+  "enableStepTrackingDesc": "Grant the mountain spirits permission to count thy strides",
+  "enableButton": "Awaken",
+  "syncStepsNow": "Bind strides now",
+
+  "heroTitleDragonLord": "Dragon Slayer",
+  "heroTitleMonarch": "Mountain King",
+  "heroTitleChampion": "Champion of the Deep",
+  "heroTitleKnight": "Tunnel Knight",
+  "heroTitleWarrior": "Stone Warrior",
+  "heroTitleRunner": "Swift-foot",
+  "heroTitleWalker": "Tunnel Walker",
+  "levelToday": "This Day",
+
+  "streakBadgeLegend": "Legend",
+  "streakBadgePro": "Veteran",
+  "streakBadgeHot": "Burning",
+
+  "celebrationSteps": "STRIDES!"
 }

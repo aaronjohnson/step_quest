@@ -51,9 +51,8 @@
 - Flutter localization delegates configured
 - XP remains universal (gaming lingua franca)
 
-### TODO
-- Widget strings still need migration to use `AppLocalizations.of(context)`
-- Pattern established in health_connect_card.dart
+### Completed
+- All widget strings migrated to use `AppLocalizations.of(context)`
 
 ---
 

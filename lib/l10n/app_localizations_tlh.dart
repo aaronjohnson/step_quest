@@ -88,13 +88,16 @@ class AppLocalizationsTlh extends AppLocalizations {
   String get healthConnectChecking => '\'ol...';
 
   @override
-  String get healthConnectSyncMessage => 'yItmey Google Fit, Samsung Health, Fitbit je Health Connect apps vo\' автоматически синхронизируются.';
+  String get healthConnectSyncMessage =>
+      'yItmey Google Fit, Samsung Health, Fitbit je Health Connect apps vo\' автоматически синхронизируются.';
 
   @override
-  String get healthConnectPrompt => 'Google Fit, Samsung Health, Fitbit je fitness apps vo\' yItmey rar.';
+  String get healthConnectPrompt =>
+      'Google Fit, Samsung Health, Fitbit je fitness apps vo\' yItmey rar.';
 
   @override
-  String get healthConnectUnavailableMessage => 'Health Connect Qapbe\'. yItmey qon manually.';
+  String get healthConnectUnavailableMessage =>
+      'Health Connect Qapbe\'. yItmey qon manually.';
 
   @override
   String get healthConnectSyncing => 'rar...';
@@ -115,13 +118,15 @@ class AppLocalizationsTlh extends AppLocalizations {
   String get healthConnectSyncPathTitle => 'rar He';
 
   @override
-  String get healthConnectSyncPathDescription => 'fitness app\'a\'lIj (Samsung Health, Google Fit, Fitbit, joq) → Health Connect → yIt Quest\n\nfitness app settings-Daq Health Connect rar yIchu\'.';
+  String get healthConnectSyncPathDescription =>
+      'fitness app\'a\'lIj (Samsung Health, Google Fit, Fitbit, joq) → Health Connect → yIt Quest\n\nfitness app settings-Daq Health Connect rar yIchu\'.';
 
   @override
   String get healthConnectMoreSensors => 'latlh sensors DaneH\'a\'?';
 
   @override
-  String get healthConnectMoreSensorsDescription => 'tIq rate, calories, Qong tracking, latlh sensor features GitHub-Daq tlhoblu\'laH:\ngithub.com/aaronjohnson/step_quest/issues';
+  String get healthConnectMoreSensorsDescription =>
+      'tIq rate, calories, Qong tracking, latlh sensor features GitHub-Daq tlhoblu\'laH:\ngithub.com/aaronjohnson/step_quest/issues';
 
   @override
   String get supportTitle => 'yIt Quest yIQaH';
@@ -130,10 +135,12 @@ class AppLocalizationsTlh extends AppLocalizations {
   String get supporterBadge => 'QaHwI\'';
 
   @override
-  String get supportThanks => 'QaHmo\' qatlho\'! nobmeylIj tlhIngan ta\' luQaH.';
+  String get supportThanks =>
+      'QaHmo\' qatlho\'! nobmeylIj tlhIngan ta\' luQaH.';
 
   @override
-  String get supportPrompt => 'yIt Quest pung je open source. Tips development QaH \'ej ads lunobHa\'.';
+  String get supportPrompt =>
+      'yIt Quest pung je open source. Tips development QaH \'ej ads lunobHa\'.';
 
   @override
   String get supportOpenTipJar => 'tip jar yIpoS';
@@ -178,7 +185,8 @@ class AppLocalizationsTlh extends AppLocalizations {
   String get supportError => 'Something went wrong. Please try again.';
 
   @override
-  String get supportStoreUnavailable => 'Store is not available on this device.';
+  String get supportStoreUnavailable =>
+      'Store is not available on this device.';
 
   @override
   String get watchTapToLog => 'yItmey qonmeH yI\'uy';
@@ -262,7 +270,8 @@ class AppLocalizationsTlh extends AppLocalizations {
   String get easterEggUnlocked => 'pegh Hol poSmoHlu\'!';
 
   @override
-  String get easterEggTapDescription => 'tIqDu\' DaHotpu\' \'ej HuD qa\'mey DavemmoHpu\'!';
+  String get easterEggTapDescription =>
+      'tIqDu\' DaHotpu\' \'ej HuD qa\'mey DavemmoHpu\'!';
 
   @override
   String get easterEggKonamiDescription => 'mIw quv \'ellu\'. Qapla\'!';
@@ -281,4 +290,65 @@ class AppLocalizationsTlh extends AppLocalizations {
 
   @override
   String get languageSecretSection => 'pegh Holmey';
+
+  @override
+  String get liveTracking => 'YIN TRACKING';
+
+  @override
+  String get stepsThisSession => 'yItmey poH';
+
+  @override
+  String get liveStarting => 'taghlu\'...';
+
+  @override
+  String get pedometerUnavailable => 'yIt counter Qapbe\'';
+
+  @override
+  String get enableStepTracking => 'yIt tracking yIchu\'';
+
+  @override
+  String get enableStepTrackingDesc =>
+      'yItmey toghmeH activity recognition yIchaw\'';
+
+  @override
+  String get enableButton => 'yIchu\'';
+
+  @override
+  String get syncStepsNow => 'DaH yItmey yIrar';
+
+  @override
+  String get heroTitleDragonLord => 'lungHa\' joH';
+
+  @override
+  String get heroTitleMonarch => 'ta\'';
+
+  @override
+  String get heroTitleChampion => 'ghobwI\' qorghwI\'';
+
+  @override
+  String get heroTitleKnight => 'SuvwI\' quv';
+
+  @override
+  String get heroTitleWarrior => 'SuvwI\'';
+
+  @override
+  String get heroTitleRunner => 'qetwI\'';
+
+  @override
+  String get heroTitleWalker => 'yItwI\'';
+
+  @override
+  String get levelToday => 'DaHjaj';
+
+  @override
+  String get streakBadgeLegend => 'qun';
+
+  @override
+  String get streakBadgePro => 'po\'wI\'';
+
+  @override
+  String get streakBadgeHot => 'tuj';
+
+  @override
+  String get celebrationSteps => 'YITMEY!';
 }

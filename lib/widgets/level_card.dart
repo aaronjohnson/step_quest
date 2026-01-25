@@ -12,14 +12,14 @@ class LevelCard extends StatelessWidget {
 
   const LevelCard({super.key, required this.data});
 
-  String _getHeroTitle(int level) {
-    if (level >= 50) return 'Dragon Lord';
-    if (level >= 40) return 'Monarch';
-    if (level >= 30) return 'Champion';
-    if (level >= 20) return 'Knight';
-    if (level >= 10) return 'Warrior';
-    if (level >= 5) return 'Runner';
-    return 'Walker';
+  String _getHeroTitle(int level, AppLocalizations l10n) {
+    if (level >= 50) return l10n.heroTitleDragonLord;
+    if (level >= 40) return l10n.heroTitleMonarch;
+    if (level >= 30) return l10n.heroTitleChampion;
+    if (level >= 20) return l10n.heroTitleKnight;
+    if (level >= 10) return l10n.heroTitleWarrior;
+    if (level >= 5) return l10n.heroTitleRunner;
+    return l10n.heroTitleWalker;
   }
 
   @override
@@ -64,7 +64,7 @@ class LevelCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        _getHeroTitle(data.level),
+                        _getHeroTitle(data.level, l10n),
                         style: TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w600,
@@ -124,7 +124,7 @@ class LevelCard extends StatelessWidget {
                   _StatItem(
                     icon: '📅',
                     value: numberFormat.format(data.todaySteps),
-                    label: 'Today',
+                    label: l10n.levelToday,
                   ),
                 ],
               ),

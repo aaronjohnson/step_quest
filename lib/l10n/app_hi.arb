@@ -80,5 +80,29 @@
   "easterEggTryNow": "अभी आज़माएं",
   "easterEggLater": "बाद में",
   "languageTitle": "भाषा",
-  "languageSecretSection": "गुप्त भाषाएं"
+  "languageSecretSection": "गुप्त भाषाएं",
+
+  "liveTracking": "लाइव ट्रैकिंग",
+  "stepsThisSession": "इस सत्र में कदम",
+  "liveStarting": "शुरू हो रहा है...",
+  "pedometerUnavailable": "पेडोमीटर उपलब्ध नहीं",
+  "enableStepTracking": "कदम ट्रैकिंग सक्षम करें",
+  "enableStepTrackingDesc": "स्वचालित रूप से कदम गिनने के लिए गतिविधि पहचान की अनुमति दें",
+  "enableButton": "सक्षम करें",
+  "syncStepsNow": "अभी कदम सिंक करें",
+
+  "heroTitleDragonLord": "ड्रैगन लॉर्ड",
+  "heroTitleMonarch": "सम्राट",
+  "heroTitleChampion": "चैंपियन",
+  "heroTitleKnight": "नाइट",
+  "heroTitleWarrior": "योद्धा",
+  "heroTitleRunner": "धावक",
+  "heroTitleWalker": "पैदल यात्री",
+  "levelToday": "आज",
+
+  "streakBadgeLegend": "किंवदंती",
+  "streakBadgePro": "प्रो",
+  "streakBadgeHot": "तेज़",
+
+  "celebrationSteps": "कदम!"
 }

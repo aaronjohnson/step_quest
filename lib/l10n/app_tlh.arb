@@ -80,5 +80,29 @@
   "easterEggTryNow": "DaH yInID",
   "easterEggLater": "ghIq",
   "languageTitle": "Hol",
-  "languageSecretSection": "pegh Holmey"
+  "languageSecretSection": "pegh Holmey",
+
+  "liveTracking": "YIN TRACKING",
+  "stepsThisSession": "yItmey poH",
+  "liveStarting": "taghlu'...",
+  "pedometerUnavailable": "yIt counter Qapbe'",
+  "enableStepTracking": "yIt tracking yIchu'",
+  "enableStepTrackingDesc": "yItmey toghmeH activity recognition yIchaw'",
+  "enableButton": "yIchu'",
+  "syncStepsNow": "DaH yItmey yIrar",
+
+  "heroTitleDragonLord": "lungHa' joH",
+  "heroTitleMonarch": "ta'",
+  "heroTitleChampion": "ghobwI' qorghwI'",
+  "heroTitleKnight": "SuvwI' quv",
+  "heroTitleWarrior": "SuvwI'",
+  "heroTitleRunner": "qetwI'",
+  "heroTitleWalker": "yItwI'",
+  "levelToday": "DaHjaj",
+
+  "streakBadgeLegend": "qun",
+  "streakBadgePro": "po'wI'",
+  "streakBadgeHot": "tuj",
+
+  "celebrationSteps": "YITMEY!"
 }

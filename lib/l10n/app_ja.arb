@@ -80,5 +80,29 @@
   "easterEggTryNow": "今すぐ試す",
   "easterEggLater": "後で",
   "languageTitle": "言語",
-  "languageSecretSection": "秘密の言語"
+  "languageSecretSection": "秘密の言語",
+
+  "liveTracking": "ライブトラッキング",
+  "stepsThisSession": "このセッションの歩数",
+  "liveStarting": "開始中...",
+  "pedometerUnavailable": "歩数計が利用できません",
+  "enableStepTracking": "歩数トラッキングを有効化",
+  "enableStepTrackingDesc": "歩数を自動カウントするため、活動認識を許可してください",
+  "enableButton": "有効化",
+  "syncStepsNow": "今すぐ歩数を同期",
+
+  "heroTitleDragonLord": "竜王",
+  "heroTitleMonarch": "君主",
+  "heroTitleChampion": "王者",
+  "heroTitleKnight": "騎士",
+  "heroTitleWarrior": "戦士",
+  "heroTitleRunner": "走者",
+  "heroTitleWalker": "歩行者",
+  "levelToday": "今日",
+
+  "streakBadgeLegend": "伝説",
+  "streakBadgePro": "プロ",
+  "streakBadgeHot": "好調",
+
+  "celebrationSteps": "歩!"
 }

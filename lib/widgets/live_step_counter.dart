@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:permission_handler/permission_handler.dart';
+import '../l10n/app_localizations.dart';
 import '../providers/game_state_provider.dart';
 import '../theme/app_theme.dart';
 
@@ -76,12 +77,13 @@ class _LiveStepCounterState extends ConsumerState<LiveStepCounter>
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final liveSteps = ref.watch(liveStepCountProvider);
     final status = ref.watch(pedestrianStatusProvider);
     final isActive = ref.watch(pedometerActiveProvider);
 
     if (!_hasPermission) {
-      return _buildPermissionRequest();
+      return _buildPermissionRequest(l10n);
     }
 
     return Container(
@@ -151,7 +153,7 @@ class _LiveStepCounterState extends ConsumerState<LiveStepCounter>
                     ),
                     const SizedBox(width: 6),
                     Text(
-                      'LIVE TRACKING',
+                      l10n.liveTracking,
                       style: TextStyle(
                         fontSize: 10,
                         fontWeight: FontWeight.bold,
@@ -174,22 +176,22 @@ class _LiveStepCounterState extends ConsumerState<LiveStepCounter>
                         ),
                       ),
                       const SizedBox(width: 6),
-                      const Text(
-                        'steps this session',
-                        style: TextStyle(
+                      Text(
+                        l10n.stepsThisSession,
+                        style: const TextStyle(
                           fontSize: 12,
                           color: AppColors.textSecondary,
                         ),
                       ),
                     ],
                   ),
-                  loading: () => const Text(
-                    'Starting...',
-                    style: TextStyle(color: AppColors.textSecondary),
+                  loading: () => Text(
+                    l10n.liveStarting,
+                    style: const TextStyle(color: AppColors.textSecondary),
                   ),
                   error: (e, _) => Text(
-                    'Pedometer unavailable',
-                    style: TextStyle(color: AppColors.textSecondary),
+                    l10n.pedometerUnavailable,
+                    style: const TextStyle(color: AppColors.textSecondary),
                   ),
                 ),
               ],
@@ -199,14 +201,14 @@ class _LiveStepCounterState extends ConsumerState<LiveStepCounter>
           IconButton(
             onPressed: _syncStepsToGame,
             icon: const Icon(Icons.sync, color: AppColors.accentGreen),
-            tooltip: 'Sync steps now',
+            tooltip: l10n.syncStepsNow,
           ),
         ],
       ),
     );
   }
 
-  Widget _buildPermissionRequest() {
+  Widget _buildPermissionRequest(AppLocalizations l10n) {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -225,17 +227,17 @@ class _LiveStepCounterState extends ConsumerState<LiveStepCounter>
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'Enable Step Tracking',
-                  style: TextStyle(
+                Text(
+                  l10n.enableStepTracking,
+                  style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textPrimary,
                   ),
                 ),
-                const Text(
-                  'Allow activity recognition to count steps automatically',
-                  style: TextStyle(
+                Text(
+                  l10n.enableStepTrackingDesc,
+                  style: const TextStyle(
                     fontSize: 12,
                     color: AppColors.textSecondary,
                   ),
@@ -249,7 +251,7 @@ class _LiveStepCounterState extends ConsumerState<LiveStepCounter>
               backgroundColor: AppColors.accentGreen,
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             ),
-            child: const Text('Enable'),
+            child: Text(l10n.enableButton),
           ),
         ],
       ),

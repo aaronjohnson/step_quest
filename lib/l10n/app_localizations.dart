@@ -68,7 +68,8 @@ import 'app_localizations_tlh.dart';
 /// be consistent with the languages listed in the AppLocalizations.supportedLocales
 /// property.
 abstract class AppLocalizations {
-  AppLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  AppLocalizations(String locale)
+    : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -76,7 +77,8 @@ abstract class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
-  static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
+  static const LocalizationsDelegate<AppLocalizations> delegate =
+      _AppLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -88,12 +90,13 @@ abstract class AppLocalizations {
   /// Additional delegates can be added by appending to this list in
   /// MaterialApp. This list does not have to be used at all if a custom list
   /// of delegates is preferred or required.
-  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates = <LocalizationsDelegate<dynamic>>[
-    delegate,
-    GlobalMaterialLocalizations.delegate,
-    GlobalCupertinoLocalizations.delegate,
-    GlobalWidgetsLocalizations.delegate,
-  ];
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
+      <LocalizationsDelegate<dynamic>>[
+        delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ];
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
@@ -104,7 +107,7 @@ abstract class AppLocalizations {
     Locale('ja'),
     Locale('khz'),
     Locale('pt'),
-    Locale('tlh')
+    Locale('tlh'),
   ];
 
   /// The app name
@@ -598,9 +601,130 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Secret Languages'**
   String get languageSecretSection;
+
+  /// Live step tracking label
+  ///
+  /// In en, this message translates to:
+  /// **'LIVE TRACKING'**
+  String get liveTracking;
+
+  /// Session step count label
+  ///
+  /// In en, this message translates to:
+  /// **'steps this session'**
+  String get stepsThisSession;
+
+  /// Pedometer starting message
+  ///
+  /// In en, this message translates to:
+  /// **'Starting...'**
+  String get liveStarting;
+
+  /// Error when pedometer not available
+  ///
+  /// In en, this message translates to:
+  /// **'Pedometer unavailable'**
+  String get pedometerUnavailable;
+
+  /// Permission request title
+  ///
+  /// In en, this message translates to:
+  /// **'Enable Step Tracking'**
+  String get enableStepTracking;
+
+  /// Permission request description
+  ///
+  /// In en, this message translates to:
+  /// **'Allow activity recognition to count steps automatically'**
+  String get enableStepTrackingDesc;
+
+  /// Enable button text
+  ///
+  /// In en, this message translates to:
+  /// **'Enable'**
+  String get enableButton;
+
+  /// Sync button tooltip
+  ///
+  /// In en, this message translates to:
+  /// **'Sync steps now'**
+  String get syncStepsNow;
+
+  /// Hero title for level 50+
+  ///
+  /// In en, this message translates to:
+  /// **'Dragon Lord'**
+  String get heroTitleDragonLord;
+
+  /// Hero title for level 40+
+  ///
+  /// In en, this message translates to:
+  /// **'Monarch'**
+  String get heroTitleMonarch;
+
+  /// Hero title for level 30+
+  ///
+  /// In en, this message translates to:
+  /// **'Champion'**
+  String get heroTitleChampion;
+
+  /// Hero title for level 20+
+  ///
+  /// In en, this message translates to:
+  /// **'Knight'**
+  String get heroTitleKnight;
+
+  /// Hero title for level 10+
+  ///
+  /// In en, this message translates to:
+  /// **'Warrior'**
+  String get heroTitleWarrior;
+
+  /// Hero title for level 5+
+  ///
+  /// In en, this message translates to:
+  /// **'Runner'**
+  String get heroTitleRunner;
+
+  /// Hero title for level 1+
+  ///
+  /// In en, this message translates to:
+  /// **'Walker'**
+  String get heroTitleWalker;
+
+  /// Today label in level card
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get levelToday;
+
+  /// Streak badge for 30+ days
+  ///
+  /// In en, this message translates to:
+  /// **'Legend'**
+  String get streakBadgeLegend;
+
+  /// Streak badge for 14+ days
+  ///
+  /// In en, this message translates to:
+  /// **'Pro'**
+  String get streakBadgePro;
+
+  /// Streak badge for 7+ days
+  ///
+  /// In en, this message translates to:
+  /// **'Hot'**
+  String get streakBadgeHot;
+
+  /// Celebration overlay text
+  ///
+  /// In en, this message translates to:
+  /// **'STEPS!'**
+  String get celebrationSteps;
 }
 
-class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
+class _AppLocalizationsDelegate
+    extends LocalizationsDelegate<AppLocalizations> {
   const _AppLocalizationsDelegate();
 
   @override
@@ -609,31 +733,46 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['de', 'en', 'es', 'hi', 'ja', 'khz', 'pt', 'tlh'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>[
+    'de',
+    'en',
+    'es',
+    'hi',
+    'ja',
+    'khz',
+    'pt',
+    'tlh',
+  ].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
 }
 
 AppLocalizations lookupAppLocalizations(Locale locale) {
-
-
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'de': return AppLocalizationsDe();
-    case 'en': return AppLocalizationsEn();
-    case 'es': return AppLocalizationsEs();
-    case 'hi': return AppLocalizationsHi();
-    case 'ja': return AppLocalizationsJa();
-    case 'khz': return AppLocalizationsKhz();
-    case 'pt': return AppLocalizationsPt();
-    case 'tlh': return AppLocalizationsTlh();
+    case 'de':
+      return AppLocalizationsDe();
+    case 'en':
+      return AppLocalizationsEn();
+    case 'es':
+      return AppLocalizationsEs();
+    case 'hi':
+      return AppLocalizationsHi();
+    case 'ja':
+      return AppLocalizationsJa();
+    case 'khz':
+      return AppLocalizationsKhz();
+    case 'pt':
+      return AppLocalizationsPt();
+    case 'tlh':
+      return AppLocalizationsTlh();
   }
 
   throw FlutterError(
     'AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
     'an issue with the localizations generation tool. Please file an issue '
     'on GitHub with a reproducible sample app and the gen-l10n configuration '
-    'that was used.'
+    'that was used.',
   );
 }

@@ -137,10 +137,10 @@ class _StreakCardState extends State<StreakCard>
                           ),
                           child: Text(
                             widget.data.streak >= 30
-                                ? '🏆 Legend'
+                                ? '🏆 ${l10n.streakBadgeLegend}'
                                 : widget.data.streak >= 14
-                                    ? '⭐ Pro'
-                                    : '✨ Hot',
+                                    ? '⭐ ${l10n.streakBadgePro}'
+                                    : '✨ ${l10n.streakBadgeHot}',
                             style: const TextStyle(
                               fontSize: 10,
                               fontWeight: FontWeight.bold,

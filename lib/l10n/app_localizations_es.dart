@@ -88,13 +88,16 @@ class AppLocalizationsEs extends AppLocalizations {
   String get healthConnectChecking => 'Verificando...';
 
   @override
-  String get healthConnectSyncMessage => 'Los pasos se sincronizan automáticamente desde Google Fit, Samsung Health, Fitbit y otras apps de Health Connect.';
+  String get healthConnectSyncMessage =>
+      'Los pasos se sincronizan automáticamente desde Google Fit, Samsung Health, Fitbit y otras apps de Health Connect.';
 
   @override
-  String get healthConnectPrompt => 'Conéctate para sincronizar pasos desde Google Fit, Samsung Health, Fitbit y otras apps de fitness.';
+  String get healthConnectPrompt =>
+      'Conéctate para sincronizar pasos desde Google Fit, Samsung Health, Fitbit y otras apps de fitness.';
 
   @override
-  String get healthConnectUnavailableMessage => 'Health Connect no está disponible. Usa el registro manual de pasos.';
+  String get healthConnectUnavailableMessage =>
+      'Health Connect no está disponible. Usa el registro manual de pasos.';
 
   @override
   String get healthConnectSyncing => 'Sincronizando...';
@@ -115,13 +118,15 @@ class AppLocalizationsEs extends AppLocalizations {
   String get healthConnectSyncPathTitle => 'Ruta de sincronización';
 
   @override
-  String get healthConnectSyncPathDescription => 'Tu app de fitness (Samsung Health, Google Fit, Fitbit, etc.) → Health Connect → Step Quest\n\nActiva la sincronización con Health Connect en la configuración de tu app de fitness.';
+  String get healthConnectSyncPathDescription =>
+      'Tu app de fitness (Samsung Health, Google Fit, Fitbit, etc.) → Health Connect → Step Quest\n\nActiva la sincronización con Health Connect en la configuración de tu app de fitness.';
 
   @override
   String get healthConnectMoreSensors => '¿Quieres más sensores?';
 
   @override
-  String get healthConnectMoreSensorsDescription => 'Frecuencia cardíaca, calorías, seguimiento del sueño y otras funciones se pueden solicitar en GitHub:\ngithub.com/aaronjohnson/step_quest/issues';
+  String get healthConnectMoreSensorsDescription =>
+      'Frecuencia cardíaca, calorías, seguimiento del sueño y otras funciones se pueden solicitar en GitHub:\ngithub.com/aaronjohnson/step_quest/issues';
 
   @override
   String get supportTitle => 'Apoya Step Quest';
@@ -130,10 +135,12 @@ class AppLocalizationsEs extends AppLocalizations {
   String get supporterBadge => 'Patrocinador';
 
   @override
-  String get supportThanks => '¡Gracias por apoyar la aventura! Tu generosidad mantiene la fortaleza en pie.';
+  String get supportThanks =>
+      '¡Gracias por apoyar la aventura! Tu generosidad mantiene la fortaleza en pie.';
 
   @override
-  String get supportPrompt => 'Step Quest es gratis y de código abierto. Las propinas ayudan al desarrollo y mantienen la app sin anuncios.';
+  String get supportPrompt =>
+      'Step Quest es gratis y de código abierto. Las propinas ayudan al desarrollo y mantienen la app sin anuncios.';
 
   @override
   String get supportOpenTipJar => 'Abrir propinas';
@@ -142,7 +149,8 @@ class AppLocalizationsEs extends AppLocalizations {
   String get supportHideTipJar => 'Ocultar propinas';
 
   @override
-  String get supportTipComing => '¡Propinas próximamente! Por ahora, visita GitHub Sponsors.';
+  String get supportTipComing =>
+      '¡Propinas próximamente! Por ahora, visita GitHub Sponsors.';
 
   @override
   String get supportSourceCode => 'Ver código fuente';
@@ -178,7 +186,8 @@ class AppLocalizationsEs extends AppLocalizations {
   String get supportError => 'Something went wrong. Please try again.';
 
   @override
-  String get supportStoreUnavailable => 'Store is not available on this device.';
+  String get supportStoreUnavailable =>
+      'Store is not available on this device.';
 
   @override
   String get watchTapToLog => 'Toca para registrar';
@@ -198,7 +207,8 @@ class AppLocalizationsEs extends AppLocalizations {
   String get streakGoalMet => '¡Excelente! ¡Alcanzaste tu meta de hoy!';
 
   @override
-  String get streakGoalPrompt => '¡Alcanza 10,000 pasos para continuar tu racha!';
+  String get streakGoalPrompt =>
+      '¡Alcanza 10,000 pasos para continuar tu racha!';
 
   @override
   String streakDayStreak(int count) {
@@ -262,13 +272,16 @@ class AppLocalizationsEs extends AppLocalizations {
   String get easterEggUnlocked => '¡Idioma secreto desbloqueado!';
 
   @override
-  String get easterEggTapDescription => '¡Tocaste las runas antiguas y despertaste a los espíritus de la montaña!';
+  String get easterEggTapDescription =>
+      '¡Tocaste las runas antiguas y despertaste a los espíritus de la montaña!';
 
   @override
-  String get easterEggKonamiDescription => 'La secuencia sagrada ha sido introducida. ¡Qapla\'!';
+  String get easterEggKonamiDescription =>
+      'La secuencia sagrada ha sido introducida. ¡Qapla\'!';
 
   @override
-  String get easterEggTapLanguageHint => 'Toca el botón de idioma para cambiar.';
+  String get easterEggTapLanguageHint =>
+      'Toca el botón de idioma para cambiar.';
 
   @override
   String get easterEggTryNow => 'Probar ahora';
@@ -281,4 +294,65 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get languageSecretSection => 'Idiomas secretos';
+
+  @override
+  String get liveTracking => 'SEGUIMIENTO EN VIVO';
+
+  @override
+  String get stepsThisSession => 'pasos en esta sesión';
+
+  @override
+  String get liveStarting => 'Iniciando...';
+
+  @override
+  String get pedometerUnavailable => 'Podómetro no disponible';
+
+  @override
+  String get enableStepTracking => 'Activar seguimiento de pasos';
+
+  @override
+  String get enableStepTrackingDesc =>
+      'Permitir reconocimiento de actividad para contar pasos automáticamente';
+
+  @override
+  String get enableButton => 'Activar';
+
+  @override
+  String get syncStepsNow => 'Sincronizar pasos ahora';
+
+  @override
+  String get heroTitleDragonLord => 'Señor Dragón';
+
+  @override
+  String get heroTitleMonarch => 'Monarca';
+
+  @override
+  String get heroTitleChampion => 'Campeón';
+
+  @override
+  String get heroTitleKnight => 'Caballero';
+
+  @override
+  String get heroTitleWarrior => 'Guerrero';
+
+  @override
+  String get heroTitleRunner => 'Corredor';
+
+  @override
+  String get heroTitleWalker => 'Caminante';
+
+  @override
+  String get levelToday => 'Hoy';
+
+  @override
+  String get streakBadgeLegend => 'Leyenda';
+
+  @override
+  String get streakBadgePro => 'Pro';
+
+  @override
+  String get streakBadgeHot => 'En racha';
+
+  @override
+  String get celebrationSteps => '¡PASOS!';
 }

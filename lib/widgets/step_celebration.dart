@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import '../l10n/app_localizations.dart';
 import '../theme/app_theme.dart';
 
 /// Shows a celebration animation when steps are logged.
@@ -92,6 +93,7 @@ class _StepCelebrationState extends State<StepCelebration>
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return AnimatedBuilder(
       animation: Listenable.merge([_mainController, _particleController]),
       builder: (context, child) {
@@ -164,9 +166,9 @@ class _StepCelebrationState extends State<StepCelebration>
                           color: Colors.white,
                         ),
                       ),
-                      const Text(
-                        'STEPS!',
-                        style: TextStyle(
+                      Text(
+                        l10n.celebrationSteps,
+                        style: const TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w600,
                           color: Colors.white70,

@@ -388,5 +388,89 @@
   "languageSecretSection": "Secret Languages",
   "@languageSecretSection": {
     "description": "Section header for unlocked secret languages"
+  },
+
+  "liveTracking": "LIVE TRACKING",
+  "@liveTracking": {
+    "description": "Live step tracking label"
+  },
+  "stepsThisSession": "steps this session",
+  "@stepsThisSession": {
+    "description": "Session step count label"
+  },
+  "liveStarting": "Starting...",
+  "@liveStarting": {
+    "description": "Pedometer starting message"
+  },
+  "pedometerUnavailable": "Pedometer unavailable",
+  "@pedometerUnavailable": {
+    "description": "Error when pedometer not available"
+  },
+  "enableStepTracking": "Enable Step Tracking",
+  "@enableStepTracking": {
+    "description": "Permission request title"
+  },
+  "enableStepTrackingDesc": "Allow activity recognition to count steps automatically",
+  "@enableStepTrackingDesc": {
+    "description": "Permission request description"
+  },
+  "enableButton": "Enable",
+  "@enableButton": {
+    "description": "Enable button text"
+  },
+  "syncStepsNow": "Sync steps now",
+  "@syncStepsNow": {
+    "description": "Sync button tooltip"
+  },
+
+  "heroTitleDragonLord": "Dragon Lord",
+  "@heroTitleDragonLord": {
+    "description": "Hero title for level 50+"
+  },
+  "heroTitleMonarch": "Monarch",
+  "@heroTitleMonarch": {
+    "description": "Hero title for level 40+"
+  },
+  "heroTitleChampion": "Champion",
+  "@heroTitleChampion": {
+    "description": "Hero title for level 30+"
+  },
+  "heroTitleKnight": "Knight",
+  "@heroTitleKnight": {
+    "description": "Hero title for level 20+"
+  },
+  "heroTitleWarrior": "Warrior",
+  "@heroTitleWarrior": {
+    "description": "Hero title for level 10+"
+  },
+  "heroTitleRunner": "Runner",
+  "@heroTitleRunner": {
+    "description": "Hero title for level 5+"
+  },
+  "heroTitleWalker": "Walker",
+  "@heroTitleWalker": {
+    "description": "Hero title for level 1+"
+  },
+  "levelToday": "Today",
+  "@levelToday": {
+    "description": "Today label in level card"
+  },
+
+  "streakBadgeLegend": "Legend",
+  "@streakBadgeLegend": {
+    "description": "Streak badge for 30+ days"
+  },
+  "streakBadgePro": "Pro",
+  "@streakBadgePro": {
+    "description": "Streak badge for 14+ days"
+  },
+  "streakBadgeHot": "Hot",
+  "@streakBadgeHot": {
+    "description": "Streak badge for 7+ days"
+  },
+
+  "celebrationSteps": "STEPS!",
+  "@celebrationSteps": {
+    "description": "Celebration overlay text"
   }
 }
