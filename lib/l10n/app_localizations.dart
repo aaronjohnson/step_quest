@@ -378,7 +378,7 @@ abstract class AppLocalizations {
   /// **'Patreon'**
   String get supportPatreon;
 
-  /// Coffee tier name
+  /// Coffee tier name (~$2)
   ///
   /// In en, this message translates to:
   /// **'Buy a Coffee'**
@@ -387,32 +387,32 @@ abstract class AppLocalizations {
   /// Coffee tier description
   ///
   /// In en, this message translates to:
-  /// **'A small thanks!'**
+  /// **'Fuel for the journey'**
   String get tipCoffeeDesc;
 
-  /// Supporter tier name
+  /// Guild Member tier name (~$3)
   ///
   /// In en, this message translates to:
-  /// **'Support the Quest'**
-  String get tipSupporter;
+  /// **'Join the Guild'**
+  String get tipGuild;
 
-  /// Supporter tier description
+  /// Guild Member tier description
   ///
   /// In en, this message translates to:
-  /// **'Help keep development going'**
-  String get tipSupporterDesc;
+  /// **'Stand with fellow adventurers'**
+  String get tipGuildDesc;
 
-  /// Legendary tier name
+  /// Dragon Slayer tier name (~$7)
   ///
   /// In en, this message translates to:
-  /// **'Legendary Patron'**
-  String get tipLegendary;
+  /// **'Dragon Slayer'**
+  String get tipDragon;
 
-  /// Legendary tier description
+  /// Dragon Slayer tier description
   ///
   /// In en, this message translates to:
-  /// **'You are a legend!'**
-  String get tipLegendaryDesc;
+  /// **'A hero of legendary generosity'**
+  String get tipDragonDesc;
 
   /// Thank you message after successful purchase
   ///

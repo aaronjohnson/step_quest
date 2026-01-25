@@ -165,19 +165,19 @@ class AppLocalizationsFi extends AppLocalizations {
   String get tipCoffee => 'Osta kahvi';
 
   @override
-  String get tipCoffeeDesc => 'Pieni kiitos!';
+  String get tipCoffeeDesc => 'Polttoainetta matkalle';
 
   @override
-  String get tipSupporter => 'Tue seikkailua';
+  String get tipGuild => 'Liity kiltaan';
 
   @override
-  String get tipSupporterDesc => 'Auta pitämään kehitys käynnissä';
+  String get tipGuildDesc => 'Seiso muiden seikkailijoiden rinnalla';
 
   @override
-  String get tipLegendary => 'Legendaarinen suojelija';
+  String get tipDragon => 'Lohikäärmeen tappaja';
 
   @override
-  String get tipLegendaryDesc => 'Olet legenda!';
+  String get tipDragonDesc => 'Legendaarisen anteliaisuuden sankari';
 
   @override
   String get supportThankYou => 'Kiitos tuestasi!';

@@ -20,8 +20,8 @@ class IAPService {
   /// Product IDs matching Google Play Console
   static const Set<String> _productIds = {
     'tip_coffee',
-    'tip_supporter',
-    'tip_legendary',
+    'tip_guild',
+    'tip_dragon',
   };
 
   /// Stream controller for purchase updates

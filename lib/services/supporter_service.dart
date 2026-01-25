@@ -10,28 +10,28 @@ class SupporterService {
   static const String _supporterDateKey = 'supporter_date';
 
   /// Supporter tiers for tip jar (prime number pricing)
-  /// Actual prices come from Google Play IAP (localized per country)
+  /// Actual prices come from Google Play IAP (localized per country via PPP)
   static final Map<String, SupporterTier> tiers = {
     'coffee': SupporterTier(
       id: 'tip_coffee',
       name: 'Buy a Coffee',
-      fallbackPrice: '~2', // Actual price from Google Play IAP
-      description: 'A small thanks!',
+      fallbackPrice: '~2',
+      description: 'Fuel for the journey',
       badge: '☕',
     ),
-    'supporter': SupporterTier(
-      id: 'tip_supporter',
-      name: 'Support the Quest',
-      fallbackPrice: '~3', // Actual price from Google Play IAP
-      description: 'Help keep development going',
-      badge: '⭐',
+    'guild': SupporterTier(
+      id: 'tip_guild',
+      name: 'Join the Guild',
+      fallbackPrice: '~3',
+      description: 'Stand with fellow adventurers',
+      badge: '⚔️',
     ),
-    'legendary': SupporterTier(
-      id: 'tip_legendary',
-      name: 'Legendary Patron',
-      fallbackPrice: '~7', // Actual price from Google Play IAP
-      description: 'You are a legend!',
-      badge: '👑',
+    'dragon': SupporterTier(
+      id: 'tip_dragon',
+      name: 'Dragon Slayer',
+      fallbackPrice: '~7',
+      description: 'A hero of legendary generosity',
+      badge: '🐉',
     ),
   };
 

@@ -165,19 +165,19 @@ class AppLocalizationsSv extends AppLocalizations {
   String get tipCoffee => 'Köp en kaffe';
 
   @override
-  String get tipCoffeeDesc => 'Ett litet tack!';
+  String get tipCoffeeDesc => 'Bränsle för resan';
 
   @override
-  String get tipSupporter => 'Stöd äventyret';
+  String get tipGuild => 'Gå med i skrået';
 
   @override
-  String get tipSupporterDesc => 'Hjälp till att hålla utvecklingen igång';
+  String get tipGuildDesc => 'Stå tillsammans med andra äventyrare';
 
   @override
-  String get tipLegendary => 'Legendarisk beskyddare';
+  String get tipDragon => 'Drakdödare';
 
   @override
-  String get tipLegendaryDesc => 'Du är en legend!';
+  String get tipDragonDesc => 'En hjälte av legendarisk generositet';
 
   @override
   String get supportThankYou => 'Tack för ditt stöd!';

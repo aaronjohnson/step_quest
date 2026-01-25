@@ -165,19 +165,19 @@ class AppLocalizationsEs extends AppLocalizations {
   String get tipCoffee => 'Invitar un café';
 
   @override
-  String get tipCoffeeDesc => '¡Un pequeño agradecimiento!';
+  String get tipCoffeeDesc => 'Combustible para el viaje';
 
   @override
-  String get tipSupporter => 'Apoyar la aventura';
+  String get tipGuild => 'Únete al Gremio';
 
   @override
-  String get tipSupporterDesc => 'Ayuda a continuar el desarrollo';
+  String get tipGuildDesc => 'Únete a otros aventureros';
 
   @override
-  String get tipLegendary => 'Patrón legendario';
+  String get tipDragon => 'Cazador de Dragones';
 
   @override
-  String get tipLegendaryDesc => '¡Eres una leyenda!';
+  String get tipDragonDesc => 'Un héroe de generosidad legendaria';
 
   @override
   String get supportThankYou => 'Thank you for your support!';

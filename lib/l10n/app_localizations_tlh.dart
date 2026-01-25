@@ -164,19 +164,19 @@ class AppLocalizationsTlh extends AppLocalizations {
   String get tipCoffee => 'qa\'vIn yInob';
 
   @override
-  String get tipCoffeeDesc => 'qatlho\' mach!';
+  String get tipCoffeeDesc => 'lengvaD nIQ';
 
   @override
-  String get tipSupporter => 'Quest yIQaH';
+  String get tipGuild => 'DIvI\' yImuv';
 
   @override
-  String get tipSupporterDesc => 'development taHmoH';
+  String get tipGuildDesc => 'latlh SuvwI\'pu\' tlhej yIQam';
 
   @override
-  String get tipLegendary => 'qun QaHwI\'';
+  String get tipDragon => 'lungqIy HoHwI\'';
 
   @override
-  String get tipLegendaryDesc => 'SoH qun SoH!';
+  String get tipDragonDesc => 'qun nobwI\' \'oH SuvwI\'\'e\'';
 
   @override
   String get supportThankYou => 'Thank you for your support!';

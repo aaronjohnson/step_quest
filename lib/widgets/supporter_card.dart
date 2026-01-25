@@ -174,8 +174,8 @@ class _SupporterCardState extends State<SupporterCard> {
     // Map tier IDs to localized names/descriptions
     final localizedTiers = {
       'coffee': (l10n.tipCoffee, l10n.tipCoffeeDesc),
-      'supporter': (l10n.tipSupporter, l10n.tipSupporterDesc),
-      'legendary': (l10n.tipLegendary, l10n.tipLegendaryDesc),
+      'guild': (l10n.tipGuild, l10n.tipGuildDesc),
+      'dragon': (l10n.tipDragon, l10n.tipDragonDesc),
     };
 
     return Column(

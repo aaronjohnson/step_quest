@@ -165,19 +165,19 @@ class AppLocalizationsHi extends AppLocalizations {
   String get tipCoffee => 'कॉफी पिलाएं';
 
   @override
-  String get tipCoffeeDesc => 'एक छोटा धन्यवाद!';
+  String get tipCoffeeDesc => 'यात्रा का ईंधन';
 
   @override
-  String get tipSupporter => 'क्वेस्ट का समर्थन करें';
+  String get tipGuild => 'गिल्ड में शामिल हों';
 
   @override
-  String get tipSupporterDesc => 'विकास जारी रखने में मदद करें';
+  String get tipGuildDesc => 'साथी साहसियों के साथ खड़े हों';
 
   @override
-  String get tipLegendary => 'महान संरक्षक';
+  String get tipDragon => 'ड्रैगन स्लेयर';
 
   @override
-  String get tipLegendaryDesc => 'आप एक महान हैं!';
+  String get tipDragonDesc => 'महान उदारता का नायक';
 
   @override
   String get supportThankYou => 'Thank you for your support!';

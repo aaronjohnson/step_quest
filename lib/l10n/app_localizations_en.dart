@@ -165,19 +165,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tipCoffee => 'Buy a Coffee';
 
   @override
-  String get tipCoffeeDesc => 'A small thanks!';
+  String get tipCoffeeDesc => 'Fuel for the journey';
 
   @override
-  String get tipSupporter => 'Support the Quest';
+  String get tipGuild => 'Join the Guild';
 
   @override
-  String get tipSupporterDesc => 'Help keep development going';
+  String get tipGuildDesc => 'Stand with fellow adventurers';
 
   @override
-  String get tipLegendary => 'Legendary Patron';
+  String get tipDragon => 'Dragon Slayer';
 
   @override
-  String get tipLegendaryDesc => 'You are a legend!';
+  String get tipDragonDesc => 'A hero of legendary generosity';
 
   @override
   String get supportThankYou => 'Thank you for your support!';

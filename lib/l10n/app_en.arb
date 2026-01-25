@@ -208,27 +208,27 @@
 
   "tipCoffee": "Buy a Coffee",
   "@tipCoffee": {
-    "description": "Coffee tier name"
+    "description": "Coffee tier name (~$2)"
   },
-  "tipCoffeeDesc": "A small thanks!",
+  "tipCoffeeDesc": "Fuel for the journey",
   "@tipCoffeeDesc": {
     "description": "Coffee tier description"
   },
-  "tipSupporter": "Support the Quest",
-  "@tipSupporter": {
-    "description": "Supporter tier name"
+  "tipGuild": "Join the Guild",
+  "@tipGuild": {
+    "description": "Guild Member tier name (~$3)"
   },
-  "tipSupporterDesc": "Help keep development going",
-  "@tipSupporterDesc": {
-    "description": "Supporter tier description"
+  "tipGuildDesc": "Stand with fellow adventurers",
+  "@tipGuildDesc": {
+    "description": "Guild Member tier description"
   },
-  "tipLegendary": "Legendary Patron",
-  "@tipLegendary": {
-    "description": "Legendary tier name"
+  "tipDragon": "Dragon Slayer",
+  "@tipDragon": {
+    "description": "Dragon Slayer tier name (~$7)"
   },
-  "tipLegendaryDesc": "You are a legend!",
-  "@tipLegendaryDesc": {
-    "description": "Legendary tier description"
+  "tipDragonDesc": "A hero of legendary generosity",
+  "@tipDragonDesc": {
+    "description": "Dragon Slayer tier description"
   },
   "supportThankYou": "Thank you for your support!",
   "@supportThankYou": {

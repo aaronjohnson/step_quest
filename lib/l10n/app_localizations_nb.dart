@@ -165,19 +165,19 @@ class AppLocalizationsNb extends AppLocalizations {
   String get tipCoffee => 'Kjøp en kaffe';
 
   @override
-  String get tipCoffeeDesc => 'En liten takk!';
+  String get tipCoffeeDesc => 'Drivstoff til reisen';
 
   @override
-  String get tipSupporter => 'Støtt eventyret';
+  String get tipGuild => 'Bli med i gildet';
 
   @override
-  String get tipSupporterDesc => 'Hjelp med å holde utviklingen i gang';
+  String get tipGuildDesc => 'Stå sammen med andre eventyrere';
 
   @override
-  String get tipLegendary => 'Legendarisk beskytter';
+  String get tipDragon => 'Dragedreper';
 
   @override
-  String get tipLegendaryDesc => 'Du er en legende!';
+  String get tipDragonDesc => 'En helt av legendarisk sjenerøsitet';
 
   @override
   String get supportThankYou => 'Takk for støtten!';

@@ -165,19 +165,19 @@ class AppLocalizationsKhz extends AppLocalizations {
   String get tipCoffee => 'A Mug of Ale';
 
   @override
-  String get tipCoffeeDesc => 'A small thanks!';
+  String get tipCoffeeDesc => 'Fuel for the march';
 
   @override
-  String get tipSupporter => 'Support the Forge';
+  String get tipGuild => 'Join the Guild';
 
   @override
-  String get tipSupporterDesc => 'Keep the hammers ringing';
+  String get tipGuildDesc => 'Stand with fellow stone-kin';
 
   @override
-  String get tipLegendary => 'Lord of the Deep';
+  String get tipDragon => 'Wyrm Slayer';
 
   @override
-  String get tipLegendaryDesc => 'Thy name echoes in the halls!';
+  String get tipDragonDesc => 'Thy generosity rings through the mountain halls';
 
   @override
   String get supportThankYou => 'Thank you for your support!';

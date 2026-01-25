@@ -163,19 +163,19 @@ class AppLocalizationsJa extends AppLocalizations {
   String get tipCoffee => 'コーヒーをおごる';
 
   @override
-  String get tipCoffeeDesc => 'ちょっとしたお礼！';
+  String get tipCoffeeDesc => '旅の燃料';
 
   @override
-  String get tipSupporter => 'クエストを応援';
+  String get tipGuild => 'ギルドに参加';
 
   @override
-  String get tipSupporterDesc => '開発の継続を支援';
+  String get tipGuildDesc => '仲間の冒険者と共に';
 
   @override
-  String get tipLegendary => '伝説のパトロン';
+  String get tipDragon => 'ドラゴンスレイヤー';
 
   @override
-  String get tipLegendaryDesc => 'あなたは伝説です！';
+  String get tipDragonDesc => '伝説的な寛大さの英雄';
 
   @override
   String get supportThankYou => 'Thank you for your support!';
