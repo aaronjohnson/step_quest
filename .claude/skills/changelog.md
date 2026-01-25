@@ -47,9 +47,12 @@ Use thematic headers instead of generic ones:
 | Bug fixes | **Battles Won** or **Menaces Vanquished** |
 | New features | **New Chambers** or **Expeditions** |
 | Dependencies | **Alliances Formed** or **Trade Agreements** |
+| External links | **Trade Routes** |
 | Breaking changes | **The Great Upheaval** |
 | Security | **The Guard's Report** |
 | Performance | **The Miners' Efficiency** |
+| Completed items | **Quests Fulfilled** |
+| Known issues | **Challenges Ahead** |
 
 ## Footer
 
