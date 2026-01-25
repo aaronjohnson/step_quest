@@ -101,3 +101,5 @@ The last point is the real win: even if someone steals your workflow file, they 
 ---
 
 *No keys. No secrets. No rotation. Just auth that works.*
+
+**Want this as a Claude skill?** See [wif.md](https://github.com/aaronjohnson/step_quest/blob/shoes/.claude/skills/wif.md) — say "set up WIF" and Claude handles the rest.
