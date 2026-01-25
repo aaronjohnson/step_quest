@@ -44,7 +44,7 @@ Step Quest is **completely free** with no ads, no subscriptions, and no paywalls
 
 The app includes an optional **tip jar** for those who wish to support development. Tips are one-time purchases that help keep the fortress running—but they're never required.
 
-**[Get Step Quest](https://step.quest.mqqn.net)** | [Patreon](https://patreon.com/mqqn) | [View Source](https://github.com/aaronjohnson/step_quest)
+**[Get Step Quest](https://step.quest.mqqn.net)** | [Blog](https://aaronjohnson.github.io/) | [Patreon](https://patreon.com/mqqn) | [View Source](https://github.com/aaronjohnson/step_quest)
 
 ### The Origin Story
 

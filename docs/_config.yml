@@ -1,8 +1,0 @@
-title: mqqn.net / blog
-description: Building with AI for human benefit. Sharing how it's done.
-remote_theme: pages-themes/minimal@v0.2.0
-plugins:
-  - jekyll-remote-theme
-
-exclude:
-  - DNS_SETUP.md
