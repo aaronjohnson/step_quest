@@ -1,5 +1,8 @@
+import 'dart:async';
 import 'dart:io' show Platform;
-import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:flutter/foundation.dart' show kIsWeb, FlutterError, PlatformDispatcher;
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -12,19 +15,36 @@ import 'services/persistence_service.dart';
 import 'theme/app_theme.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  await runZonedGuarded(() async {
+    WidgetsFlutterBinding.ensureInitialized();
 
-  // Initialize persistence service
-  final persistenceService = await PersistenceService.create();
+    // Initialize Firebase
+    await Firebase.initializeApp();
 
-  runApp(
-    ProviderScope(
-      overrides: [
-        persistenceServiceProvider.overrideWithValue(persistenceService),
-      ],
-      child: const StepQuestApp(),
-    ),
-  );
+    // Set up Crashlytics error handling
+    FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
+
+    // Pass all uncaught asynchronous errors to Crashlytics
+    PlatformDispatcher.instance.onError = (error, stack) {
+      FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
+      return true;
+    };
+
+    // Initialize persistence service
+    final persistenceService = await PersistenceService.create();
+
+    runApp(
+      ProviderScope(
+        overrides: [
+          persistenceServiceProvider.overrideWithValue(persistenceService),
+        ],
+        child: const StepQuestApp(),
+      ),
+    );
+  }, (error, stack) {
+    // Catch errors that happen outside of the Flutter framework
+    FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
+  });
 }
 
 class StepQuestApp extends ConsumerWidget {
@@ -52,6 +72,11 @@ class StepQuestApp extends ConsumerWidget {
         Locale('hi'),      // Hindi (INR)
         Locale('ja'),      // Japanese (JPY)
         Locale('pt'),      // Portuguese (BRL)
+        Locale('da'),      // Danish (DKK)
+        Locale('nb'),      // Norwegian Bokmål (NOK)
+        Locale('sv'),      // Swedish (SEK)
+        Locale('fi'),      // Finnish (EUR)
+        Locale('ca'),      // Catalan
         Locale('tlh'),     // Klingon (easter egg)
         Locale('khz'),     // Khuzdul/Dwarvish (easter egg)
       ],

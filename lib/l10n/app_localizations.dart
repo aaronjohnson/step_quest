@@ -5,13 +5,18 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
+import 'app_localizations_ca.dart';
+import 'app_localizations_da.dart';
 import 'app_localizations_de.dart';
 import 'app_localizations_en.dart';
 import 'app_localizations_es.dart';
+import 'app_localizations_fi.dart';
 import 'app_localizations_hi.dart';
 import 'app_localizations_ja.dart';
 import 'app_localizations_khz.dart';
+import 'app_localizations_nb.dart';
 import 'app_localizations_pt.dart';
+import 'app_localizations_sv.dart';
 import 'app_localizations_tlh.dart';
 
 // ignore_for_file: type=lint
@@ -100,13 +105,18 @@ abstract class AppLocalizations {
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
+    Locale('ca'),
+    Locale('da'),
     Locale('de'),
     Locale('en'),
     Locale('es'),
+    Locale('fi'),
     Locale('hi'),
     Locale('ja'),
     Locale('khz'),
+    Locale('nb'),
     Locale('pt'),
+    Locale('sv'),
     Locale('tlh'),
   ];
 
@@ -734,13 +744,18 @@ class _AppLocalizationsDelegate
 
   @override
   bool isSupported(Locale locale) => <String>[
+    'ca',
+    'da',
     'de',
     'en',
     'es',
+    'fi',
     'hi',
     'ja',
     'khz',
+    'nb',
     'pt',
+    'sv',
     'tlh',
   ].contains(locale.languageCode);
 
@@ -751,20 +766,30 @@ class _AppLocalizationsDelegate
 AppLocalizations lookupAppLocalizations(Locale locale) {
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
+    case 'ca':
+      return AppLocalizationsCa();
+    case 'da':
+      return AppLocalizationsDa();
     case 'de':
       return AppLocalizationsDe();
     case 'en':
       return AppLocalizationsEn();
     case 'es':
       return AppLocalizationsEs();
+    case 'fi':
+      return AppLocalizationsFi();
     case 'hi':
       return AppLocalizationsHi();
     case 'ja':
       return AppLocalizationsJa();
     case 'khz':
       return AppLocalizationsKhz();
+    case 'nb':
+      return AppLocalizationsNb();
     case 'pt':
       return AppLocalizationsPt();
+    case 'sv':
+      return AppLocalizationsSv();
     case 'tlh':
       return AppLocalizationsTlh();
   }
