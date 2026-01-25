@@ -41,9 +41,9 @@ class AchievementsCard extends StatelessWidget {
             physics: const NeverScrollableScrollPhysics(),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
-              crossAxisSpacing: 12,
-              mainAxisSpacing: 12,
-              childAspectRatio: 0.85,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              childAspectRatio: 0.9,
             ),
             itemCount: allAchievements.length,
             itemBuilder: (context, index) {
@@ -83,44 +83,40 @@ class _AchievementTile extends StatelessWidget {
         child: Stack(
           children: [
             Padding(
-              padding: const EdgeInsets.all(8),
+              padding: const EdgeInsets.all(6),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
                     achievement.emoji,
                     style: TextStyle(
-                      fontSize: 32,
+                      fontSize: 28,
                       color: isUnlocked ? null : Colors.grey,
                     ),
                   ),
-                  const SizedBox(height: 4),
-                  Text(
-                    achievement.name,
-                    textAlign: TextAlign.center,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontSize: 11,
-                      fontWeight: FontWeight.w500,
-                      color: isUnlocked
-                          ? AppColors.textPrimary
-                          : AppColors.textSecondary,
+                  const SizedBox(height: 2),
+                  Flexible(
+                    child: Text(
+                      achievement.name,
+                      textAlign: TextAlign.center,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontSize: 10,
+                        fontWeight: FontWeight.w500,
+                        color: isUnlocked
+                            ? AppColors.textPrimary
+                            : AppColors.textSecondary,
+                      ),
                     ),
                   ),
-                  const SizedBox(height: 4),
-                  if (isUnlocked)
-                    const Icon(
-                      Icons.check_circle,
-                      size: 16,
-                      color: AppColors.accentGreen,
-                    )
-                  else
-                    const Icon(
-                      Icons.lock,
-                      size: 16,
-                      color: AppColors.textSecondary,
-                    ),
+                  const SizedBox(height: 2),
+                  Icon(
+                    isUnlocked ? Icons.check_circle : Icons.lock,
+                    size: 14,
+                    color: isUnlocked ? AppColors.accentGreen : AppColors.textSecondary,
+                  ),
                 ],
               ),
             ),
