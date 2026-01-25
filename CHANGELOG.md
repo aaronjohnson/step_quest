@@ -48,10 +48,20 @@
   - Four posts: WIF, Firebase keys, Claude skills, Dwarf Fortress changelogs
   - Hosted at aaronjohnson.github.io/step_quest
   - Linked from landing page footer
+- **The Hub Rises** (aaronjohnson.github.io) — A central hall connects all realms
+  - Links to Step Quest, Ocean Data, Form Copilot
+  - Recent posts aggregated from project blogs
+  - One account, many expeditions
 - **Teaching the Oracle** (Claude Skills) — The AI learns the ways of the fortress
   - `changelog.md` — Dwarf Fortress-style patch notes
   - `wif.md` — Keyless CI setup in one command
   - Skills beget skills: have Claude write them, reuse forever
+
+### The Cartographer's Notes
+- **The Road Ahead Updated** (README) — The map grows clearer
+  - Health Connect marked complete — Samsung, Fitbit, Google Fit all flow through
+  - Walking with friends hinted — privacy-first social, someday
+  - Friend codes, not accounts; opt-in, not default; your steps, your choice
 
 ### Secrets of the Deep
 - The only winning move is not to play
