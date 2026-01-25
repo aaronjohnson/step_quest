@@ -7,14 +7,14 @@
 ## v0.7.0 - "The Quest for a Proper Address" (2026-01-25)
 
 ### The Mason's Work
-- **Custom Domain** — The fortress finally has a proper address
+- **A Proper Address at Last** (Custom Domain) — The fortress claims its place on the map
   - `step.quest.mqqn.net` now points to the landing page
   - Cloud DNS zone created for `quest.mqqn.net` namespace
   - Subdomain delegation from Gandi preserves email safety
   - Future quest apps can live at `*.quest.mqqn.net`
 
 ### The Scribes' Archives
-- Added `docs/DNS_SETUP.md` — A map for future domain expeditions
+- **A Map for Future Expeditions** (docs/DNS_SETUP.md) — The cartographers document their journey
   - Cloud DNS setup with subdomain delegation
   - Firebase Hosting custom domain configuration
   - Fourth-level domain considerations
@@ -30,13 +30,13 @@
 ## v0.6.0 - "The Watchtower Speaks Many Tongues" (2026-01-25)
 
 ### The Watchtower
-- **Firebase Crashlytics** — The fortress now reports when walls crumble
+- **Eyes on the Walls** (Firebase Crashlytics) — The fortress now reports when walls crumble
   - Three-layer error handling: Flutter errors, platform errors, zone errors
   - Crashes appear in Firebase Console automatically
   - The mountain spirits will know when something goes wrong
 
 ### The Translator's Guild
-- **Nordic Expansion** — The northern realms join the quest
+- **The Nordic Expansion** (da, nb, sv, fi, ca) — The northern realms join the quest
   - Danish (da) — For the Danes who march through wind and rain
   - Norwegian Bokmål (nb) — For the fjord-dwellers
   - Swedish (sv) — For those who brave the midnight sun
@@ -45,35 +45,35 @@
 - Total: 13 languages + 2 secret (Klingon, Dwarven)
 
 ### The Scribes' Archives
-- **Privacy Policy Updated** — The scribes have documented the watchtower's new eyes
+- **The Watchtower Disclosed** (Privacy Policy) — The scribes document the new eyes
   - Crashlytics data collection disclosed
   - Link to Firebase privacy practices added
-- **SECURITY.md Updated** — The fortress ledger now records crash reports
+- **The Ledger Updated** (SECURITY.md) — Crash reports now recorded in fortress records
 
 ---
 
 ## v0.5.0 - "The Grand Opening" (2026-01-25)
 
 ### New Chambers
-- **Google Play Store Release** — The fortress gates open to the public
+- **The Gates Open** (Google Play Store) — The fortress welcomes adventurers
   - Mobile app available on internal testing track
   - Wear OS app on dedicated form factor track
   - Automated CI/CD via GitHub Actions and Fastlane
 
-- **Tip Jar Implementation** — Real Google Play Billing integration
+- **The Patron's Coffer** (Tip Jar) — Real Google Play Billing integration
   - Three tiers: Coffee ($2), Supporter ($3), Legendary ($7)
   - Prime number pricing preserved
   - Consumable products (can tip multiple times)
   - Purchase status tracked locally
 
-- **Landing Page** — Firebase Hosting at step-quest-485403.web.app
+- **The Welcome Hall** (Landing Page) — Firebase Hosting at step-quest-485403.web.app
   - Beta testing links for Phone and Wear OS
   - Privacy policy for Play Store compliance
   - iOS waitlist form with Firestore backend
 
 ### The Scribes' Archives
-- SECURITY.md for vulnerability reporting via GitHub
-- README updated with Free and Open Source section
+- **The Guard's Codex** (SECURITY.md) — Vulnerability reporting via GitHub
+- **The Free Banner** (README) — Updated with Free and Open Source section
 
 ### Secrets of the Deep
 - Product flavors for mobile/wear separation
@@ -86,7 +86,7 @@
 ## v0.4.0 - "The Tower of Babel Falls" (2026-01-24)
 
 ### The Translator's Guild
-- **Full Internationalization Infrastructure** — The fortress now speaks many tongues
+- **Many Tongues** (i18n Infrastructure) — The fortress learns to speak
   - English (en) - Base language
   - German (de) - For our European allies (EUR)
   - Spanish (es) - Para nuestros amigos hispanohablantes
@@ -100,32 +100,32 @@
 - XP remains universal (gaming lingua franca)
 
 ### Quests Fulfilled
-- All widget strings migrated to use `AppLocalizations.of(context)`
+- **The Words Migrate** (AppLocalizations) — All widget strings now speak the local tongue
 
 ---
 
 ## v0.3.0 - "The Supporter's Guild" (2026-01-24)
 
 ### New Chambers
-- **Supporter System** — A tip jar for those who wish to fund the fortress
+- **The Patron's Guild** (Supporter System) — A tip jar for those who wish to fund the fortress
   - Three tiers with prime number pricing: Coffee ☕ (~$2), Supporter ⭐ (~$3), Legendary 👑 (~$7)
   - Supporter badge displayed proudly in-app
   - Google Play IAP integration pending (prices will be localized per country)
 
-- **Health Connect Info Panel** — Expanded sync documentation
+- **The Oracle Speaks** (Health Connect Info Panel) — Expanded sync documentation
   - Explains the data flow: Fitness App → Health Connect → Step Quest
   - Lists compatible apps (Samsung Health, Google Fit, Fitbit, etc.)
   - Directs adventurers to GitHub for sensor feature requests
 
 ### Trade Routes
-- GitHub Sponsors for the developer community
-- Patreon for general audience supporters
-- Source code link for the curious and brave
-- SUPPORTERS.md added for public recognition of patrons
+- **The Sponsor's Path** (GitHub Sponsors) — For the developer community
+- **The Patron's Road** (Patreon) — For general audience supporters
+- **The Open Scrolls** (Source Code) — Link for the curious and brave
+- **The Hall of Patrons** (SUPPORTERS.md) — Public recognition of those who give
 
 ### The Architect's Wisdom
-- **Prime number pricing** — Because $2, $3, and $7 are more elegant than $1.99
-- **Localized pricing** — Sensible round numbers per country (configured in Play Console)
+- **Prime Numbers** (Pricing) — Because $2, $3, and $7 are more elegant than $1.99
+- **Local Currencies** (Play Console) — Sensible round numbers per country
 - In-app purchases follow Google Play policies
 - Both GitHub Sponsors AND Patreon for different audiences
 - Open source remains free; tips fund development and keep ads at bay
@@ -135,18 +135,18 @@
 ## v0.2.0 - "The Health Connection" (2026-01-24)
 
 ### New Chambers
-- **Health Connect Integration** — The fortress now receives tribute from the realm's fitness trackers
+- **Tribute from the Realm** (Health Connect) — The fortress receives steps from fitness trackers
   - Automatic step syncing from Health Connect-compatible apps
   - Manual sync button for the impatient adventurer
   - Graceful fallback to manual logging when Health Connect is unavailable
 
 ### The Great Upheaval
-- Raised minimum Android SDK to 26 (Android 8.0 Oreo)
+- **The Ancient Devices Left Behind** (minSdk 26) — Android 8.0 Oreo becomes the threshold
   - The ancient devices of API 23-25 can no longer receive the blessings of Health Connect
   - Their inhabitants must seek adventure through other means
 
 ### Menaces Vanquished
-- **Corrected the sacred color references in the Health Connect card**
+- **The Sacred Colors Corrected** (Theme Fix) — The Health Connect card finds its true hue
   - The `xpGold` color, though noble in intent, did not exist in the theme scrolls
   - Replaced with `accentGold`, which had been there all along, waiting patiently
 
@@ -155,29 +155,29 @@
 ## v0.1.0 - "The Great Awakening" (2026-01-24)
 
 ### New Chambers
-- Initial project creation with phone and watch support
-- Step logging gamification with levels, XP, and streaks
-- Wear OS companion app for quick step entry
-- Ambient mode support for low-power watch display
+- **The Fortress Rises** (Initial Release) — Phone and watch support established
+- **The Gamification Engine** (Core Features) — Levels, XP, and streaks begin tracking
+- **The Wrist Companion** (Wear OS) — Quick step entry from the watch
+- **The Low-Power Vigil** (Ambient Mode) — Watch display persists in darkness
 
 ### Menaces Vanquished
 
-**Fixed Android Virtual Device refusing to materialize on the host plane**
+**The Emulator Refuses to Materialize** (AVD + Flatpak)
 - The emulator, summoned via Flatpak's sandboxed realm, crashed repeatedly
 - Hardware acceleration proved incompatible with the astral projection required
 - Decided to use physical devices instead of wrestling with ethereal constructs
 
-**Prevented the build system from starving due to missing Java sustenance**
+**The Build System Starves** (JAVA_HOME)
 - The Gradle daemon searched in vain for JAVA_HOME
 - Flatpak had imprisoned the JetBrains Runtime in a sandbox dimension
 - Installed OpenJDK 21 in the Distrobox container, restoring the daemon's vitality
 
-**Stopped the wear plugin from speaking in an ancient dialect (package attribute)**
+**The Ancient Dialect** (wear → wear_plus)
 - The venerable `wear` package (vintage 2021) used deprecated manifest incantations
 - Android Gradle Plugin 8+ no longer understood these archaic runes
 - Migrated to `wear_plus`, a living fork that speaks the modern tongue
 
-**Removed discontinued wearable_rotary dependency**
+**The Discontinued Dependency** (wearable_rotary)
 - The package had passed into the void (marked discontinued)
 - Its functionality was mourned but not required for initial operation
 

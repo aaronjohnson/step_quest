@@ -15,6 +15,23 @@ Each version gets a thematic subtitle in quotes:
 
 ## Writing Style
 
+### Item Headers (Hybrid Style)
+
+Use thematic names with technical terms in parentheses for searchability:
+
+```markdown
+### New Chambers
+- **The Grand Gates Open** (Google Play) — The fortress welcomes adventurers
+- **The Watchtower's Eyes** (Crashlytics) — Walls report when they crumble
+```
+
+Format: `**Thematic Name** (Technical Term) — Poetic description`
+
+This preserves:
+- **Flavor**: The thematic name leads, setting the tone
+- **Searchability**: Technical term in parentheses for grep/search
+- **Clarity**: Description explains what actually happened
+
 ### Bug Fixes
 Frame as epic battles or discoveries:
 - "Fixed Android Virtual Device refusing to materialize on the host plane"
