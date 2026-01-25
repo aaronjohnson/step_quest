@@ -16,6 +16,8 @@ Create a `.claude/skills/` directory in your project. Add markdown files describ
     └── changelog.md
 ```
 
+**The key:** Name the file after the keyword. When you say "update the changelog," Claude finds `changelog.md` and applies your style.
+
 ## A Real Example
 
 My step counter app uses Dwarf Fortress-style changelogs. Instead of explaining this every time, I created `.claude/skills/changelog.md`:
