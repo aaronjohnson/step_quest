@@ -4,6 +4,29 @@
 
 ---
 
+## v0.7.0 - "The Quest for a Proper Address" (2026-01-25)
+
+### Infrastructure
+- **Custom Domain** — The fortress finally has a proper address
+  - `step.quest.mqqn.net` now points to the landing page
+  - Cloud DNS zone created for `quest.mqqn.net` namespace
+  - Subdomain delegation from Gandi preserves email safety
+  - Future quest apps can live at `*.quest.mqqn.net`
+
+### Documentation
+- Added `docs/DNS_SETUP.md` — A map for future domain expeditions
+  - Cloud DNS setup with subdomain delegation
+  - Firebase Hosting custom domain configuration
+  - Fourth-level domain considerations
+  - Useful gcloud commands for DNS management
+
+### Technical Notes
+- Firebase Hosting requires A records, not CNAME, for custom domains
+- Default domains (`*.web.app`, `*.firebaseapp.com`) remain active alongside custom domain
+- SSL certificate auto-provisioned by Firebase (minting takes 15-30 min)
+
+---
+
 ## v0.6.0 - "The Watchtower Speaks Many Tongues" (2026-01-25)
 
 ### Crashlytics
