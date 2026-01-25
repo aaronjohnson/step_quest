@@ -4,6 +4,25 @@
 
 ---
 
+## v0.6.0 - "The Watchtower Speaks Many Tongues" (2026-01-25)
+
+### Crashlytics
+- **Firebase Crashlytics** — The fortress now reports when walls crumble
+  - Three-layer error handling: Flutter errors, platform errors, zone errors
+  - Crashes appear in Firebase Console automatically
+  - The mountain spirits will know when something goes wrong
+
+### Localization
+- **Nordic Expansion** — The northern realms join the quest
+  - Danish (da) — For the Danes who march through wind and rain
+  - Norwegian Bokmål (nb) — For the fjord-dwellers
+  - Swedish (sv) — For those who brave the midnight sun
+  - Finnish (fi) — For the sauna warriors
+  - Catalan (ca) — For the builders of Sagrada Família
+- Total: 13 languages + 2 secret (Klingon, Dwarven)
+
+---
+
 ## v0.5.0 - "The Grand Opening" (2026-01-25)
 
 ### Major Features
