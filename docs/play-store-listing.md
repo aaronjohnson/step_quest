@@ -38,7 +38,7 @@ Health & Fitness
 Everyone
 
 ## Privacy Policy URL
-https://mqqn.net/step-quest/privacy (TODO: create this)
+https://step-quest-485403.web.app/privacy
 
 ## Keywords/Tags
 step counter, pedometer, fitness game, walking tracker, health, exercise, RPG, gamification, step tracker, daily steps

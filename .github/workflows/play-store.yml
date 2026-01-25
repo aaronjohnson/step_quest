@@ -1,0 +1,97 @@
+name: Play Store Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      track:
+        description: 'Release track'
+        required: true
+        default: 'internal'
+        type: choice
+        options:
+          - internal
+          - alpha
+          - production
+      rollout:
+        description: 'Production rollout percentage (only for production track)'
+        required: false
+        default: '100'
+        type: choice
+        options:
+          - '10'
+          - '25'
+          - '50'
+          - '100'
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  play-store-release:
+    runs-on: [self-hosted, macOS, ARM64]
+
+    defaults:
+      run:
+        working-directory: android
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud (WIF)
+        id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: 'projects/203689137716/locations/global/workloadIdentityPools/github-actions-pool/providers/github-provider'
+          service_account: 'github-actions-firebase@step-quest-485403.iam.gserviceaccount.com'
+
+      - name: Get Flutter dependencies
+        run: flutter pub get
+        working-directory: .
+
+      - name: Copy signing config
+        working-directory: .
+        run: |
+          if [ -f ~/projects/step_quest/android/key.properties ]; then
+            cp ~/projects/step_quest/android/key.properties android/key.properties
+            cp ~/projects/step_quest/android/app/step-quest-release-key.jks android/app/step-quest-release-key.jks
+            echo "Signing config copied"
+          else
+            echo "ERROR: Signing config required for Play Store releases"
+            exit 1
+          fi
+
+      - name: Install Fastlane
+        run: |
+          export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+          bundle config set --local path 'vendor/bundle'
+          bundle install
+
+      - name: Upload to Internal Track
+        if: ${{ github.event.inputs.track == 'internal' }}
+        run: |
+          export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+          bundle exec fastlane android upload_internal
+
+      - name: Promote to Alpha
+        if: ${{ github.event.inputs.track == 'alpha' }}
+        run: |
+          export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+          bundle exec fastlane android promote_to_alpha
+
+      - name: Promote to Production
+        if: ${{ github.event.inputs.track == 'production' }}
+        run: |
+          export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+          ROLLOUT=$(echo "${{ github.event.inputs.rollout }}" | awk '{print $1/100}')
+          bundle exec fastlane android promote_to_production rollout:$ROLLOUT
+
+      - name: Upload AAB artifact
+        if: ${{ github.event.inputs.track == 'internal' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-aab-release
+          path: |
+            build/app/outputs/bundle/release/*.aab
+          retention-days: 30

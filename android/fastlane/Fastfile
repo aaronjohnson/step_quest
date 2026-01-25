@@ -110,6 +110,67 @@ platform :android do
     end
   end
 
+  # ===================
+  # Google Play Store
+  # ===================
+
+  # Helper to get Play Store credentials (supports WIF via GOOGLE_APPLICATION_CREDENTIALS)
+  def play_store_json_key
+    ENV["GOOGLE_APPLICATION_CREDENTIALS"] || ENV["GOOGLE_PLAY_JSON_KEY"] || "play-store-key.json"
+  end
+
+  desc "Upload AAB to Play Store internal testing track"
+  lane :upload_internal do |options|
+    aab_path = build_bundle
+
+    upload_to_play_store(
+      track: "internal",
+      aab: aab_path,
+      skip_upload_apk: true,
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true,
+      json_key: play_store_json_key
+    )
+
+    UI.success("AAB uploaded to Play Store internal testing track!")
+  end
+
+  desc "Promote internal build to closed testing (alpha)"
+  lane :promote_to_alpha do
+    upload_to_play_store(
+      track: "internal",
+      track_promote_to: "alpha",
+      skip_upload_apk: true,
+      skip_upload_aab: true,
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true,
+      json_key: play_store_json_key
+    )
+
+    UI.success("Promoted to alpha (closed testing)!")
+  end
+
+  desc "Promote to production"
+  lane :promote_to_production do |options|
+    rollout = options[:rollout] || 1.0
+
+    upload_to_play_store(
+      track: "alpha",
+      track_promote_to: "production",
+      rollout: rollout.to_s,
+      skip_upload_apk: true,
+      skip_upload_aab: true,
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true,
+      json_key: play_store_json_key
+    )
+
+    UI.success("Promoted to production with #{(rollout * 100).to_i}% rollout!")
+  end
+
   desc "Install APK on connected device"
   lane :install do |options|
     apk_type = options[:release] ? "release" : "debug"

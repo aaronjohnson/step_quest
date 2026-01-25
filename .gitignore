@@ -63,3 +63,8 @@ android/build/
 
 # Firebase
 google-services.json
+.firebase/
+
+# Google Play Store API key - DO NOT COMMIT
+/android/fastlane/play-store-key.json
+/android/play-store-key.json
