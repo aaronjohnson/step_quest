@@ -78,3 +78,13 @@ android {
 flutter {
     source = "../.."
 }
+
+// Exclude Wear OS libraries from mobile builds
+configurations.all {
+    if (name.contains("mobile", ignoreCase = true)) {
+        exclude(group = "com.google.android.wearable", module = "wearable")
+        exclude(group = "com.google.android.support", module = "wearable")
+        exclude(group = "androidx.wear", module = "wear")
+        exclude(group = "androidx.wear.compose", module = "compose-foundation")
+    }
+}

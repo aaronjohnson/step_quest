@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Explicitly NOT a watch app - remove any watch features from dependencies -->
+    <uses-feature
+        android:name="android.hardware.type.watch"
+        tools:node="remove" />
+
+</manifest>
