@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700"/>
+      <stop offset="100%" style="stop-color:#ffaa00"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="100" fill="url(#bg)"/>
+
+  <!-- Footprint (stylized shoe/boot) -->
+  <ellipse cx="200" cy="320" rx="70" ry="90" fill="#4ade80" opacity="0.9"/>
+  <ellipse cx="200" cy="200" rx="45" ry="55" fill="#4ade80" opacity="0.9"/>
+
+  <!-- Second footprint (slightly behind) -->
+  <ellipse cx="310" cy="360" rx="60" ry="75" fill="#22c55e" opacity="0.6"/>
+  <ellipse cx="310" cy="260" rx="38" ry="45" fill="#22c55e" opacity="0.6"/>
+
+  <!-- Trophy/Star at top -->
+  <polygon points="400,80 415,130 470,130 425,165 440,215 400,185 360,215 375,165 330,130 385,130" fill="url(#gold)"/>
+
+  <!-- Sparkle effects -->
+  <circle cx="120" cy="120" r="8" fill="white" opacity="0.6"/>
+  <circle cx="450" cy="400" r="6" fill="white" opacity="0.5"/>
+  <circle cx="80" cy="420" r="5" fill="white" opacity="0.4"/>
+</svg>

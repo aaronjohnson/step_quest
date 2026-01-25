@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../l10n/app_localizations.dart';
 import '../services/supporter_service.dart';
 import '../theme/app_theme.dart';
 import 'game_card.dart';
@@ -32,6 +33,8 @@ class _SupporterCardState extends State<SupporterCard> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
     return GameCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,9 +46,9 @@ class _SupporterCardState extends State<SupporterCard> {
                 style: const TextStyle(fontSize: 24),
               ),
               const SizedBox(width: 8),
-              const Text(
-                'Support Step Quest',
-                style: TextStyle(
+              Text(
+                l10n.supportTitle,
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
@@ -59,9 +62,9 @@ class _SupporterCardState extends State<SupporterCard> {
                     color: AppColors.accentGold.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  child: const Text(
-                    'Supporter',
-                    style: TextStyle(
+                  child: Text(
+                    l10n.supporterBadge,
+                    style: const TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
                       color: AppColors.accentGold,
@@ -72,9 +75,7 @@ class _SupporterCardState extends State<SupporterCard> {
           ),
           const SizedBox(height: 12),
           Text(
-            _status?.isSupporter == true
-                ? 'Thank you for supporting the quest! Your generosity keeps the fortress running.'
-                : 'Step Quest is free and open source. Tips help fund development and keep ads away.',
+            _status?.isSupporter == true ? l10n.supportThanks : l10n.supportPrompt,
             style: const TextStyle(
               fontSize: 14,
               color: AppColors.textSecondary,
@@ -91,7 +92,7 @@ class _SupporterCardState extends State<SupporterCard> {
                   _showTipJar ? Icons.expand_less : Icons.favorite,
                   size: 18,
                 ),
-                label: Text(_showTipJar ? 'Hide Tip Jar' : 'Open Tip Jar'),
+                label: Text(_showTipJar ? l10n.supportHideTipJar : l10n.supportOpenTipJar),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.accentGold,
                   foregroundColor: Colors.black,
@@ -100,32 +101,43 @@ class _SupporterCardState extends State<SupporterCard> {
             ),
             if (_showTipJar) ...[
               const SizedBox(height: 16),
-              _buildTipOptions(),
+              _buildTipOptions(l10n),
             ],
           ],
           const SizedBox(height: 12),
-          _buildExternalLinks(),
+          _buildExternalLinks(l10n),
         ],
       ),
     );
   }
 
-  Widget _buildTipOptions() {
+  Widget _buildTipOptions(AppLocalizations l10n) {
+    // Map tier IDs to localized names/descriptions
+    final localizedTiers = {
+      'coffee': (l10n.tipCoffee, l10n.tipCoffeeDesc),
+      'supporter': (l10n.tipSupporter, l10n.tipSupporterDesc),
+      'legendary': (l10n.tipLegendary, l10n.tipLegendaryDesc),
+    };
+
     return Column(
       children: SupporterService.tiers.entries.map((entry) {
         final tier = entry.value;
+        final (name, desc) = localizedTiers[entry.key] ?? (tier.name, tier.description);
         return Padding(
           padding: const EdgeInsets.only(bottom: 8),
           child: _TipOption(
-            tier: tier,
-            onTap: () => _handleTip(entry.key),
+            badge: tier.badge,
+            name: name,
+            description: desc,
+            price: tier.displayPrice,
+            onTap: () => _handleTip(entry.key, l10n),
           ),
         );
       }).toList(),
     );
   }
 
-  Widget _buildExternalLinks() {
+  Widget _buildExternalLinks(AppLocalizations l10n) {
     return Column(
       children: [
         Row(
@@ -134,7 +146,7 @@ class _SupporterCardState extends State<SupporterCard> {
             TextButton.icon(
               onPressed: () => _launchUrl('https://github.com/sponsors/aaronjohnson'),
               icon: const Icon(Icons.favorite_border, size: 16),
-              label: const Text('GitHub Sponsors'),
+              label: Text(l10n.supportGitHubSponsors),
               style: TextButton.styleFrom(
                 foregroundColor: AppColors.textSecondary,
               ),
@@ -143,7 +155,7 @@ class _SupporterCardState extends State<SupporterCard> {
             TextButton.icon(
               onPressed: () => _launchUrl('https://www.patreon.com/aaronjohnson'),
               icon: const Icon(Icons.star_border, size: 16),
-              label: const Text('Patreon'),
+              label: Text(l10n.supportPatreon),
               style: TextButton.styleFrom(
                 foregroundColor: AppColors.textSecondary,
               ),
@@ -153,7 +165,7 @@ class _SupporterCardState extends State<SupporterCard> {
         TextButton.icon(
           onPressed: () => _launchUrl('https://github.com/aaronjohnson/step_quest'),
           icon: const Icon(Icons.code, size: 16),
-          label: const Text('View Source Code'),
+          label: Text(l10n.supportSourceCode),
           style: TextButton.styleFrom(
             foregroundColor: AppColors.textSecondary,
           ),
@@ -162,14 +174,14 @@ class _SupporterCardState extends State<SupporterCard> {
     );
   }
 
-  Future<void> _handleTip(String tierId) async {
+  Future<void> _handleTip(String tierId, AppLocalizations l10n) async {
     // TODO: Implement Google Play Billing
     // For now, show a coming soon message
     if (!mounted) return;
 
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Tip jar coming soon! For now, visit GitHub Sponsors.'),
+      SnackBar(
+        content: Text(l10n.supportTipComing),
         behavior: SnackBarBehavior.floating,
       ),
     );
@@ -184,11 +196,17 @@ class _SupporterCardState extends State<SupporterCard> {
 }
 
 class _TipOption extends StatelessWidget {
-  final SupporterTier tier;
+  final String badge;
+  final String name;
+  final String description;
+  final String price;
   final VoidCallback onTap;
 
   const _TipOption({
-    required this.tier,
+    required this.badge,
+    required this.name,
+    required this.description,
+    required this.price,
     required this.onTap,
   });
 
@@ -204,14 +222,14 @@ class _TipOption extends StatelessWidget {
           padding: const EdgeInsets.all(12),
           child: Row(
             children: [
-              Text(tier.badge, style: const TextStyle(fontSize: 24)),
+              Text(badge, style: const TextStyle(fontSize: 24)),
               const SizedBox(width: 12),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      tier.name,
+                      name,
                       style: const TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
@@ -219,7 +237,7 @@ class _TipOption extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      tier.description,
+                      description,
                       style: const TextStyle(
                         fontSize: 12,
                         color: AppColors.textSecondary,
@@ -235,7 +253,7 @@ class _TipOption extends StatelessWidget {
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Text(
-                  tier.displayPrice,
+                  price,
                   style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,

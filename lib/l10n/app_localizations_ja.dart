@@ -190,4 +190,92 @@ class AppLocalizationsJa extends AppLocalizations {
   String watchLoggedSteps(int count) {
     return '$count 歩を記録しました！';
   }
+
+  @override
+  String get streakGoalMet => '素晴らしい！今日の目標を達成しました！';
+
+  @override
+  String get streakGoalPrompt => '連続記録を続けるために10,000歩を達成しよう！';
+
+  @override
+  String streakDayStreak(int count) {
+    return '$count日連続';
+  }
+
+  @override
+  String get logTodayTitle => '今日の歩数を記録';
+
+  @override
+  String logTodayProgress(String current, String goal) {
+    return '今日: $current / $goal';
+  }
+
+  @override
+  String logStepsToGo(String count) {
+    return 'あと$count';
+  }
+
+  @override
+  String get logEnterSteps => '歩数を入力...';
+
+  @override
+  String get logAddButton => '追加';
+
+  @override
+  String get logAutoSaved => '自動保存されました';
+
+  @override
+  String get levelTotalSteps => '総歩数';
+
+  @override
+  String achievementsProgress(int unlocked, int total) {
+    return '実績 ($unlocked/$total)';
+  }
+
+  @override
+  String get achievementUnlocked => '達成！';
+
+  @override
+  String get achievementLocked => '未達成';
+
+  @override
+  String get closeButton => '閉じる';
+
+  @override
+  String get watchAddSteps => '歩数を追加';
+
+  @override
+  String get watchBack => '← 戻る';
+
+  @override
+  String get watchStepsAdded => '歩追加しました！';
+
+  @override
+  String watchLevelShort(int level) {
+    return 'Lv $level';
+  }
+
+  @override
+  String get easterEggUnlocked => '秘密の言語がアンロック！';
+
+  @override
+  String get easterEggTapDescription => '古代のルーンに触れ、山の精霊を目覚めさせた！';
+
+  @override
+  String get easterEggKonamiDescription => '聖なるシーケンスが入力されました。Qapla\'!';
+
+  @override
+  String get easterEggTapLanguageHint => '言語ボタンをタップして切り替えましょう。';
+
+  @override
+  String get easterEggTryNow => '今すぐ試す';
+
+  @override
+  String get easterEggLater => '後で';
+
+  @override
+  String get languageTitle => '言語';
+
+  @override
+  String get languageSecretSection => '秘密の言語';
 }

@@ -28,6 +28,8 @@ class _HealthConnectCardState extends State<HealthConnectCard> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+
     return GameCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,7 +43,7 @@ class _HealthConnectCardState extends State<HealthConnectCard> {
               ),
               const SizedBox(width: 8),
               Text(
-                AppLocalizations.of(context)!.healthConnectTitle,
+                l10n.healthConnectTitle,
                 style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -49,28 +51,28 @@ class _HealthConnectCardState extends State<HealthConnectCard> {
                 ),
               ),
               const Spacer(),
-              _buildStatusChip(),
+              _buildStatusChip(l10n),
             ],
           ),
           const SizedBox(height: 12),
           Text(
-            _getStatusMessage(),
+            _getStatusMessage(l10n),
             style: const TextStyle(
               fontSize: 14,
               color: AppColors.textSecondary,
             ),
           ),
           const SizedBox(height: 12),
-          _buildActionButton(),
+          _buildActionButton(l10n),
           const SizedBox(height: 8),
-          _buildInfoToggle(),
-          if (_showInfo) _buildInfoSection(),
+          _buildInfoToggle(l10n),
+          if (_showInfo) _buildInfoSection(l10n),
         ],
       ),
     );
   }
 
-  Widget _buildInfoToggle() {
+  Widget _buildInfoToggle(AppLocalizations l10n) {
     return GestureDetector(
       onTap: () => setState(() => _showInfo = !_showInfo),
       child: Row(
@@ -83,7 +85,7 @@ class _HealthConnectCardState extends State<HealthConnectCard> {
           ),
           const SizedBox(width: 4),
           Text(
-            _showInfo ? 'Hide details' : 'How does sync work?',
+            _showInfo ? l10n.healthConnectHideDetails : l10n.healthConnectHowItWorks,
             style: const TextStyle(
               fontSize: 12,
               color: AppColors.textSecondary,
@@ -94,7 +96,7 @@ class _HealthConnectCardState extends State<HealthConnectCard> {
     );
   }
 
-  Widget _buildInfoSection() {
+  Widget _buildInfoSection(AppLocalizations l10n) {
     return Container(
       margin: const EdgeInsets.only(top: 12),
       padding: const EdgeInsets.all(12),
@@ -102,44 +104,39 @@ class _HealthConnectCardState extends State<HealthConnectCard> {
         color: Colors.black26,
         borderRadius: BorderRadius.circular(8),
       ),
-      child: const Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Sync Path',
-            style: TextStyle(
+            l10n.healthConnectSyncPathTitle,
+            style: const TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
             ),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Text(
-            'Your fitness app (Samsung Health, Google Fit, Fitbit, etc.) '
-            '→ Health Connect → Step Quest\n\n'
-            'Enable Health Connect sync in your fitness app\'s settings '
-            'to share step data.',
-            style: TextStyle(
+            l10n.healthConnectSyncPathDescription,
+            style: const TextStyle(
               fontSize: 12,
               color: AppColors.textSecondary,
               height: 1.4,
             ),
           ),
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           Text(
-            'Want more sensors?',
-            style: TextStyle(
+            l10n.healthConnectMoreSensors,
+            style: const TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
             ),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Text(
-            'Heart rate, calories, sleep tracking, and other sensor '
-            'features can be requested on our GitHub:\n'
-            'github.com/aaronjohnson/step_quest/issues',
-            style: TextStyle(
+            l10n.healthConnectMoreSensorsDescription,
+            style: const TextStyle(
               fontSize: 12,
               color: AppColors.textSecondary,
               height: 1.4,
@@ -176,12 +173,12 @@ class _HealthConnectCardState extends State<HealthConnectCard> {
     }
   }
 
-  Widget _buildStatusChip() {
+  Widget _buildStatusChip(AppLocalizations l10n) {
     final (label, color) = switch (widget.status) {
-      HealthConnectStatus.authorized => ('Connected', AppColors.accentGold),
-      HealthConnectStatus.notAuthorized => ('Not Connected', AppColors.textSecondary),
-      HealthConnectStatus.unavailable => ('Unavailable', Colors.red.shade300),
-      HealthConnectStatus.unknown => ('Checking...', AppColors.textSecondary),
+      HealthConnectStatus.authorized => (l10n.healthConnectConnected, AppColors.accentGold),
+      HealthConnectStatus.notAuthorized => (l10n.healthConnectNotConnected, AppColors.textSecondary),
+      HealthConnectStatus.unavailable => (l10n.healthConnectUnavailable, Colors.red.shade300),
+      HealthConnectStatus.unknown => (l10n.healthConnectChecking, AppColors.textSecondary),
     };
 
     return Container(
@@ -201,20 +198,20 @@ class _HealthConnectCardState extends State<HealthConnectCard> {
     );
   }
 
-  String _getStatusMessage() {
+  String _getStatusMessage(AppLocalizations l10n) {
     switch (widget.status) {
       case HealthConnectStatus.authorized:
-        return 'Steps sync automatically from Google Fit, Samsung Health, Fitbit, and other Health Connect apps.';
+        return l10n.healthConnectSyncMessage;
       case HealthConnectStatus.notAuthorized:
-        return 'Connect to sync steps from Google Fit, Samsung Health, Fitbit, and other fitness apps.';
+        return l10n.healthConnectPrompt;
       case HealthConnectStatus.unavailable:
-        return 'Health Connect is not available. Use manual step logging.';
+        return l10n.healthConnectUnavailableMessage;
       case HealthConnectStatus.unknown:
-        return 'Checking Health Connect availability...';
+        return l10n.healthConnectChecking;
     }
   }
 
-  Widget _buildActionButton() {
+  Widget _buildActionButton(AppLocalizations l10n) {
     if (widget.status == HealthConnectStatus.unavailable) {
       return const SizedBox.shrink();
     }
@@ -231,7 +228,7 @@ class _HealthConnectCardState extends State<HealthConnectCard> {
                   child: CircularProgressIndicator(strokeWidth: 2),
                 )
               : const Icon(Icons.sync, size: 18),
-          label: Text(widget.isSyncing ? 'Syncing...' : 'Sync Now'),
+          label: Text(widget.isSyncing ? l10n.healthConnectSyncing : l10n.healthConnectSyncNow),
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.cardOverlay,
             foregroundColor: AppColors.textPrimary,
@@ -245,7 +242,7 @@ class _HealthConnectCardState extends State<HealthConnectCard> {
       child: ElevatedButton.icon(
         onPressed: widget.onConnect,
         icon: const Icon(Icons.link, size: 18),
-        label: const Text('Connect Health'),
+        label: Text(l10n.healthConnectConnect),
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.accentGold,
           foregroundColor: Colors.black,

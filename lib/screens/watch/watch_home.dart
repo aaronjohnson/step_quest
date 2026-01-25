@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:wear_plus/wear_plus.dart';
+import '../../l10n/app_localizations.dart';
 import '../../providers/game_state_provider.dart';
 import '../../theme/app_theme.dart';
 import 'watch_quick_log.dart';
@@ -31,6 +32,7 @@ class _ActiveWatchHome extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     final gameState = ref.watch(gameStateProvider);
     final screenSize = MediaQuery.of(context).size;
 
@@ -71,7 +73,7 @@ class _ActiveWatchHome extends ConsumerWidget {
               children: [
                 // Level display
                 Text(
-                  'Level ${gameState.level}',
+                  l10n.levelLabel(gameState.level),
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -98,9 +100,9 @@ class _ActiveWatchHome extends ConsumerWidget {
                     fontFeatures: [FontFeature.tabularFigures()],
                   ),
                 ),
-                const Text(
-                  'steps',
-                  style: TextStyle(
+                Text(
+                  l10n.watchStepsLabel,
+                  style: const TextStyle(
                     fontSize: 12,
                     color: AppColors.textSecondary,
                   ),
@@ -113,7 +115,7 @@ class _ActiveWatchHome extends ConsumerWidget {
                     const Text('🔥', style: TextStyle(fontSize: 18)),
                     const SizedBox(width: 4),
                     Text(
-                      '${gameState.streak} days',
+                      l10n.streakDays(gameState.streak),
                       style: const TextStyle(
                         fontSize: 14,
                         color: AppColors.textPrimary,
@@ -123,9 +125,9 @@ class _ActiveWatchHome extends ConsumerWidget {
                 ),
                 const SizedBox(height: 16),
                 // Hint to tap
-                const Text(
-                  'Tap to log steps',
-                  style: TextStyle(
+                Text(
+                  l10n.watchTapToLog,
+                  style: const TextStyle(
                     fontSize: 10,
                     color: AppColors.textSecondary,
                   ),
@@ -152,6 +154,7 @@ class _AmbientWatchHome extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     final gameState = ref.watch(gameStateProvider);
     final screenSize = MediaQuery.of(context).size;
 
@@ -165,7 +168,7 @@ class _AmbientWatchHome extends ConsumerWidget {
           children: [
             // Level (minimal)
             Text(
-              'Lv ${gameState.level}',
+              l10n.watchLevelShort(gameState.level),
               style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w300,

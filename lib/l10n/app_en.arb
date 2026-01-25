@@ -249,5 +249,132 @@
     "placeholders": {
       "count": {"type": "int"}
     }
+  },
+
+  "streakGoalMet": "Great job! You've hit your goal today!",
+  "@streakGoalMet": {
+    "description": "Message when daily goal is met"
+  },
+  "streakGoalPrompt": "Hit 10,000 steps to continue your streak!",
+  "@streakGoalPrompt": {
+    "description": "Message prompting user to reach goal"
+  },
+  "streakDayStreak": "{count} Day Streak",
+  "@streakDayStreak": {
+    "description": "Streak display with day count",
+    "placeholders": {
+      "count": {"type": "int"}
+    }
+  },
+
+  "logTodayTitle": "Log Today's Steps",
+  "@logTodayTitle": {
+    "description": "Log steps card title"
+  },
+  "logTodayProgress": "Today: {current} / {goal}",
+  "@logTodayProgress": {
+    "description": "Today's progress display",
+    "placeholders": {
+      "current": {"type": "String"},
+      "goal": {"type": "String"}
+    }
+  },
+  "logStepsToGo": "{count} to go",
+  "@logStepsToGo": {
+    "description": "Steps remaining to goal",
+    "placeholders": {
+      "count": {"type": "String"}
+    }
+  },
+  "logEnterSteps": "Enter steps...",
+  "@logEnterSteps": {
+    "description": "Hint text for step input"
+  },
+  "logAddButton": "Add",
+  "@logAddButton": {
+    "description": "Add button text"
+  },
+  "logAutoSaved": "Progress auto-saved",
+  "@logAutoSaved": {
+    "description": "Auto-save confirmation text"
+  },
+
+  "levelTotalSteps": "Total Steps",
+  "@levelTotalSteps": {
+    "description": "Label for total steps in level card"
+  },
+
+  "achievementsProgress": "Achievements ({unlocked}/{total})",
+  "@achievementsProgress": {
+    "description": "Achievements header with progress",
+    "placeholders": {
+      "unlocked": {"type": "int"},
+      "total": {"type": "int"}
+    }
+  },
+  "achievementUnlocked": "Unlocked!",
+  "@achievementUnlocked": {
+    "description": "Achievement unlocked status"
+  },
+  "achievementLocked": "Locked",
+  "@achievementLocked": {
+    "description": "Achievement locked status"
+  },
+  "closeButton": "Close",
+  "@closeButton": {
+    "description": "Generic close button"
+  },
+
+  "watchAddSteps": "Add Steps",
+  "@watchAddSteps": {
+    "description": "Watch quick log title"
+  },
+  "watchBack": "← Back",
+  "@watchBack": {
+    "description": "Watch back button"
+  },
+  "watchStepsAdded": "steps added!",
+  "@watchStepsAdded": {
+    "description": "Confirmation after logging steps"
+  },
+  "watchLevelShort": "Lv {level}",
+  "@watchLevelShort": {
+    "description": "Short level display for ambient mode",
+    "placeholders": {
+      "level": {"type": "int"}
+    }
+  },
+
+  "easterEggUnlocked": "Secret Language Unlocked!",
+  "@easterEggUnlocked": {
+    "description": "Easter egg unlock dialog title"
+  },
+  "easterEggTapDescription": "You tapped the ancient runes and awoke the mountain spirits!",
+  "@easterEggTapDescription": {
+    "description": "Description when unlocking via tap"
+  },
+  "easterEggKonamiDescription": "The sacred sequence has been entered. Qapla'!",
+  "@easterEggKonamiDescription": {
+    "description": "Description when unlocking via Konami code"
+  },
+  "easterEggTapLanguageHint": "Tap the language button to switch.",
+  "@easterEggTapLanguageHint": {
+    "description": "Hint about language button"
+  },
+  "easterEggTryNow": "Try It Now",
+  "@easterEggTryNow": {
+    "description": "Button to try the new language"
+  },
+  "easterEggLater": "Later",
+  "@easterEggLater": {
+    "description": "Button to dismiss"
+  },
+  "languageTitle": "Language",
+  "@languageTitle": {
+    "description": "Language selector title"
+  },
+  "languageSecretSection": "Secret Languages",
+  "@languageSecretSection": {
+    "description": "Section header for unlocked secret languages"
   }
 }

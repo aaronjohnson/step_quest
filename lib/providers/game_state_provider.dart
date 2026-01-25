@@ -1,8 +1,10 @@
+import 'dart:async';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../models/step_quest_data.dart';
 import '../services/persistence_service.dart';
 import '../services/game_engine.dart';
 import '../services/health_service.dart';
+import '../services/pedometer_service.dart';
 
 /// Provider for the persistence service.
 final persistenceServiceProvider = Provider<PersistenceService>((ref) {
@@ -26,6 +28,28 @@ enum HealthConnectStatus {
   notAuthorized,
   authorized,
 }
+
+/// Provider for the pedometer service.
+final pedometerServiceProvider = Provider<PedometerService>((ref) {
+  final service = PedometerService();
+  ref.onDispose(() => service.dispose());
+  return service;
+});
+
+/// Provider for live step count from pedometer.
+final liveStepCountProvider = StreamProvider<int>((ref) {
+  final pedometer = ref.watch(pedometerServiceProvider);
+  return pedometer.stepStream;
+});
+
+/// Provider for pedestrian status (walking/stopped).
+final pedestrianStatusProvider = StreamProvider<String>((ref) {
+  final pedometer = ref.watch(pedometerServiceProvider);
+  return pedometer.statusStream;
+});
+
+/// Provider for whether pedometer is active.
+final pedometerActiveProvider = StateProvider<bool>((ref) => false);
 
 /// Provider for the game state with persistence.
 final gameStateProvider =
@@ -100,6 +124,15 @@ class GameStateNotifier extends StateNotifier<StepQuestData> {
     state = StepQuestData.empty();
     _lastSyncedSteps = 0;
     await _persistence.clear();
+  }
+
+  /// Adds steps from pedometer (called periodically to sync live steps).
+  Future<void> addPedometerSteps(int steps) async {
+    if (steps <= 0) return;
+
+    final newState = GameEngine.processSteps(state, steps, DateTime.now());
+    state = newState;
+    await _persistence.save(newState);
   }
 }
 

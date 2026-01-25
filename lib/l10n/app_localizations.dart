@@ -10,7 +10,9 @@ import 'app_localizations_en.dart';
 import 'app_localizations_es.dart';
 import 'app_localizations_hi.dart';
 import 'app_localizations_ja.dart';
+import 'app_localizations_khz.dart';
 import 'app_localizations_pt.dart';
+import 'app_localizations_tlh.dart';
 
 // ignore_for_file: type=lint
 
@@ -103,7 +105,9 @@ abstract class AppLocalizations {
     Locale('es'),
     Locale('hi'),
     Locale('ja'),
+    Locale('khz'),
     Locale('pt'),
+    Locale('tlh'),
   ];
 
   /// The app name
@@ -423,6 +427,162 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Logged {count} steps!'**
   String watchLoggedSteps(int count);
+
+  /// Message when daily goal is met
+  ///
+  /// In en, this message translates to:
+  /// **'Great job! You\'ve hit your goal today!'**
+  String get streakGoalMet;
+
+  /// Message prompting user to reach goal
+  ///
+  /// In en, this message translates to:
+  /// **'Hit 10,000 steps to continue your streak!'**
+  String get streakGoalPrompt;
+
+  /// Streak display with day count
+  ///
+  /// In en, this message translates to:
+  /// **'{count} Day Streak'**
+  String streakDayStreak(int count);
+
+  /// Log steps card title
+  ///
+  /// In en, this message translates to:
+  /// **'Log Today\'s Steps'**
+  String get logTodayTitle;
+
+  /// Today's progress display
+  ///
+  /// In en, this message translates to:
+  /// **'Today: {current} / {goal}'**
+  String logTodayProgress(String current, String goal);
+
+  /// Steps remaining to goal
+  ///
+  /// In en, this message translates to:
+  /// **'{count} to go'**
+  String logStepsToGo(String count);
+
+  /// Hint text for step input
+  ///
+  /// In en, this message translates to:
+  /// **'Enter steps...'**
+  String get logEnterSteps;
+
+  /// Add button text
+  ///
+  /// In en, this message translates to:
+  /// **'Add'**
+  String get logAddButton;
+
+  /// Auto-save confirmation text
+  ///
+  /// In en, this message translates to:
+  /// **'Progress auto-saved'**
+  String get logAutoSaved;
+
+  /// Label for total steps in level card
+  ///
+  /// In en, this message translates to:
+  /// **'Total Steps'**
+  String get levelTotalSteps;
+
+  /// Achievements header with progress
+  ///
+  /// In en, this message translates to:
+  /// **'Achievements ({unlocked}/{total})'**
+  String achievementsProgress(int unlocked, int total);
+
+  /// Achievement unlocked status
+  ///
+  /// In en, this message translates to:
+  /// **'Unlocked!'**
+  String get achievementUnlocked;
+
+  /// Achievement locked status
+  ///
+  /// In en, this message translates to:
+  /// **'Locked'**
+  String get achievementLocked;
+
+  /// Generic close button
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get closeButton;
+
+  /// Watch quick log title
+  ///
+  /// In en, this message translates to:
+  /// **'Add Steps'**
+  String get watchAddSteps;
+
+  /// Watch back button
+  ///
+  /// In en, this message translates to:
+  /// **'← Back'**
+  String get watchBack;
+
+  /// Confirmation after logging steps
+  ///
+  /// In en, this message translates to:
+  /// **'steps added!'**
+  String get watchStepsAdded;
+
+  /// Short level display for ambient mode
+  ///
+  /// In en, this message translates to:
+  /// **'Lv {level}'**
+  String watchLevelShort(int level);
+
+  /// Easter egg unlock dialog title
+  ///
+  /// In en, this message translates to:
+  /// **'Secret Language Unlocked!'**
+  String get easterEggUnlocked;
+
+  /// Description when unlocking via tap
+  ///
+  /// In en, this message translates to:
+  /// **'You tapped the ancient runes and awoke the mountain spirits!'**
+  String get easterEggTapDescription;
+
+  /// Description when unlocking via Konami code
+  ///
+  /// In en, this message translates to:
+  /// **'The sacred sequence has been entered. Qapla\'!'**
+  String get easterEggKonamiDescription;
+
+  /// Hint about language button
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the language button to switch.'**
+  String get easterEggTapLanguageHint;
+
+  /// Button to try the new language
+  ///
+  /// In en, this message translates to:
+  /// **'Try It Now'**
+  String get easterEggTryNow;
+
+  /// Button to dismiss
+  ///
+  /// In en, this message translates to:
+  /// **'Later'**
+  String get easterEggLater;
+
+  /// Language selector title
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get languageTitle;
+
+  /// Section header for unlocked secret languages
+  ///
+  /// In en, this message translates to:
+  /// **'Secret Languages'**
+  String get languageSecretSection;
 }
 
 class _AppLocalizationsDelegate
@@ -441,7 +601,9 @@ class _AppLocalizationsDelegate
     'es',
     'hi',
     'ja',
+    'khz',
     'pt',
+    'tlh',
   ].contains(locale.languageCode);
 
   @override
@@ -461,8 +623,12 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsHi();
     case 'ja':
       return AppLocalizationsJa();
+    case 'khz':
+      return AppLocalizationsKhz();
     case 'pt':
       return AppLocalizationsPt();
+    case 'tlh':
+      return AppLocalizationsTlh();
   }
 
   throw FlutterError(

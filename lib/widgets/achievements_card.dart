@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../l10n/app_localizations.dart';
 import '../models/achievement.dart';
 import '../models/step_quest_data.dart';
 import '../theme/app_theme.dart';
@@ -12,6 +13,7 @@ class AchievementsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final unlockedCount = data.unlockedAchievements.length;
     final totalCount = allAchievements.length;
 
@@ -24,7 +26,7 @@ class AchievementsCard extends StatelessWidget {
               const Text('🏅', style: TextStyle(fontSize: 24)),
               const SizedBox(width: 8),
               Text(
-                'Achievements ($unlockedCount/$totalCount)',
+                l10n.achievementsProgress(unlockedCount, totalCount),
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -138,6 +140,7 @@ class _AchievementTile extends StatelessWidget {
   }
 
   void _showAchievementDetails(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -174,7 +177,7 @@ class _AchievementTile extends StatelessWidget {
                 ),
                 const SizedBox(width: 8),
                 Text(
-                  isUnlocked ? 'Unlocked!' : 'Locked',
+                  isUnlocked ? l10n.achievementUnlocked : l10n.achievementLocked,
                   style: TextStyle(
                     color: isUnlocked
                         ? AppColors.accentGreen
@@ -189,7 +192,7 @@ class _AchievementTile extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Close'),
+            child: Text(l10n.closeButton),
           ),
         ],
       ),

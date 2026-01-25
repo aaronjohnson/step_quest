@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'l10n/app_localizations.dart';
 import 'providers/game_state_provider.dart';
+import 'providers/locale_provider.dart';
 import 'screens/phone/home_screen.dart';
 import 'screens/watch/watch_home.dart';
 import 'services/persistence_service.dart';
@@ -26,11 +27,13 @@ void main() async {
   );
 }
 
-class StepQuestApp extends StatelessWidget {
+class StepQuestApp extends ConsumerWidget {
   const StepQuestApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final selectedLocale = ref.watch(localeProvider);
+
     return MaterialApp(
       title: 'Step Quest',
       debugShowCheckedModeBanner: false,
@@ -49,7 +52,10 @@ class StepQuestApp extends StatelessWidget {
         Locale('hi'),      // Hindi (INR)
         Locale('ja'),      // Japanese (JPY)
         Locale('pt'),      // Portuguese (BRL)
+        Locale('tlh'),     // Klingon (easter egg)
+        Locale('khz'),     // Khuzdul/Dwarvish (easter egg)
       ],
+      locale: selectedLocale,
       home: const _DeviceAdaptiveHome(),
     );
   }

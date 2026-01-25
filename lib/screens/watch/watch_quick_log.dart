@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../l10n/app_localizations.dart';
 import '../../providers/game_state_provider.dart';
 import '../../theme/app_theme.dart';
 
@@ -38,6 +39,7 @@ class _WatchQuickLogState extends ConsumerState<WatchQuickLog> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final screenSize = MediaQuery.of(context).size;
 
     if (_showConfirmation) {
@@ -63,9 +65,9 @@ class _WatchQuickLogState extends ConsumerState<WatchQuickLog> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                'Add Steps',
-                style: TextStyle(
+              Text(
+                l10n.watchAddSteps,
+                style: const TextStyle(
                   fontSize: 14,
                   color: AppColors.textSecondary,
                 ),
@@ -106,9 +108,9 @@ class _WatchQuickLogState extends ConsumerState<WatchQuickLog> {
               // Back button
               GestureDetector(
                 onTap: () => Navigator.pop(context),
-                child: const Text(
-                  '← Back',
-                  style: TextStyle(
+                child: Text(
+                  l10n.watchBack,
+                  style: const TextStyle(
                     fontSize: 12,
                     color: AppColors.textSecondary,
                   ),
@@ -178,6 +180,7 @@ class _ConfirmationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
@@ -203,9 +206,9 @@ class _ConfirmationScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 4),
-            const Text(
-              'steps added!',
-              style: TextStyle(
+            Text(
+              l10n.watchStepsAdded,
+              style: const TextStyle(
                 fontSize: 14,
                 color: Colors.white70,
               ),

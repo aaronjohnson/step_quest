@@ -192,4 +192,94 @@ class AppLocalizationsEn extends AppLocalizations {
   String watchLoggedSteps(int count) {
     return 'Logged $count steps!';
   }
+
+  @override
+  String get streakGoalMet => 'Great job! You\'ve hit your goal today!';
+
+  @override
+  String get streakGoalPrompt => 'Hit 10,000 steps to continue your streak!';
+
+  @override
+  String streakDayStreak(int count) {
+    return '$count Day Streak';
+  }
+
+  @override
+  String get logTodayTitle => 'Log Today\'s Steps';
+
+  @override
+  String logTodayProgress(String current, String goal) {
+    return 'Today: $current / $goal';
+  }
+
+  @override
+  String logStepsToGo(String count) {
+    return '$count to go';
+  }
+
+  @override
+  String get logEnterSteps => 'Enter steps...';
+
+  @override
+  String get logAddButton => 'Add';
+
+  @override
+  String get logAutoSaved => 'Progress auto-saved';
+
+  @override
+  String get levelTotalSteps => 'Total Steps';
+
+  @override
+  String achievementsProgress(int unlocked, int total) {
+    return 'Achievements ($unlocked/$total)';
+  }
+
+  @override
+  String get achievementUnlocked => 'Unlocked!';
+
+  @override
+  String get achievementLocked => 'Locked';
+
+  @override
+  String get closeButton => 'Close';
+
+  @override
+  String get watchAddSteps => 'Add Steps';
+
+  @override
+  String get watchBack => '← Back';
+
+  @override
+  String get watchStepsAdded => 'steps added!';
+
+  @override
+  String watchLevelShort(int level) {
+    return 'Lv $level';
+  }
+
+  @override
+  String get easterEggUnlocked => 'Secret Language Unlocked!';
+
+  @override
+  String get easterEggTapDescription =>
+      'You tapped the ancient runes and awoke the mountain spirits!';
+
+  @override
+  String get easterEggKonamiDescription =>
+      'The sacred sequence has been entered. Qapla\'!';
+
+  @override
+  String get easterEggTapLanguageHint => 'Tap the language button to switch.';
+
+  @override
+  String get easterEggTryNow => 'Try It Now';
+
+  @override
+  String get easterEggLater => 'Later';
+
+  @override
+  String get languageTitle => 'Language';
+
+  @override
+  String get languageSecretSection => 'Secret Languages';
 }

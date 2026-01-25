@@ -192,4 +192,96 @@ class AppLocalizationsPt extends AppLocalizations {
   String watchLoggedSteps(int count) {
     return '$count passos registrados!';
   }
+
+  @override
+  String get streakGoalMet => 'Ótimo trabalho! Você atingiu sua meta hoje!';
+
+  @override
+  String get streakGoalPrompt =>
+      'Alcance 10.000 passos para manter sua sequência!';
+
+  @override
+  String streakDayStreak(int count) {
+    return 'Sequência de $count dias';
+  }
+
+  @override
+  String get logTodayTitle => 'Registrar passos de hoje';
+
+  @override
+  String logTodayProgress(String current, String goal) {
+    return 'Hoje: $current / $goal';
+  }
+
+  @override
+  String logStepsToGo(String count) {
+    return 'faltam $count';
+  }
+
+  @override
+  String get logEnterSteps => 'Digite os passos...';
+
+  @override
+  String get logAddButton => 'Adicionar';
+
+  @override
+  String get logAutoSaved => 'Progresso salvo automaticamente';
+
+  @override
+  String get levelTotalSteps => 'Passos totais';
+
+  @override
+  String achievementsProgress(int unlocked, int total) {
+    return 'Conquistas ($unlocked/$total)';
+  }
+
+  @override
+  String get achievementUnlocked => 'Desbloqueado!';
+
+  @override
+  String get achievementLocked => 'Bloqueado';
+
+  @override
+  String get closeButton => 'Fechar';
+
+  @override
+  String get watchAddSteps => 'Adicionar passos';
+
+  @override
+  String get watchBack => '← Voltar';
+
+  @override
+  String get watchStepsAdded => 'passos adicionados!';
+
+  @override
+  String watchLevelShort(int level) {
+    return 'Nv $level';
+  }
+
+  @override
+  String get easterEggUnlocked => 'Idioma secreto desbloqueado!';
+
+  @override
+  String get easterEggTapDescription =>
+      'Você tocou as runas antigas e despertou os espíritos da montanha!';
+
+  @override
+  String get easterEggKonamiDescription =>
+      'A sequência sagrada foi inserida. Qapla\'!';
+
+  @override
+  String get easterEggTapLanguageHint =>
+      'Toque no botão de idioma para trocar.';
+
+  @override
+  String get easterEggTryNow => 'Experimentar agora';
+
+  @override
+  String get easterEggLater => 'Depois';
+
+  @override
+  String get languageTitle => 'Idioma';
+
+  @override
+  String get languageSecretSection => 'Idiomas secretos';
 }

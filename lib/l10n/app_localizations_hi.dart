@@ -192,4 +192,95 @@ class AppLocalizationsHi extends AppLocalizations {
   String watchLoggedSteps(int count) {
     return '$count कदम दर्ज हुए!';
   }
+
+  @override
+  String get streakGoalMet => 'बहुत बढ़िया! आज का लक्ष्य पूरा हुआ!';
+
+  @override
+  String get streakGoalPrompt =>
+      'अपनी स्ट्रीक जारी रखने के लिए 10,000 कदम पूरे करें!';
+
+  @override
+  String streakDayStreak(int count) {
+    return '$count दिन की स्ट्रीक';
+  }
+
+  @override
+  String get logTodayTitle => 'आज के कदम दर्ज करें';
+
+  @override
+  String logTodayProgress(String current, String goal) {
+    return 'आज: $current / $goal';
+  }
+
+  @override
+  String logStepsToGo(String count) {
+    return '$count बाकी';
+  }
+
+  @override
+  String get logEnterSteps => 'कदम दर्ज करें...';
+
+  @override
+  String get logAddButton => 'जोड़ें';
+
+  @override
+  String get logAutoSaved => 'प्रगति स्वचालित रूप से सहेजी गई';
+
+  @override
+  String get levelTotalSteps => 'कुल कदम';
+
+  @override
+  String achievementsProgress(int unlocked, int total) {
+    return 'उपलब्धियां ($unlocked/$total)';
+  }
+
+  @override
+  String get achievementUnlocked => 'अनलॉक!';
+
+  @override
+  String get achievementLocked => 'लॉक';
+
+  @override
+  String get closeButton => 'बंद करें';
+
+  @override
+  String get watchAddSteps => 'कदम जोड़ें';
+
+  @override
+  String get watchBack => '← वापस';
+
+  @override
+  String get watchStepsAdded => 'कदम जोड़े गए!';
+
+  @override
+  String watchLevelShort(int level) {
+    return 'Lv $level';
+  }
+
+  @override
+  String get easterEggUnlocked => 'गुप्त भाषा अनलॉक!';
+
+  @override
+  String get easterEggTapDescription =>
+      'आपने प्राचीन रूण को छुआ और पर्वत आत्माओं को जगाया!';
+
+  @override
+  String get easterEggKonamiDescription =>
+      'पवित्र अनुक्रम दर्ज किया गया। Qapla\'!';
+
+  @override
+  String get easterEggTapLanguageHint => 'भाषा बदलने के लिए भाषा बटन टैप करें।';
+
+  @override
+  String get easterEggTryNow => 'अभी आज़माएं';
+
+  @override
+  String get easterEggLater => 'बाद में';
+
+  @override
+  String get languageTitle => 'भाषा';
+
+  @override
+  String get languageSecretSection => 'गुप्त भाषाएं';
 }

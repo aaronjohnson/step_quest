@@ -24,7 +24,7 @@ android {
         applicationId = "net.mqqn.step_quest"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = 26 // Required for Health Connect
+        minSdk = 29 // Required for pedometer_2 and Health Connect
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName

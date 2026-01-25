@@ -30,6 +30,8 @@ dependencies:
   wear_plus: ^1.2.4
   health: ^13.2.1
   url_launcher: ^6.3.2
+  pedometer_2: ^5.0.4
+  permission_handler: ^12.0.1
 
 dev_dependencies:
   flutter_test:
@@ -37,7 +39,17 @@ dev_dependencies:
   flutter_lints: ^3.0.1
   build_runner: ^2.4.7
   json_serializable: ^6.7.1
+  flutter_launcher_icons: ^0.14.4
+
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: "assets/icons/icon_1024.png"
+  adaptive_icon_background: "#1a1a2e"
+  adaptive_icon_foreground: "assets/icons/icon_1024.png"
 
 flutter:
   uses-material-design: true
   generate: true
+  assets:
+    - assets/icons/
