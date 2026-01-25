@@ -22,6 +22,8 @@ Create a `.claude/skills/` directory in your project. Add markdown files describ
 
 **Project or global:** Skills in `.claude/skills/` apply to that project. Put them in `~/.claude/skills/` and they follow you everywhere.
 
+**See it in action:** [changelog.md](https://github.com/aaronjohnson/step_quest/blob/shoes/.claude/skills/changelog.md) — the skill that powers Step Quest's Dwarf Fortress-style changelogs.
+
 ## A Real Example
 
 My step counter app uses Dwarf Fortress-style changelogs. Instead of explaining this every time, I created `.claude/skills/changelog.md`:
