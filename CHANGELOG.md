@@ -33,6 +33,16 @@
   - Git history spelunkers will find only a useless relic
   - Android key was never in the repo (lives only in the local forge)
 
+### The Patron's Hall Opens
+- **A Place for Supporters** (Patreon) — The fortress welcomes benefactors
+  - patreon.com/mqqn established
+  - First post tells the origin story: from React screenshot to running app in a day
+  - "Building with AI for human benefit. Sharing how it's done."
+- **The Roads Connect** (Cross-linking) — All paths lead to the fortress
+  - Patreon link added to landing page footer
+  - Origin story linked from README
+  - Beta invite email: apps+stepquest@mqqn.net
+
 ### Secrets of the Deep
 - The only winning move is not to play
 - Sometimes the simplest solution is no solution
