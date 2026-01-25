@@ -112,7 +112,10 @@ class _StreakCardState extends State<StreakCard>
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
+                  Wrap(
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    spacing: 8,
+                    runSpacing: 4,
                     children: [
                       Text(
                         l10n.streakDayStreak(widget.data.streak),
@@ -122,8 +125,7 @@ class _StreakCardState extends State<StreakCard>
                           color: AppColors.textPrimary,
                         ),
                       ),
-                      if (widget.data.streak >= 7) ...[
-                        const SizedBox(width: 8),
+                      if (widget.data.streak >= 7)
                         Container(
                           padding: const EdgeInsets.symmetric(
                             horizontal: 8,
@@ -146,7 +148,6 @@ class _StreakCardState extends State<StreakCard>
                             ),
                           ),
                         ),
-                      ],
                     ],
                   ),
                   const SizedBox(height: 6),
