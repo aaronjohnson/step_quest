@@ -73,10 +73,14 @@ flutter run
 
 ## The Road Ahead
 
-- [ ] Health Connect integration — Let the device count what the device can count
-- [ ] Samsung Health sync — For those who've pledged to the Samsung guild
+- [x] Health Connect integration — Samsung Health, Google Fit, Fitbit all flow through here
 - [ ] Achievements gallery — Display your glory
 - [ ] Historical charts — For those who wish to gaze upon their journey
+- [ ] Walking with friends — See fellow adventurers' progress without compromising privacy
+  - Opt-in only, no location data, just ranks and streaks
+  - Friend codes instead of accounts — no email, no phone number
+  - Could be local-first (no server) or end-to-end encrypted
+  - Your steps, your choice to share
 
 ## Contributing
 
