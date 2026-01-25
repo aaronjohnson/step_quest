@@ -76,3 +76,5 @@ Now the key only works from your domains.
 ---
 
 *The key is public. The rules are the security.*
+
+**Epilogue:** After writing this post, I deleted the feature entirely. No waitlist form, no Firebase SDK, no API key to defend. The scanners went quiet. Sometimes the only winning move is not to play.
