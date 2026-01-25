@@ -88,16 +88,13 @@ class AppLocalizationsHi extends AppLocalizations {
   String get healthConnectChecking => 'जांच रहा है...';
 
   @override
-  String get healthConnectSyncMessage =>
-      'Google Fit, Samsung Health, Fitbit और अन्य Health Connect ऐप्स से कदम अपने आप सिंक होते हैं।';
+  String get healthConnectSyncMessage => 'Google Fit, Samsung Health, Fitbit और अन्य Health Connect ऐप्स से कदम अपने आप सिंक होते हैं।';
 
   @override
-  String get healthConnectPrompt =>
-      'Google Fit, Samsung Health, Fitbit और अन्य फिटनेस ऐप्स से कदम सिंक करने के लिए कनेक्ट करें।';
+  String get healthConnectPrompt => 'Google Fit, Samsung Health, Fitbit और अन्य फिटनेस ऐप्स से कदम सिंक करने के लिए कनेक्ट करें।';
 
   @override
-  String get healthConnectUnavailableMessage =>
-      'Health Connect उपलब्ध नहीं है। मैन्युअल कदम दर्ज करें।';
+  String get healthConnectUnavailableMessage => 'Health Connect उपलब्ध नहीं है। मैन्युअल कदम दर्ज करें।';
 
   @override
   String get healthConnectSyncing => 'सिंक हो रहा है...';
@@ -118,15 +115,13 @@ class AppLocalizationsHi extends AppLocalizations {
   String get healthConnectSyncPathTitle => 'सिंक पथ';
 
   @override
-  String get healthConnectSyncPathDescription =>
-      'आपका फिटनेस ऐप (Samsung Health, Google Fit, Fitbit, आदि) → Health Connect → Step Quest\n\nअपने फिटनेस ऐप की सेटिंग्स में Health Connect सिंक सक्षम करें।';
+  String get healthConnectSyncPathDescription => 'आपका फिटनेस ऐप (Samsung Health, Google Fit, Fitbit, आदि) → Health Connect → Step Quest\n\nअपने फिटनेस ऐप की सेटिंग्स में Health Connect सिंक सक्षम करें।';
 
   @override
   String get healthConnectMoreSensors => 'और सेंसर चाहिए?';
 
   @override
-  String get healthConnectMoreSensorsDescription =>
-      'हृदय गति, कैलोरी, नींद ट्रैकिंग और अन्य सेंसर सुविधाओं के लिए GitHub पर अनुरोध करें:\ngithub.com/aaronjohnson/step_quest/issues';
+  String get healthConnectMoreSensorsDescription => 'हृदय गति, कैलोरी, नींद ट्रैकिंग और अन्य सेंसर सुविधाओं के लिए GitHub पर अनुरोध करें:\ngithub.com/aaronjohnson/step_quest/issues';
 
   @override
   String get supportTitle => 'Step Quest का समर्थन करें';
@@ -135,12 +130,10 @@ class AppLocalizationsHi extends AppLocalizations {
   String get supporterBadge => 'समर्थक';
 
   @override
-  String get supportThanks =>
-      'समर्थन के लिए धन्यवाद! आपकी उदारता इस किले को चालू रखती है।';
+  String get supportThanks => 'समर्थन के लिए धन्यवाद! आपकी उदारता इस किले को चालू रखती है।';
 
   @override
-  String get supportPrompt =>
-      'Step Quest मुफ्त और ओपन सोर्स है। टिप्स विकास में मदद करती हैं और विज्ञापनों को दूर रखती हैं।';
+  String get supportPrompt => 'Step Quest मुफ्त और ओपन सोर्स है। टिप्स विकास में मदद करती हैं और विज्ञापनों को दूर रखती हैं।';
 
   @override
   String get supportOpenTipJar => 'टिप जार खोलें';
@@ -149,8 +142,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get supportHideTipJar => 'टिप जार छुपाएं';
 
   @override
-  String get supportTipComing =>
-      'टिप जार जल्द आ रहा है! अभी के लिए GitHub Sponsors देखें।';
+  String get supportTipComing => 'टिप जार जल्द आ रहा है! अभी के लिए GitHub Sponsors देखें।';
 
   @override
   String get supportSourceCode => 'सोर्स कोड देखें';
@@ -180,6 +172,15 @@ class AppLocalizationsHi extends AppLocalizations {
   String get tipLegendaryDesc => 'आप एक महान हैं!';
 
   @override
+  String get supportThankYou => 'Thank you for your support!';
+
+  @override
+  String get supportError => 'Something went wrong. Please try again.';
+
+  @override
+  String get supportStoreUnavailable => 'Store is not available on this device.';
+
+  @override
   String get watchTapToLog => 'दर्ज करने के लिए टैप करें';
 
   @override
@@ -197,8 +198,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get streakGoalMet => 'बहुत बढ़िया! आज का लक्ष्य पूरा हुआ!';
 
   @override
-  String get streakGoalPrompt =>
-      'अपनी स्ट्रीक जारी रखने के लिए 10,000 कदम पूरे करें!';
+  String get streakGoalPrompt => 'अपनी स्ट्रीक जारी रखने के लिए 10,000 कदम पूरे करें!';
 
   @override
   String streakDayStreak(int count) {
@@ -262,12 +262,10 @@ class AppLocalizationsHi extends AppLocalizations {
   String get easterEggUnlocked => 'गुप्त भाषा अनलॉक!';
 
   @override
-  String get easterEggTapDescription =>
-      'आपने प्राचीन रूण को छुआ और पर्वत आत्माओं को जगाया!';
+  String get easterEggTapDescription => 'आपने प्राचीन रूण को छुआ और पर्वत आत्माओं को जगाया!';
 
   @override
-  String get easterEggKonamiDescription =>
-      'पवित्र अनुक्रम दर्ज किया गया। Qapla\'!';
+  String get easterEggKonamiDescription => 'पवित्र अनुक्रम दर्ज किया गया। Qapla\'!';
 
   @override
   String get easterEggTapLanguageHint => 'भाषा बदलने के लिए भाषा बटन टैप करें।';

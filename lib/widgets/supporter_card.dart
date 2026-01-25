@@ -1,7 +1,9 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../l10n/app_localizations.dart';
 import '../services/supporter_service.dart';
+import '../services/iap_service.dart';
 import '../theme/app_theme.dart';
 import 'game_card.dart';
 
@@ -15,13 +17,70 @@ class SupporterCard extends StatefulWidget {
 
 class _SupporterCardState extends State<SupporterCard> {
   final SupporterService _supporterService = SupporterService();
+  final IAPService _iapService = IAPService();
   SupporterStatus? _status;
   bool _showTipJar = false;
+  bool _isLoading = false;
+  String? _pendingPurchase;
+  StreamSubscription<PurchaseUpdate>? _purchaseSubscription;
 
   @override
   void initState() {
     super.initState();
-    _loadStatus();
+    _initialize();
+  }
+
+  Future<void> _initialize() async {
+    await _iapService.initialize();
+    await _loadStatus();
+
+    // Listen for purchase updates
+    _purchaseSubscription = _iapService.purchaseUpdates.listen(_handlePurchaseUpdate);
+  }
+
+  @override
+  void dispose() {
+    _purchaseSubscription?.cancel();
+    super.dispose();
+  }
+
+  void _handlePurchaseUpdate(PurchaseUpdate update) {
+    if (!mounted) return;
+
+    setState(() {
+      _isLoading = false;
+      _pendingPurchase = null;
+    });
+
+    final l10n = AppLocalizations.of(context)!;
+
+    switch (update.status) {
+      case PurchaseUpdateStatus.success:
+        _loadStatus(); // Refresh supporter status
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(l10n.supportThankYou),
+            backgroundColor: AppColors.accentGold,
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+        break;
+      case PurchaseUpdateStatus.error:
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(update.message ?? l10n.supportError),
+            backgroundColor: Colors.red,
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+        break;
+      case PurchaseUpdateStatus.canceled:
+        // User canceled, no message needed
+        break;
+      case PurchaseUpdateStatus.pending:
+        setState(() => _isLoading = true);
+        break;
+    }
   }
 
   Future<void> _loadStatus() async {
@@ -123,6 +182,8 @@ class _SupporterCardState extends State<SupporterCard> {
       children: SupporterService.tiers.entries.map((entry) {
         final tier = entry.value;
         final (name, desc) = localizedTiers[entry.key] ?? (tier.name, tier.description);
+        final isThisLoading = _isLoading && _pendingPurchase == entry.key;
+
         return Padding(
           padding: const EdgeInsets.only(bottom: 8),
           child: _TipOption(
@@ -130,6 +191,8 @@ class _SupporterCardState extends State<SupporterCard> {
             name: name,
             description: desc,
             price: tier.displayPrice,
+            isLoading: isThisLoading,
+            isDisabled: _isLoading,
             onTap: () => _handleTip(entry.key, l10n),
           ),
         );
@@ -175,16 +238,50 @@ class _SupporterCardState extends State<SupporterCard> {
   }
 
   Future<void> _handleTip(String tierId, AppLocalizations l10n) async {
-    // TODO: Implement Google Play Billing
-    // For now, show a coming soon message
-    if (!mounted) return;
+    if (!mounted || _isLoading) return;
 
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(l10n.supportTipComing),
-        behavior: SnackBarBehavior.floating,
-      ),
-    );
+    final tier = SupporterService.tiers[tierId];
+    if (tier == null) return;
+
+    // Check if IAP is available
+    if (!_iapService.isAvailable) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(l10n.supportStoreUnavailable),
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
+      return;
+    }
+
+    setState(() {
+      _isLoading = true;
+      _pendingPurchase = tierId;
+    });
+
+    try {
+      final success = await _iapService.purchaseProduct(tier.id);
+      if (!success && mounted) {
+        setState(() {
+          _isLoading = false;
+          _pendingPurchase = null;
+        });
+      }
+      // Success/error handled by purchase stream listener
+    } catch (e) {
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+          _pendingPurchase = null;
+        });
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(l10n.supportError),
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+      }
+    }
   }
 
   Future<void> _launchUrl(String url) async {
@@ -200,6 +297,8 @@ class _TipOption extends StatelessWidget {
   final String name;
   final String description;
   final String price;
+  final bool isLoading;
+  final bool isDisabled;
   final VoidCallback onTap;
 
   const _TipOption({
@@ -208,21 +307,26 @@ class _TipOption extends StatelessWidget {
     required this.description,
     required this.price,
     required this.onTap,
+    this.isLoading = false,
+    this.isDisabled = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.black26,
+      color: isDisabled ? Colors.black12 : Colors.black26,
       borderRadius: BorderRadius.circular(8),
       child: InkWell(
-        onTap: onTap,
+        onTap: isDisabled ? null : onTap,
         borderRadius: BorderRadius.circular(8),
         child: Padding(
           padding: const EdgeInsets.all(12),
           child: Row(
             children: [
-              Text(badge, style: const TextStyle(fontSize: 24)),
+              Text(badge, style: TextStyle(
+                fontSize: 24,
+                color: isDisabled ? Colors.grey : null,
+              )),
               const SizedBox(width: 12),
               Expanded(
                 child: Column(
@@ -230,10 +334,10 @@ class _TipOption extends StatelessWidget {
                   children: [
                     Text(
                       name,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
-                        color: AppColors.textPrimary,
+                        color: isDisabled ? AppColors.textSecondary : AppColors.textPrimary,
                       ),
                     ),
                     Text(
@@ -249,17 +353,26 @@ class _TipOption extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 decoration: BoxDecoration(
-                  color: AppColors.accentGold,
+                  color: isDisabled ? Colors.grey : AppColors.accentGold,
                   borderRadius: BorderRadius.circular(16),
                 ),
-                child: Text(
-                  price,
-                  style: const TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
-                ),
+                child: isLoading
+                    ? const SizedBox(
+                        width: 16,
+                        height: 16,
+                        child: CircularProgressIndicator(
+                          strokeWidth: 2,
+                          valueColor: AlwaysStoppedAnimation<Color>(Colors.black),
+                        ),
+                      )
+                    : Text(
+                        price,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
               ),
             ],
           ),

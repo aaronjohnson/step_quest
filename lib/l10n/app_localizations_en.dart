@@ -88,16 +88,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get healthConnectChecking => 'Checking...';
 
   @override
-  String get healthConnectSyncMessage =>
-      'Steps sync automatically from Google Fit, Samsung Health, Fitbit, and other Health Connect apps.';
+  String get healthConnectSyncMessage => 'Steps sync automatically from Google Fit, Samsung Health, Fitbit, and other Health Connect apps.';
 
   @override
-  String get healthConnectPrompt =>
-      'Connect to sync steps from Google Fit, Samsung Health, Fitbit, and other fitness apps.';
+  String get healthConnectPrompt => 'Connect to sync steps from Google Fit, Samsung Health, Fitbit, and other fitness apps.';
 
   @override
-  String get healthConnectUnavailableMessage =>
-      'Health Connect is not available. Use manual step logging.';
+  String get healthConnectUnavailableMessage => 'Health Connect is not available. Use manual step logging.';
 
   @override
   String get healthConnectSyncing => 'Syncing...';
@@ -118,15 +115,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get healthConnectSyncPathTitle => 'Sync Path';
 
   @override
-  String get healthConnectSyncPathDescription =>
-      'Your fitness app (Samsung Health, Google Fit, Fitbit, etc.) → Health Connect → Step Quest\n\nEnable Health Connect sync in your fitness app\'s settings to share step data.';
+  String get healthConnectSyncPathDescription => 'Your fitness app (Samsung Health, Google Fit, Fitbit, etc.) → Health Connect → Step Quest\n\nEnable Health Connect sync in your fitness app\'s settings to share step data.';
 
   @override
   String get healthConnectMoreSensors => 'Want more sensors?';
 
   @override
-  String get healthConnectMoreSensorsDescription =>
-      'Heart rate, calories, sleep tracking, and other sensor features can be requested on our GitHub:\ngithub.com/aaronjohnson/step_quest/issues';
+  String get healthConnectMoreSensorsDescription => 'Heart rate, calories, sleep tracking, and other sensor features can be requested on our GitHub:\ngithub.com/aaronjohnson/step_quest/issues';
 
   @override
   String get supportTitle => 'Support Step Quest';
@@ -135,12 +130,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get supporterBadge => 'Supporter';
 
   @override
-  String get supportThanks =>
-      'Thank you for supporting the quest! Your generosity keeps the fortress running.';
+  String get supportThanks => 'Thank you for supporting the quest! Your generosity keeps the fortress running.';
 
   @override
-  String get supportPrompt =>
-      'Step Quest is free and open source. Tips help fund development and keep ads away.';
+  String get supportPrompt => 'Step Quest is free and open source. Tips help fund development and keep ads away.';
 
   @override
   String get supportOpenTipJar => 'Open Tip Jar';
@@ -149,8 +142,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get supportHideTipJar => 'Hide Tip Jar';
 
   @override
-  String get supportTipComing =>
-      'Tip jar coming soon! For now, visit GitHub Sponsors.';
+  String get supportTipComing => 'Tip jar coming soon! For now, visit GitHub Sponsors.';
 
   @override
   String get supportSourceCode => 'View Source Code';
@@ -178,6 +170,15 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get tipLegendaryDesc => 'You are a legend!';
+
+  @override
+  String get supportThankYou => 'Thank you for your support!';
+
+  @override
+  String get supportError => 'Something went wrong. Please try again.';
+
+  @override
+  String get supportStoreUnavailable => 'Store is not available on this device.';
 
   @override
   String get watchTapToLog => 'Tap to log steps';
@@ -261,12 +262,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get easterEggUnlocked => 'Secret Language Unlocked!';
 
   @override
-  String get easterEggTapDescription =>
-      'You tapped the ancient runes and awoke the mountain spirits!';
+  String get easterEggTapDescription => 'You tapped the ancient runes and awoke the mountain spirits!';
 
   @override
-  String get easterEggKonamiDescription =>
-      'The sacred sequence has been entered. Qapla\'!';
+  String get easterEggKonamiDescription => 'The sacred sequence has been entered. Qapla\'!';
 
   @override
   String get easterEggTapLanguageHint => 'Tap the language button to switch.';

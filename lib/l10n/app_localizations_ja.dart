@@ -88,16 +88,13 @@ class AppLocalizationsJa extends AppLocalizations {
   String get healthConnectChecking => '確認中...';
 
   @override
-  String get healthConnectSyncMessage =>
-      'Google Fit、Samsung Health、Fitbit、その他のHealth Connectアプリから歩数が自動同期されます。';
+  String get healthConnectSyncMessage => 'Google Fit、Samsung Health、Fitbit、その他のHealth Connectアプリから歩数が自動同期されます。';
 
   @override
-  String get healthConnectPrompt =>
-      '接続してGoogle Fit、Samsung Health、Fitbitなどのフィットネスアプリから歩数を同期しましょう。';
+  String get healthConnectPrompt => '接続してGoogle Fit、Samsung Health、Fitbitなどのフィットネスアプリから歩数を同期しましょう。';
 
   @override
-  String get healthConnectUnavailableMessage =>
-      'Health Connectは利用できません。手動で歩数を入力してください。';
+  String get healthConnectUnavailableMessage => 'Health Connectは利用できません。手動で歩数を入力してください。';
 
   @override
   String get healthConnectSyncing => '同期中...';
@@ -118,15 +115,13 @@ class AppLocalizationsJa extends AppLocalizations {
   String get healthConnectSyncPathTitle => '同期パス';
 
   @override
-  String get healthConnectSyncPathDescription =>
-      'フィットネスアプリ (Samsung Health、Google Fit、Fitbitなど) → Health Connect → Step Quest\n\nフィットネスアプリの設定でHealth Connect同期を有効にしてください。';
+  String get healthConnectSyncPathDescription => 'フィットネスアプリ (Samsung Health、Google Fit、Fitbitなど) → Health Connect → Step Quest\n\nフィットネスアプリの設定でHealth Connect同期を有効にしてください。';
 
   @override
   String get healthConnectMoreSensors => 'もっとセンサーが欲しい？';
 
   @override
-  String get healthConnectMoreSensorsDescription =>
-      '心拍数、カロリー、睡眠トラッキングなどのセンサー機能はGitHubでリクエストできます:\ngithub.com/aaronjohnson/step_quest/issues';
+  String get healthConnectMoreSensorsDescription => '心拍数、カロリー、睡眠トラッキングなどのセンサー機能はGitHubでリクエストできます:\ngithub.com/aaronjohnson/step_quest/issues';
 
   @override
   String get supportTitle => 'Step Questを応援';
@@ -138,8 +133,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get supportThanks => '応援ありがとうございます！あなたの支援が開発を支えています。';
 
   @override
-  String get supportPrompt =>
-      'Step Questは無料でオープンソースです。チップは開発費に充てられ、広告なしを維持します。';
+  String get supportPrompt => 'Step Questは無料でオープンソースです。チップは開発費に充てられ、広告なしを維持します。';
 
   @override
   String get supportOpenTipJar => 'チップを送る';
@@ -176,6 +170,15 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get tipLegendaryDesc => 'あなたは伝説です！';
+
+  @override
+  String get supportThankYou => 'Thank you for your support!';
+
+  @override
+  String get supportError => 'Something went wrong. Please try again.';
+
+  @override
+  String get supportStoreUnavailable => 'Store is not available on this device.';
 
   @override
   String get watchTapToLog => 'タップして記録';

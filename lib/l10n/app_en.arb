@@ -230,6 +230,18 @@
   "@tipLegendaryDesc": {
     "description": "Legendary tier description"
   },
+  "supportThankYou": "Thank you for your support!",
+  "@supportThankYou": {
+    "description": "Thank you message after successful purchase"
+  },
+  "supportError": "Something went wrong. Please try again.",
+  "@supportError": {
+    "description": "Generic error message for purchases"
+  },
+  "supportStoreUnavailable": "Store is not available on this device.",
+  "@supportStoreUnavailable": {
+    "description": "Message when Play Store is unavailable"
+  },
 
   "watchTapToLog": "Tap to log steps",
   "@watchTapToLog": {

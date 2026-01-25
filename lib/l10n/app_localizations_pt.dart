@@ -88,16 +88,13 @@ class AppLocalizationsPt extends AppLocalizations {
   String get healthConnectChecking => 'Verificando...';
 
   @override
-  String get healthConnectSyncMessage =>
-      'Os passos são sincronizados automaticamente do Google Fit, Samsung Health, Fitbit e outros apps do Health Connect.';
+  String get healthConnectSyncMessage => 'Os passos são sincronizados automaticamente do Google Fit, Samsung Health, Fitbit e outros apps do Health Connect.';
 
   @override
-  String get healthConnectPrompt =>
-      'Conecte-se para sincronizar passos do Google Fit, Samsung Health, Fitbit e outros apps de fitness.';
+  String get healthConnectPrompt => 'Conecte-se para sincronizar passos do Google Fit, Samsung Health, Fitbit e outros apps de fitness.';
 
   @override
-  String get healthConnectUnavailableMessage =>
-      'Health Connect não está disponível. Use o registro manual de passos.';
+  String get healthConnectUnavailableMessage => 'Health Connect não está disponível. Use o registro manual de passos.';
 
   @override
   String get healthConnectSyncing => 'Sincronizando...';
@@ -118,15 +115,13 @@ class AppLocalizationsPt extends AppLocalizations {
   String get healthConnectSyncPathTitle => 'Caminho de sincronização';
 
   @override
-  String get healthConnectSyncPathDescription =>
-      'Seu app de fitness (Samsung Health, Google Fit, Fitbit, etc.) → Health Connect → Step Quest\n\nAtive a sincronização do Health Connect nas configurações do seu app de fitness.';
+  String get healthConnectSyncPathDescription => 'Seu app de fitness (Samsung Health, Google Fit, Fitbit, etc.) → Health Connect → Step Quest\n\nAtive a sincronização do Health Connect nas configurações do seu app de fitness.';
 
   @override
   String get healthConnectMoreSensors => 'Quer mais sensores?';
 
   @override
-  String get healthConnectMoreSensorsDescription =>
-      'Frequência cardíaca, calorias, monitoramento de sono e outros recursos podem ser solicitados no GitHub:\ngithub.com/aaronjohnson/step_quest/issues';
+  String get healthConnectMoreSensorsDescription => 'Frequência cardíaca, calorias, monitoramento de sono e outros recursos podem ser solicitados no GitHub:\ngithub.com/aaronjohnson/step_quest/issues';
 
   @override
   String get supportTitle => 'Apoie o Step Quest';
@@ -135,12 +130,10 @@ class AppLocalizationsPt extends AppLocalizations {
   String get supporterBadge => 'Apoiador';
 
   @override
-  String get supportThanks =>
-      'Obrigado por apoiar a aventura! Sua generosidade mantém a fortaleza de pé.';
+  String get supportThanks => 'Obrigado por apoiar a aventura! Sua generosidade mantém a fortaleza de pé.';
 
   @override
-  String get supportPrompt =>
-      'Step Quest é gratuito e código aberto. Gorjetas ajudam no desenvolvimento e mantêm o app sem anúncios.';
+  String get supportPrompt => 'Step Quest é gratuito e código aberto. Gorjetas ajudam no desenvolvimento e mantêm o app sem anúncios.';
 
   @override
   String get supportOpenTipJar => 'Abrir gorjetas';
@@ -149,8 +142,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get supportHideTipJar => 'Fechar gorjetas';
 
   @override
-  String get supportTipComing =>
-      'Gorjetas em breve! Por enquanto, visite GitHub Sponsors.';
+  String get supportTipComing => 'Gorjetas em breve! Por enquanto, visite GitHub Sponsors.';
 
   @override
   String get supportSourceCode => 'Ver código fonte';
@@ -180,6 +172,15 @@ class AppLocalizationsPt extends AppLocalizations {
   String get tipLegendaryDesc => 'Você é uma lenda!';
 
   @override
+  String get supportThankYou => 'Thank you for your support!';
+
+  @override
+  String get supportError => 'Something went wrong. Please try again.';
+
+  @override
+  String get supportStoreUnavailable => 'Store is not available on this device.';
+
+  @override
   String get watchTapToLog => 'Toque para registrar';
 
   @override
@@ -197,8 +198,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get streakGoalMet => 'Ótimo trabalho! Você atingiu sua meta hoje!';
 
   @override
-  String get streakGoalPrompt =>
-      'Alcance 10.000 passos para manter sua sequência!';
+  String get streakGoalPrompt => 'Alcance 10.000 passos para manter sua sequência!';
 
   @override
   String streakDayStreak(int count) {
@@ -262,16 +262,13 @@ class AppLocalizationsPt extends AppLocalizations {
   String get easterEggUnlocked => 'Idioma secreto desbloqueado!';
 
   @override
-  String get easterEggTapDescription =>
-      'Você tocou as runas antigas e despertou os espíritos da montanha!';
+  String get easterEggTapDescription => 'Você tocou as runas antigas e despertou os espíritos da montanha!';
 
   @override
-  String get easterEggKonamiDescription =>
-      'A sequência sagrada foi inserida. Qapla\'!';
+  String get easterEggKonamiDescription => 'A sequência sagrada foi inserida. Qapla\'!';
 
   @override
-  String get easterEggTapLanguageHint =>
-      'Toque no botão de idioma para trocar.';
+  String get easterEggTapLanguageHint => 'Toque no botão de idioma para trocar.';
 
   @override
   String get easterEggTryNow => 'Experimentar agora';

@@ -88,16 +88,13 @@ class AppLocalizationsKhz extends AppLocalizations {
   String get healthConnectChecking => 'Seeking...';
 
   @override
-  String get healthConnectSyncMessage =>
-      'Strides flow from Google Fit, Samsung Health, Fitbit, and other halls through Health Connect.';
+  String get healthConnectSyncMessage => 'Strides flow from Google Fit, Samsung Health, Fitbit, and other halls through Health Connect.';
 
   @override
-  String get healthConnectPrompt =>
-      'Bind to sync strides from the great fitness halls.';
+  String get healthConnectPrompt => 'Bind to sync strides from the great fitness halls.';
 
   @override
-  String get healthConnectUnavailableMessage =>
-      'Health Connect lies beyond reach. Record strides by thine own hand.';
+  String get healthConnectUnavailableMessage => 'Health Connect lies beyond reach. Record strides by thine own hand.';
 
   @override
   String get healthConnectSyncing => 'Binding...';
@@ -118,15 +115,13 @@ class AppLocalizationsKhz extends AppLocalizations {
   String get healthConnectSyncPathTitle => 'The Binding Path';
 
   @override
-  String get healthConnectSyncPathDescription =>
-      'Thy fitness hall (Samsung Health, Google Fit, Fitbit) → Health Connect → Step Quest\n\nEnable Health Connect in thy fitness hall\'s deep settings.';
+  String get healthConnectSyncPathDescription => 'Thy fitness hall (Samsung Health, Google Fit, Fitbit) → Health Connect → Step Quest\n\nEnable Health Connect in thy fitness hall\'s deep settings.';
 
   @override
   String get healthConnectMoreSensors => 'Desire more sensors?';
 
   @override
-  String get healthConnectMoreSensorsDescription =>
-      'Heart-stone rate, forge-calories, sleep-watch, and other craft-works may be requested at the GitHub mine:\ngithub.com/aaronjohnson/step_quest/issues';
+  String get healthConnectMoreSensorsDescription => 'Heart-stone rate, forge-calories, sleep-watch, and other craft-works may be requested at the GitHub mine:\ngithub.com/aaronjohnson/step_quest/issues';
 
   @override
   String get supportTitle => 'Support the Quest';
@@ -135,12 +130,10 @@ class AppLocalizationsKhz extends AppLocalizations {
   String get supporterBadge => 'Patron of the Hall';
 
   @override
-  String get supportThanks =>
-      'The Mountain thanks thee! Thy gold keeps the forges burning.';
+  String get supportThanks => 'The Mountain thanks thee! Thy gold keeps the forges burning.';
 
   @override
-  String get supportPrompt =>
-      'Step Quest is free as mountain air. Tips fuel the forge and keep the halls ad-free.';
+  String get supportPrompt => 'Step Quest is free as mountain air. Tips fuel the forge and keep the halls ad-free.';
 
   @override
   String get supportOpenTipJar => 'Open the coffers';
@@ -149,8 +142,7 @@ class AppLocalizationsKhz extends AppLocalizations {
   String get supportHideTipJar => 'Seal the coffers';
 
   @override
-  String get supportTipComing =>
-      'Coffers coming soon! Visit GitHub Sponsors meanwhile.';
+  String get supportTipComing => 'Coffers coming soon! Visit GitHub Sponsors meanwhile.';
 
   @override
   String get supportSourceCode => 'View the runes';
@@ -180,6 +172,15 @@ class AppLocalizationsKhz extends AppLocalizations {
   String get tipLegendaryDesc => 'Thy name echoes in the halls!';
 
   @override
+  String get supportThankYou => 'Thank you for your support!';
+
+  @override
+  String get supportError => 'Something went wrong. Please try again.';
+
+  @override
+  String get supportStoreUnavailable => 'Store is not available on this device.';
+
+  @override
   String get watchTapToLog => 'Tap to record';
 
   @override
@@ -197,8 +198,7 @@ class AppLocalizationsKhz extends AppLocalizations {
   String get streakGoalMet => 'By Durin\'s beard! Thy daily quota is met!';
 
   @override
-  String get streakGoalPrompt =>
-      'March 10,000 strides to maintain thine endurance!';
+  String get streakGoalPrompt => 'March 10,000 strides to maintain thine endurance!';
 
   @override
   String streakDayStreak(int count) {
@@ -262,16 +262,13 @@ class AppLocalizationsKhz extends AppLocalizations {
   String get easterEggUnlocked => 'Secret Tongue Unearthed!';
 
   @override
-  String get easterEggTapDescription =>
-      'Thou hast struck the ancient runes and roused the spirits of the deep!';
+  String get easterEggTapDescription => 'Thou hast struck the ancient runes and roused the spirits of the deep!';
 
   @override
-  String get easterEggKonamiDescription =>
-      'The sacred sequence hath been entered. Victory!';
+  String get easterEggKonamiDescription => 'The sacred sequence hath been entered. Victory!';
 
   @override
-  String get easterEggTapLanguageHint =>
-      'Tap the tongue-stone to change thy speech.';
+  String get easterEggTapLanguageHint => 'Tap the tongue-stone to change thy speech.';
 
   @override
   String get easterEggTryNow => 'Speak It Now';
