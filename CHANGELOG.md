@@ -43,10 +43,21 @@
   - Origin story linked from README
   - Beta invite email: apps+stepquest@mqqn.net
 
+### The Scribes' Archives
+- **The Blog Awakens** (GitHub Pages) — The fortress shares its wisdom
+  - Four posts: WIF, Firebase keys, Claude skills, Dwarf Fortress changelogs
+  - Hosted at aaronjohnson.github.io/step_quest
+  - Linked from landing page footer
+- **Teaching the Oracle** (Claude Skills) — The AI learns the ways of the fortress
+  - `changelog.md` — Dwarf Fortress-style patch notes
+  - `wif.md` — Keyless CI setup in one command
+  - Skills beget skills: have Claude write them, reuse forever
+
 ### Secrets of the Deep
 - The only winning move is not to play
 - Sometimes the simplest solution is no solution
 - The Cloud Function sleeps in `functions/`, awaiting a future where org policies relent
+- Even when you can defend something as secure, ask if you need it at all
 
 ---
 
