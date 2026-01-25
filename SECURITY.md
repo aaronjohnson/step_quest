@@ -39,6 +39,7 @@ If you discover a security vulnerability in Step Quest, please report it private
 ### Out of Scope
 
 - Google Play Store infrastructure
+- Firebase / Google Cloud infrastructure
 - Health Connect / Google Health Services
 - Third-party fitness apps (Samsung Health, Fitbit, etc.)
 - Google Play Billing infrastructure
@@ -57,13 +58,24 @@ Step Quest handles the following data:
 | Health Connect data | Read-only from Health Connect | Medium |
 | Purchase receipts | Google Play (not stored locally) | Medium |
 | iOS waitlist emails | Firestore (write-only collection) | Medium |
+| Crash reports | Firebase Crashlytics | Low |
+
+### Crash Reporting (Firebase Crashlytics)
+
+We use Firebase Crashlytics to collect crash reports for debugging. This includes:
+- Device model and OS version
+- App version and crash timestamps
+- Stack traces (technical error details)
+- Anonymous installation identifiers
+
+Crashlytics does **not** collect personal information, location, health data, or step counts.
 
 ### What We Don't Collect
 
 - Personal identification information
 - Location data
 - Contacts or phone data
-- Analytics or tracking data
+- Behavioral analytics or tracking data
 - Advertising identifiers
 
 ## Security Practices

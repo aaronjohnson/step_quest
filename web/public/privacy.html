@@ -124,7 +124,7 @@
         </header>
 
         <main>
-            <p><strong>Last updated:</strong> January 24, 2026</p>
+            <p><strong>Last updated:</strong> January 25, 2026</p>
 
             <div class="highlight">
                 <p>Step Quest is designed with privacy as a core principle. We collect minimal data, store everything locally on your device, and never share your information with third parties.</p>
@@ -149,8 +149,17 @@
             <p>All your game data (level, XP, achievements, streaks) is stored locally on your device using secure local storage. This data never leaves your device and is not transmitted to any servers.</p>
 
             <h2>Third-Party Services</h2>
-            <p>Step Quest does not integrate with any third-party analytics, advertising, or tracking services.</p>
-            <p>If you use the optional tip jar feature, payment processing is handled entirely by Google Play. We do not receive or store any payment information.</p>
+
+            <p><strong>Firebase Crashlytics:</strong> We use Firebase Crashlytics to collect crash reports when the app encounters an error. This helps us identify and fix bugs. Crashlytics collects:</p>
+            <ul>
+                <li>Device model and operating system version</li>
+                <li>App version and crash timestamps</li>
+                <li>Stack traces (technical error information)</li>
+                <li>Anonymous installation identifiers</li>
+            </ul>
+            <p>Crashlytics does not collect personal information, location data, or any health/step data. You can learn more about Firebase's data practices at <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a>.</p>
+
+            <p><strong>Google Play:</strong> If you use the optional tip jar feature, payment processing is handled entirely by Google Play. We do not receive or store any payment information.</p>
 
             <h2>Health Connect Integration</h2>
             <p>When you grant Health Connect permissions, Step Quest reads only your step count data. We do not access any other health metrics. You can revoke these permissions at any time through your device's Health Connect settings.</p>
