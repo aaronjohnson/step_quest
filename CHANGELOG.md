@@ -21,6 +21,12 @@
   - Catalan (ca) — For the builders of Sagrada Família
 - Total: 13 languages + 2 secret (Klingon, Dwarven)
 
+### Documentation
+- **Privacy Policy Updated** — The scribes have documented the watchtower's new eyes
+  - Crashlytics data collection disclosed
+  - Link to Firebase privacy practices added
+- **SECURITY.md Updated** — The fortress ledger now records crash reports
+
 ---
 
 ## v0.5.0 - "The Grand Opening" (2026-01-25)
