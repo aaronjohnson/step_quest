@@ -2,8 +2,6 @@
 
 *"The fortress grows not through great plans, but through countless small steps."*
 
-**[step-quest-485403.web.app](https://step-quest-485403.web.app)**
-
 ---
 
 ## The Legend
@@ -39,6 +37,14 @@ Traditional fitness apps treat you as a vessel to be filled with data. Step Ques
 We simply wait. And when you walk, **we celebrate**.
 
 Your steps become XP. Your XP becomes levels. Your levels become a testament to your perseverance. Like a dwarf fortress rising from the mountain, your progress is measured not in days, but in dedication.
+
+## Free and Open Source
+
+Step Quest is **completely free** with no ads, no subscriptions, and no paywalls. All features are available to everyone.
+
+The app includes an optional **tip jar** for those who wish to support development. Tips are one-time purchases that help keep the fortress running—but they're never required.
+
+**[Get Step Quest](https://step-quest-485403.web.app)** | [View Source](https://github.com/aaronjohnson/step_quest)
 
 ## Installation
 
