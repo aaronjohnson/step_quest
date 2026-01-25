@@ -82,12 +82,13 @@ class _AchievementTile extends StatelessWidget {
         ),
         child: Stack(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(6),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                children: [
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.all(6),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
                   Text(
                     achievement.emoji,
                     style: TextStyle(
@@ -117,7 +118,8 @@ class _AchievementTile extends StatelessWidget {
                     size: 14,
                     color: isUnlocked ? AppColors.accentGreen : AppColors.textSecondary,
                   ),
-                ],
+                  ],
+                ),
               ),
             ),
             if (!isUnlocked)
