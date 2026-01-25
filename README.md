@@ -44,7 +44,11 @@ Step Quest is **completely free** with no ads, no subscriptions, and no paywalls
 
 The app includes an optional **tip jar** for those who wish to support development. Tips are one-time purchases that help keep the fortress running—but they're never required.
 
-**[Get Step Quest](https://step-quest-485403.web.app)** | [View Source](https://github.com/aaronjohnson/step_quest)
+**[Get Step Quest](https://step.quest.mqqn.net)** | [Patreon](https://patreon.com/mqqn) | [View Source](https://github.com/aaronjohnson/step_quest)
+
+### The Origin Story
+
+A friend built a step counter in React.js using Claude.ai — on her first day trying it. A day later, this Flutter app was running on three phones and a watch. [Read the full story →](https://www.patreon.com/posts/149109253)
 
 ## Installation
 
