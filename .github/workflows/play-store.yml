@@ -70,9 +70,11 @@ jobs:
 
       - name: Build AAB
         if: ${{ github.event.inputs.track == 'internal' }}
+        env:
+          BUILD_NUMBER: ${{ github.run_number }}
         run: |
           export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-          bundle exec fastlane android build_bundle
+          bundle exec fastlane android build_bundle build_number:$BUILD_NUMBER
 
       - name: Upload AAB artifact
         if: ${{ github.event.inputs.track == 'internal' }}

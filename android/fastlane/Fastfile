@@ -32,9 +32,15 @@ platform :android do
   end
 
   desc "Build release App Bundle (AAB) for Play Store"
-  lane :build_bundle do
+  lane :build_bundle do |options|
+    build_number = options[:build_number] || ENV["BUILD_NUMBER"]
+
     Dir.chdir(FLUTTER_ROOT) do
-      sh("flutter", "build", "appbundle", "--release")
+      if build_number
+        sh("flutter", "build", "appbundle", "--release", "--build-number=#{build_number}")
+      else
+        sh("flutter", "build", "appbundle", "--release")
+      end
     end
 
     aab_path = File.join(FLUTTER_ROOT, "build/app/outputs/bundle/release/app-release.aab")
