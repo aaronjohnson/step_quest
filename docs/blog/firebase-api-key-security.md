@@ -135,21 +135,23 @@ match /ios-waitlist/{doc} {
 
 ## The gcloud Commands
 
-Here's how to apply these restrictions via CLI:
+Here's how to apply these restrictions via CLI (this is exactly what I did):
 
 ```bash
-# Enable API Keys management
-gcloud services enable apikeys.googleapis.com --project=YOUR_PROJECT
+# 1. Enable API Keys management
+gcloud services enable apikeys.googleapis.com --project=step-quest-485403
 
-# List your keys to find the key ID
-gcloud services api-keys list --project=YOUR_PROJECT
+# 2. List your keys to find the key ID
+gcloud services api-keys list --project=step-quest-485403
+# Look for "Browser key (auto created by Firebase)"
 
-# Apply restrictions
-gcloud services api-keys update YOUR_KEY_ID \
-  --project=YOUR_PROJECT \
-  --allowed-referrers="yourdomain.com/*,yourproject.web.app/*" \
-  --api-target=service=firestore.googleapis.com
+# 3. Apply HTTP referrer restrictions
+gcloud services api-keys update ee562fb1-7d94-411d-bd7b-42fb04831b05 \
+  --project=step-quest-485403 \
+  --allowed-referrers="step.quest.mqqn.net/*,step-quest-485403.web.app/*,step-quest-485403.firebaseapp.com/*,localhost:*"
 ```
+
+The key now only works from my domains. An attacker copying the API key to their site will get a `403 Forbidden`.
 
 ## Why Security Scanners Get This Wrong
 
@@ -199,8 +201,10 @@ So the next time a scanner screams about your Firebase API key, take a breath. C
 
 ---
 
-*Published: January 2026*
+*Published: January 25, 2026*
 *Project: [Step Quest](https://step.quest.mqqn.net) - A gamified step counter*
+
+**Update:** After writing this post, I applied the referrer restrictions via `gcloud` CLI. The key is now properly secured, the landing page still works, and Google's security scanner should be satisfied. Total time to fix: 5 minutes. Time spent understanding the problem: much longer (but now you don't have to).
 
 ## Further Reading
 
