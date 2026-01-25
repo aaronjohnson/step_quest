@@ -121,7 +121,11 @@ platform :android do
 
   desc "Upload AAB to Play Store internal testing track"
   lane :upload_internal do |options|
-    aab_path = build_bundle
+    # Use existing AAB if available, otherwise build
+    aab_path = File.join(FLUTTER_ROOT, "build/app/outputs/bundle/release/app-release.aab")
+    unless File.exist?(aab_path)
+      aab_path = build_bundle
+    end
 
     upload_to_play_store(
       track: "internal",

@@ -68,8 +68,24 @@ jobs:
           bundle config set --local path 'vendor/bundle'
           bundle install
 
-      - name: Upload to Internal Track
+      - name: Build AAB
         if: ${{ github.event.inputs.track == 'internal' }}
+        run: |
+          export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+          bundle exec fastlane android build_bundle
+
+      - name: Upload AAB artifact
+        if: ${{ github.event.inputs.track == 'internal' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-aab-release
+          path: |
+            build/app/outputs/bundle/release/*.aab
+          retention-days: 30
+
+      - name: Upload to Play Store Internal Track
+        if: ${{ github.event.inputs.track == 'internal' }}
+        continue-on-error: true
         run: |
           export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
           bundle exec fastlane android upload_internal
@@ -86,12 +102,3 @@ jobs:
           export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
           ROLLOUT=$(echo "${{ github.event.inputs.rollout }}" | awk '{print $1/100}')
           bundle exec fastlane android promote_to_production rollout:$ROLLOUT
-
-      - name: Upload AAB artifact
-        if: ${{ github.event.inputs.track == 'internal' }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: android-aab-release
-          path: |
-            build/app/outputs/bundle/release/*.aab
-          retention-days: 30
