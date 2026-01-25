@@ -4,6 +4,23 @@
 
 ---
 
+## v0.8.1 - "The Great Consolidation" (2026-01-25)
+
+### The Scribes Converge
+- **One Hub to Rule Them All** (Blog Migration) — The archives unite
+  - Step Quest blog posts moved to aaronjohnson.github.io
+  - Ocean Data and Form Copilot posts join the collection
+  - 13 posts total, organized by topic
+  - Landing page and README now link to the hub
+  - The old /step_quest/ blog path fades into memory
+
+### Secrets of the Deep
+- All writings in one place means easier discovery
+- Project-specific repos stay focused on code
+- The hub indexes everything; the repos link to it
+
+---
+
 ## v0.8.0 - "A Strange Game" (2026-01-25)
 
 ### The Diplomat's Retreat
@@ -46,7 +63,7 @@
 ### The Scribes' Archives
 - **The Blog Awakens** (GitHub Pages) — The fortress shares its wisdom
   - Four posts: WIF, Firebase keys, Claude skills, Dwarf Fortress changelogs
-  - Hosted at aaronjohnson.github.io/step_quest
+  - Originally at /step_quest/, later migrated to hub (see v0.8.1)
   - Linked from landing page footer
 - **The Hub Rises** (aaronjohnson.github.io) — A central hall connects all realms
   - Links to Step Quest, Ocean Data, Form Copilot
