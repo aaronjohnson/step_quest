@@ -68,3 +68,5 @@ google-services.json
 # Google Play Store API key - DO NOT COMMIT
 /android/fastlane/play-store-key.json
 /android/play-store-key.json
+functions/node_modules/
+functions/lib/

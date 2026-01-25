@@ -4,6 +4,42 @@
 
 ---
 
+## v0.8.0 - "A Strange Game" (2026-01-25)
+
+### The Diplomat's Retreat
+- **The Watchers Cry Wolf** (Security Scanners) — GitHub and Google Cloud sound the alarm
+  - The Firebase API key, visible in the landing page, triggered automated guardians
+  - "Your credentials have been compromised!" they warned
+  - The key was never a secret — it's an identifier, not a password
+  - But the watchers do not understand nuance
+
+### The Engineer's Folly
+- **A Cloud Function Rises** (functions/) — An elaborate tunnel is dug
+  - A Node.js function to proxy waitlist submissions
+  - IAM permissions granted: logging, storage, artifact registry
+  - The build succeeds, the function deploys
+  - "403 Forbidden" — the organization policy blocks public access
+  - The tunnel collapses before reaching the surface
+
+### The Sage's Wisdom
+- **The Waitlist Falls Silent** (Landing Page) — The feature is removed entirely
+  - No form, no Firebase SDK, no API key exposure
+  - "🍎 iOS - Coming Soon" remains as a simple promise
+  - The `functions/` directory preserved as a monument to hubris
+
+### The Purge
+- **The Key Returns to the Void** (API Key Deleted) — The exposed key is revoked
+  - Web API key deleted from GCP, not just removed from code
+  - Git history spelunkers will find only a useless relic
+  - Android key was never in the repo (lives only in the local forge)
+
+### Secrets of the Deep
+- The only winning move is not to play
+- Sometimes the simplest solution is no solution
+- The Cloud Function sleeps in `functions/`, awaiting a future where org policies relent
+
+---
+
 ## v0.7.0 - "The Quest for a Proper Address" (2026-01-25)
 
 ### The Mason's Work
@@ -69,7 +105,6 @@
 - **The Welcome Hall** (Landing Page) — Firebase Hosting at step-quest-485403.web.app
   - Beta testing links for Phone and Wear OS
   - Privacy policy for Play Store compliance
-  - iOS waitlist form with Firestore backend
 
 ### The Scribes' Archives
 - **The Guard's Codex** (SECURITY.md) — Vulnerability reporting via GitHub
