@@ -31,21 +31,30 @@ platform :android do
     apk_path
   end
 
-  desc "Build release App Bundle (AAB) for Play Store"
+  desc "Build release App Bundle (AAB) for Play Store (mobile)"
   lane :build_bundle do |options|
     build_number = options[:build_number] || ENV["BUILD_NUMBER"]
+    flavor = options[:flavor] || "mobile"
 
     Dir.chdir(FLUTTER_ROOT) do
-      if build_number
-        sh("flutter", "build", "appbundle", "--release", "--build-number=#{build_number}")
-      else
-        sh("flutter", "build", "appbundle", "--release")
-      end
+      args = ["flutter", "build", "appbundle", "--release", "--flavor=#{flavor}"]
+      args << "--build-number=#{build_number}" if build_number
+      sh(*args)
     end
 
-    aab_path = File.join(FLUTTER_ROOT, "build/app/outputs/bundle/release/app-release.aab")
+    aab_path = File.join(FLUTTER_ROOT, "build/app/outputs/bundle/#{flavor}Release/app-#{flavor}-release.aab")
     UI.success("Release AAB built: #{aab_path}")
     aab_path
+  end
+
+  desc "Build mobile AAB"
+  lane :build_mobile do |options|
+    build_bundle(options.merge(flavor: "mobile"))
+  end
+
+  desc "Build Wear OS AAB"
+  lane :build_wear do |options|
+    build_bundle(options.merge(flavor: "wear"))
   end
 
   desc "Distribute debug build to Firebase App Distribution"
@@ -125,12 +134,12 @@ platform :android do
     ENV["GOOGLE_APPLICATION_CREDENTIALS"] || ENV["GOOGLE_PLAY_JSON_KEY"] || "play-store-key.json"
   end
 
-  desc "Upload AAB to Play Store internal testing track"
+  desc "Upload mobile AAB to Play Store internal testing track"
   lane :upload_internal do |options|
-    # Use existing AAB if available, otherwise build
-    aab_path = File.join(FLUTTER_ROOT, "build/app/outputs/bundle/release/app-release.aab")
+    flavor = "mobile"
+    aab_path = File.join(FLUTTER_ROOT, "build/app/outputs/bundle/#{flavor}Release/app-#{flavor}-release.aab")
     unless File.exist?(aab_path)
-      aab_path = build_bundle
+      aab_path = build_mobile(options)
     end
 
     upload_to_play_store(
@@ -143,7 +152,28 @@ platform :android do
       json_key: play_store_json_key
     )
 
-    UI.success("AAB uploaded to Play Store internal testing track!")
+    UI.success("Mobile AAB uploaded to Play Store internal testing track!")
+  end
+
+  desc "Upload Wear OS AAB to Play Store wear:internal track"
+  lane :upload_wear_internal do |options|
+    flavor = "wear"
+    aab_path = File.join(FLUTTER_ROOT, "build/app/outputs/bundle/#{flavor}Release/app-#{flavor}-release.aab")
+    unless File.exist?(aab_path)
+      aab_path = build_wear(options)
+    end
+
+    upload_to_play_store(
+      track: "wear:internal",
+      aab: aab_path,
+      skip_upload_apk: true,
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true,
+      json_key: play_store_json_key
+    )
+
+    UI.success("Wear OS AAB uploaded to Play Store wear:internal track!")
   end
 
   desc "Promote internal build to closed testing (alpha)"

@@ -1,0 +1,11 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Wear OS device support -->
+    <uses-feature android:name="android.hardware.type.watch" android:required="true" />
+
+    <application>
+        <!-- Wear OS standalone app (can work without phone) -->
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
+    </application>
+</manifest>

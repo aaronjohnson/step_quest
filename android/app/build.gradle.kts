@@ -40,6 +40,19 @@ android {
         versionName = flutter.versionName
     }
 
+    flavorDimensions += "device"
+    productFlavors {
+        create("mobile") {
+            dimension = "device"
+            // Mobile-specific config (if needed)
+        }
+        create("wear") {
+            dimension = "device"
+            // Wear OS minimum SDK is 30 for recent features
+            minSdk = 30
+        }
+    }
+
     signingConfigs {
         if (keystorePropertiesFile.exists()) {
             create("release") {

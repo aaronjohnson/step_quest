@@ -3,6 +3,15 @@ name: Play Store Release
 on:
   workflow_dispatch:
     inputs:
+      device:
+        description: 'Device type'
+        required: true
+        default: 'mobile'
+        type: choice
+        options:
+          - mobile
+          - wear
+          - both
       track:
         description: 'Release track'
         required: true
@@ -68,30 +77,55 @@ jobs:
           bundle config set --local path 'vendor/bundle'
           bundle install
 
-      - name: Build AAB
-        if: ${{ github.event.inputs.track == 'internal' }}
+      # Mobile builds
+      - name: Build Mobile AAB
+        if: ${{ github.event.inputs.track == 'internal' && (github.event.inputs.device == 'mobile' || github.event.inputs.device == 'both') }}
         env:
           BUILD_NUMBER: ${{ github.run_number }}
         run: |
           export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-          bundle exec fastlane android build_bundle build_number:$BUILD_NUMBER
+          bundle exec fastlane android build_mobile build_number:$BUILD_NUMBER
 
-      - name: Upload AAB artifact
-        if: ${{ github.event.inputs.track == 'internal' }}
+      - name: Upload Mobile AAB artifact
+        if: ${{ github.event.inputs.track == 'internal' && (github.event.inputs.device == 'mobile' || github.event.inputs.device == 'both') }}
         uses: actions/upload-artifact@v4
         with:
-          name: android-aab-release
-          path: |
-            build/app/outputs/bundle/release/*.aab
+          name: android-aab-mobile
+          path: build/app/outputs/bundle/mobileRelease/*.aab
           retention-days: 30
 
-      - name: Upload to Play Store Internal Track
-        if: ${{ github.event.inputs.track == 'internal' }}
+      - name: Upload Mobile to Play Store
+        if: ${{ github.event.inputs.track == 'internal' && (github.event.inputs.device == 'mobile' || github.event.inputs.device == 'both') }}
         continue-on-error: true
         run: |
           export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
           bundle exec fastlane android upload_internal
 
+      # Wear OS builds
+      - name: Build Wear OS AAB
+        if: ${{ github.event.inputs.track == 'internal' && (github.event.inputs.device == 'wear' || github.event.inputs.device == 'both') }}
+        env:
+          BUILD_NUMBER: ${{ github.run_number }}
+        run: |
+          export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+          bundle exec fastlane android build_wear build_number:$BUILD_NUMBER
+
+      - name: Upload Wear OS AAB artifact
+        if: ${{ github.event.inputs.track == 'internal' && (github.event.inputs.device == 'wear' || github.event.inputs.device == 'both') }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-aab-wear
+          path: build/app/outputs/bundle/wearRelease/*.aab
+          retention-days: 30
+
+      - name: Upload Wear OS to Play Store
+        if: ${{ github.event.inputs.track == 'internal' && (github.event.inputs.device == 'wear' || github.event.inputs.device == 'both') }}
+        continue-on-error: true
+        run: |
+          export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+          bundle exec fastlane android upload_wear_internal
+
+      # Promotions (apply to both tracks)
       - name: Promote to Alpha
         if: ${{ github.event.inputs.track == 'alpha' }}
         run: |
