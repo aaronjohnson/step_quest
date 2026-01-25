@@ -34,13 +34,22 @@ Frame as construction or expansion:
 
 ## Section Headers
 
-Use thematic headers when appropriate:
-- **Infrastructure** - DNS, hosting, CI/CD
-- **Crashlytics** - Error reporting
-- **Localization** - Language support
-- **Documentation** - Docs and policies
-- **Technical Notes** - Implementation details
-- **Philosophy** - Design decisions
+Use thematic headers instead of generic ones:
+
+| Topic | Thematic Header |
+|-------|-----------------|
+| DNS, hosting, CI/CD | **The Mason's Work** or **Fortifications** |
+| Error reporting | **The Watchtower** |
+| Language support | **The Translator's Guild** or **Foreign Tongues** |
+| Docs and policies | **The Scribes' Archives** |
+| Implementation details | **Secrets of the Deep** |
+| Design decisions | **The Architect's Wisdom** |
+| Bug fixes | **Battles Won** or **Menaces Vanquished** |
+| New features | **New Chambers** or **Expeditions** |
+| Dependencies | **Alliances Formed** or **Trade Agreements** |
+| Breaking changes | **The Great Upheaval** |
+| Security | **The Guard's Report** |
+| Performance | **The Miners' Efficiency** |
 
 ## Footer
 
@@ -54,13 +63,17 @@ End the changelog with:
 ```markdown
 ## v0.8.0 - "The Cartographer's Update" (2026-01-26)
 
-### Infrastructure
+### The Mason's Work
 - **Cloud DNS Migration** — The realm's maps now live in the cloud
   - Subdomain delegation keeps the old kingdoms safe
   - Future expeditions can claim `*.quest.mqqn.net`
 
-### Bug Fixes
+### Menaces Vanquished
 - **Corrected the ancient scroll references**
   - The import path, lost to time, has been rediscovered
   - Adventurers no longer wander in darkness
+
+### The Translator's Guild
+- **Elvish (el)** — For the immortal walkers of Middle-earth
+- **Orcish (or)** — WAAAAAGH! steps count double
 ```
