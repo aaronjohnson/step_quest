@@ -125,7 +125,11 @@
 
 ### The Architect's Wisdom
 - **Prime Numbers** (Pricing) — Because $2, $3, and $7 are more elegant than $1.99
-- **Local Currencies** (Play Console) — Sensible round numbers per country
+- **The Price of Coffee Worldwide** (PPP Auto-Pricing) — A tip should feel the same everywhere
+  - Google's auto-pricing uses Purchasing Power Parity, not just exchange rates
+  - A $2 coffee in San Francisco ≠ ₹166 in Mumbai — that's a fancy dinner
+  - Play Console suggests ₹79, R$4.90, ¥200 — prices that feel like a coffee
+  - 173 countries, zero manual spreadsheets, one fair gesture of support
 - In-app purchases follow Google Play policies
 - Both GitHub Sponsors AND Patreon for different audiences
 - Open source remains free; tips fund development and keep ads at bay
