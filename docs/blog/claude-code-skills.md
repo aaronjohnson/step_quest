@@ -20,6 +20,8 @@ Create a `.claude/skills/` directory in your project. Add markdown files describ
 
 **The trick:** Have Claude write the skill. Describe what you want once, ask Claude to save it as a skill, and every future conversation inherits it. Teach once, use forever.
 
+**Project or global:** Skills in `.claude/skills/` apply to that project. Put them in `~/.claude/skills/` and they follow you everywhere.
+
 ## A Real Example
 
 My step counter app uses Dwarf Fortress-style changelogs. Instead of explaining this every time, I created `.claude/skills/changelog.md`:
