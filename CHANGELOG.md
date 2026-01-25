@@ -108,7 +108,7 @@
 
 ### New Chambers
 - **The Patron's Guild** (Supporter System) — A tip jar for those who wish to fund the fortress
-  - Three tiers with prime number pricing: Coffee ☕ (~$2), Supporter ⭐ (~$3), Legendary 👑 (~$7)
+  - Three tiers with prime number pricing: Coffee ☕ ($2), Supporter ⭐ ($3), Legendary 👑 ($7)
   - Supporter badge displayed proudly in-app
   - Google Play IAP integration pending (prices will be localized per country)
 
