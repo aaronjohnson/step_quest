@@ -77,14 +77,15 @@ jobs:
           bundle config set --local path 'vendor/bundle'
           bundle install
 
-      # Mobile builds
+      # Mobile builds (version code = run_number * 2)
       - name: Build Mobile AAB
         if: ${{ github.event.inputs.track == 'internal' && (github.event.inputs.device == 'mobile' || github.event.inputs.device == 'both') }}
         env:
           BUILD_NUMBER: ${{ github.run_number }}
         run: |
           export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-          bundle exec fastlane android build_mobile build_number:$BUILD_NUMBER
+          MOBILE_VERSION=$((BUILD_NUMBER * 2))
+          bundle exec fastlane android build_mobile build_number:$MOBILE_VERSION
 
       - name: Upload Mobile AAB artifact
         if: ${{ github.event.inputs.track == 'internal' && (github.event.inputs.device == 'mobile' || github.event.inputs.device == 'both') }}
@@ -101,14 +102,15 @@ jobs:
           export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
           bundle exec fastlane android upload_internal
 
-      # Wear OS builds
+      # Wear OS builds (version code = run_number * 2 + 1)
       - name: Build Wear OS AAB
         if: ${{ github.event.inputs.track == 'internal' && (github.event.inputs.device == 'wear' || github.event.inputs.device == 'both') }}
         env:
           BUILD_NUMBER: ${{ github.run_number }}
         run: |
           export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-          bundle exec fastlane android build_wear build_number:$BUILD_NUMBER
+          WEAR_VERSION=$((BUILD_NUMBER * 2 + 1))
+          bundle exec fastlane android build_wear build_number:$WEAR_VERSION
 
       - name: Upload Wear OS AAB artifact
         if: ${{ github.event.inputs.track == 'internal' && (github.event.inputs.device == 'wear' || github.event.inputs.device == 'both') }}
