@@ -314,14 +314,18 @@ jobs:
           bundle config set --local path 'vendor/bundle'
           bundle install
 
-      - name: Build and Upload to Internal
+      # IMPORTANT: Split build and upload into separate steps!
+      # The first upload to Play Console MUST be manual. By splitting steps
+      # and using continue-on-error, the AAB artifact is saved even when
+      # upload fails, allowing manual download and upload to Play Console.
+
+      - name: Build AAB
         if: ${{ github.event.inputs.track == 'internal' }}
         env:
           BUILD_NUMBER: ${{ github.run_number }}
         run: |
           export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
           bundle exec fastlane android build_bundle build_number:$BUILD_NUMBER
-          bundle exec fastlane android upload_internal
 
       - name: Upload AAB artifact
         if: ${{ github.event.inputs.track == 'internal' }}
@@ -330,6 +334,13 @@ jobs:
           name: release-aab-v${{ github.run_number }}
           path: build/app/outputs/bundle/release/*.aab
           retention-days: 30
+
+      - name: Upload to Play Store
+        if: ${{ github.event.inputs.track == 'internal' }}
+        continue-on-error: true  # First upload must be manual, this will fail
+        run: |
+          export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+          bundle exec fastlane android upload_internal
 
       - name: Promote to Alpha
         if: ${{ github.event.inputs.track == 'alpha' }}
@@ -388,7 +399,10 @@ When ready to transfer an app to a different developer account:
 - [ ] Add signing config copy step
 
 ### Internal Testing
-- [ ] Upload first AAB manually (or via workflow)
+- [ ] Run workflow to build AAB (upload step will fail - this is expected)
+- [ ] Download AAB artifact from workflow run
+- [ ] Upload first AAB manually via Play Console (required by Google)
 - [ ] Create tester list
 - [ ] Share opt-in link with testers
 - [ ] Testers install via Play Store
+- [ ] Subsequent workflow runs will upload automatically
