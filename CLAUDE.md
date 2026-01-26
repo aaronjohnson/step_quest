@@ -115,6 +115,23 @@ Product IDs:
 - XP is universal (not translated)
 - TODO: Migrate remaining widget hardcoded strings
 
+## Mac Mini Troubleshooting
+
+### gh: No such file or directory
+If git operations fail with `/usr/local/bin/gh: No such file or directory`:
+
+Homebrew on Apple Silicon installs to `/opt/homebrew`, not `/usr/local`.
+```bash
+gh auth setup-git
+```
+
+### bundle install: system gems error
+If `bundle install` tries to install to system gems or throws permission errors:
+```bash
+bundle config set --local path 'vendor/bundle'
+bundle install
+```
+
 ## Future Plans
 - Google Play Billing integration for tip jar
 - Watch-to-phone data synchronization
