@@ -4,6 +4,17 @@
 
 ---
 
+## Unreleased - "The Gate That Wasn't There"
+
+### Wayfinding
+- **The Phantom Portal Sealed** (Google Play link) — Travelers were sent to a gate not yet built
+  - The landing page's "Get it on Google Play" button led to a store listing that does not exist yet
+  - It now reads "Join the Beta" and leads to the beta testing hall
+  - A small sign by the door says "Coming soon to Google Play"
+  - Invite-only tester links and the request-access raven remain unchanged
+
+---
+
 ## v0.8.1 - "The Great Consolidation" (2026-01-25)
 
 ### The Scribes Converge
