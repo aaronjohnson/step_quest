@@ -1,2 +1,2 @@
 # name | command (from the repo root)                                                                | paths
-site   | nix run nixpkgs#firebase-tools -- deploy --only hosting --project step-quest-485403 | web/public firebase.json
+site   | firebase deploy --only hosting --project step-quest-485403 | web/public firebase.json
